@@ -1,0 +1,64 @@
+.. _reference-linux-mariadb-instalacion_mariadb:
+
+###################
+Instalacion MariaDB
+###################
+
+
+.. warning::
+    Cuidado con las versiones, la 10+, no tiene la misma compatibilidad que
+    las 5.x.
+
+En fedora 20+, MySQL Workbench no esta en los repositorios, tampoco he probado Workbench
+con MariaDB 10+ en ningun sistema.
+
+Fedora
+******
+
+.. code-block:: bash
+
+    yum -y install mariadb mariadb-server
+
+    # Opcional
+    yum -y install mysql-workbench
+
+    systemctl start mariadb.service
+    systemctl enable mariadb.service
+    mysql_secure_installation
+
+Ubuntu
+******
+
+En ubuntu, hay que instalarlo con los repos de MariaDB:
+
+* https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs
+
+.. code-block:: bash
+
+    sudo apt-get install software-properties-common
+    sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+    sudo add-apt-repository 'deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main'
+
+    sudo apt-get update
+    sudo apt-get install mariadb-server
+
+    # Opcional
+    apt-get install mysql-workbench
+
+Ejecutar, para eliminar usuario temporal, etc
+
+.. code-block:: bash
+
+    mysql_secure_installation
+
+    /etc/init.d/mysql restart
+
+Crear un usuario y una database
+*******************************
+
+.. code-block:: bash
+
+    mysql -u root -p
+    create user snicoper@localhost identified by '123456';
+    create database practicas;
+    grant all on practicas.* to snicoper@localhost;
