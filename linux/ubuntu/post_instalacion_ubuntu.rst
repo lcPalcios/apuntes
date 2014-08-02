@@ -60,7 +60,7 @@ Diccionario español
 
 .. code-block:: bash
 
-    sudo apt-get install aspell-es -y
+    sudo apt-get install aspell-es myspell-es -y
 
 KDE
 ===
