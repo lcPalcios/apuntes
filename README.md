@@ -24,8 +24,3 @@ Cualquier sugerencia o corrección snicoper@gmail.com
     <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
     <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 </form>
-
-<script
-    data-name="Apuntes informatica"
-    data-button="donate" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ZHEFMHDL2X6H8" async="async"
-></script>
