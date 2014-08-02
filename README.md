@@ -25,8 +25,7 @@ Cualquier sugerencia o corrección snicoper@gmail.com
     <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-<script src="http://raw.github.com/paypal/JavaScriptButtons/master/dist/paypal-button.min.js?merchant=ZHEFMHDL2X6H8"
-    data-button="buynow"
-    data-name="Donate to The Changelog"
-    data-amount="5.00"
+<script
+    data-name="Apuntes informatica"
+    data-button="donate" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ZHEFMHDL2X6H8" async="async"
 ></script>
