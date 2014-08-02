@@ -11,3 +11,4 @@ Contents:
 
     netbeans/index
     sublime_text/index
+    vim/index
