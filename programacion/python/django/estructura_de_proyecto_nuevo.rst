@@ -4,22 +4,12 @@
 Estructura de un proyecto nuevo
 ###############################
 
-.. warning::
-    Reparsarlo
-
 Crear el proyecto
+*****************
 
 .. code-block:: bash
 
     django-admin.py startproject nombre_proyecto
-
-
-Renombrar nombre_proyecto a src
-
-.. code-block:: bash
-
-    mv nombre_proyecto src
-    cd src
 
 freeze
 ******
@@ -29,7 +19,7 @@ freeze
     mkdir requeriments
     pip freeze > reqrequeriments/reqrequeriments.txt
 
-Inicializar repo Git
+Inicializar Git
 ********************
 
 .. code-block:: bash
@@ -72,24 +62,20 @@ Primer commit
     git add --all
     git commit -m "Initial commit, added gitignore and requeriments.txt"
 
-nombre_proyecto es la raiz del pryecto
+nombre_proyecto es la raiz del proyecto
 
 .. code-block:: bash
 
     cd nombre_proyecto
 
     # Crear la estuctura del sitio
-    mkdir templates apps static media
-
-    # apps como modulo
-    touch apps/__init__.py
+    mkdir templates static media
 
 Donde
 
-+ templates -> Los archivos .html
-+ apps -> las aplicaciones
++ templates -> Archivos .html compartidos
 + static -> archivos .css .js, etc, fonts, img
-+ media -> media que suban los usuarios
++ media -> archivos subidos por los usuarios, e.j. imagenes
 
 Crear las carpetas de js, css, etc dentro de static
 
@@ -100,21 +86,39 @@ Crear las carpetas de js, css, etc dentro de static
 
     cd ..
 
-La aplicacion para el home, se llama main y crear el archivo base.html dentro de templates.
-Cada apps/nombre_app tendra un directorio en templates/nombre_app.
+La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
+``base.html`` dentro de ``~/templates``. Cada app tendra un directorio en
+``templates/nombre_app`` dentro de ``~/nombre_app``
 
 .. code-block:: bash
 
-    cd apps
-
     django-admin.py startapp main
+    mkdir -p main/templates/main
+    touch main/templates/main/index.html
     touch main/urls.py
 
-    cd ..
-
-    mkdir templates/main
-    touch templates/main/index.html
     touch templates/base.html
+
+.. note::
+    **Copiado y pegado del** `tutorial django <https://docs.djangoproject.com/en/1.6/intro/tutorial03/>`_
+
+    Podríamos tener todas nuestras plantillas juntas, en un solo directorio de
+    plantillas grandes, y que funcionaría perfectamente bien. Sin embargo, esta
+    plantilla pertenece a la aplicación polls, por lo que a diferencia de la
+    plantilla de administración que hemos creado en el tutorial anterior, vamos
+    a poner esto en el directorio de la plantilla de la aplicación (``polls/templates``)
+    y no del proyecto (``templates``).
+
+    Ahora podríamos ser capaces de salirse con poner nuestras plantillas
+    directamente en ``polls/templates`` (en lugar de crear otro subdirectorio
+    polls), pero en realidad sería una mala idea.
+    Django elegirá la primera plantilla que encuentra cuyo nombre coincide,
+    y si has tenido una plantilla con el mismo nombre en una aplicación diferente,
+    Django sería incapaz de distinguir entre ellos.
+    Tenemos que ser capaces de señalar Django la correcta, y la mejor manera
+    de asegurar esto es por el namespacing.
+    Es decir, al poner las plantillas dentro de otro directorio llamado
+    así por la propia aplicación.
 
 Añadir TEMPLATE_DIRS y STATICFILES_DIRS en setting.py
 
@@ -137,7 +141,7 @@ buscar y remplazar
 
     TIME_ZONE = 'Europe/Madrid'
 
-Para que pueda los static del admin, añadir en urls.py principal
+Para que pueda leer los ``static``  del ``admin``, añadir en ``urls.py`` principal
 
 .. code-block:: python
 
@@ -194,3 +198,46 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         {% block scripts %}{% endblock scripts %}
     </body>
     </html>
+
+
+Estructura
+**********
+
+.. code-block:: bash
+
+    (venv)snicoper@lxmaq1 ~/projects/python/nombre_proyecto
+    (master) $ pwd
+    /home/snicoper/projects/python/nombre_proyecto
+    (venv)snicoper@lxmaq1 ~/projects/python/nombre_proyecto
+    (master) $ tree
+    .
+    ├── manage.py
+    ├── nombre_proyecto
+    │   ├── __init__.py
+    │   ├── main
+    │   │   ├── admin.py
+    │   │   ├── __init__.py
+    │   │   ├── migrations
+    │   │   │   └── __init__.py
+    │   │   ├── models.py
+    │   │   ├── templates
+    │   │   │   └── main
+    │   │   │       └── index.html
+    │   │   ├── tests.py
+    │   │   ├── urls.py
+    │   │   └── views.py
+    │   ├── media
+    │   ├── settings.py
+    │   ├── static
+    │   │   ├── css
+    │   │   ├── fonts
+    │   │   ├── img
+    │   │   └── js
+    │   ├── templates
+    │   │   └── base.html
+    │   ├── urls.py
+    │   └── wsgi.py
+    └── requeriments
+        └── requeriments.txt
+
+    13 directories, 15 files

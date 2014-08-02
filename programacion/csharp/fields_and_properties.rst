@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-fields_and_properties:
 
 ####################
-Compos y Propiedades
+Campos y Propiedades
 ####################
 
 Un campo es el equivalente de una propiedad en PHP.
@@ -31,5 +31,7 @@ Una propiedad es un setters/getter con posible logica sobre un campo.
     }
 
 A groso modo, se puede decir que un campo(field) son como las propiedades en PHP
-y las propiedades son los metodos accesores en PHP, con un mecanisco que lo hacen
-mas simples.
+y las propiedades son los metodos accesores en PHP.
+
+Internamente cuando lo convierte a ¿``CIL``?, crea metodos accesores como en PHP, es un
+atajo para el desarrollador.

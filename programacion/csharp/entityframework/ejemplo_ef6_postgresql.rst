@@ -61,7 +61,7 @@ En la base de datos, cree una database 'practicas' para el usuario
     ALTER TABLE noticias ADD CONSTRAINT fk_noticias_categoria_id FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON UPDATE CASCADE ON DELETE CASCADE;
     ALTER TABLE noticias ADD CONSTRAINT fk_noticias_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
-En VS, en la carpeta Models, creo 3 clases 'Usaurio.cs', 'Categoria.cs' y 'Noticia.cs'.
+En VS, en la carpeta Models, creo 3 clases 'Usuario.cs', 'Categoria.cs' y 'Noticia.cs'.
 
 **Usuario.cs**
 
@@ -189,8 +189,6 @@ Nombre de la clave foranea. (La tabla debera ser con el mismo nombre)
 
 La propiedad de "navegacion", seria el nombre de la clave foranea sin el ID
 ``public virtual Department Department { get; set; }``
-
-Repito, OPTAR POR SER EXPLICITO.
 
 **BlogContext**
 
