@@ -4,7 +4,9 @@
 C# y ASP.NET MVC
 ################
 
-Categorias:
+**Categorias**
+
+----------------
 
 .. toctree::
     :maxdepth: 2
@@ -12,9 +14,10 @@ Categorias:
     aspnet-mvc/index
     entityframework/index
     identity/index
-    csharp_script/index
 
-C#
+**C# Lenguaje**
+
+----------------
 
 .. toctree::
     :maxdepth: 1
@@ -25,10 +28,12 @@ C#
     character_commands
     checked_unchecked
     conversiones_implicitas_numericas
+    creacion_labmda_csharp
     descripcion_accesibilidad
     diferencia_class_and_struct
     fields_and_properties
     ienumerator
+    metodos_extension_csharp
     new_and_override
     operadores_sobrecargables
     ref_and_out
@@ -36,3 +41,12 @@ C#
     tipos_csharp_to_postgresql
     up_down_cast
     virtual
+
+**Scripts**
+
+----------------
+
+.. toctree::
+    :maxdepth: 2
+
+    csharp_script/index

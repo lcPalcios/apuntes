@@ -4,7 +4,9 @@
 Windows
 #######
 
-Contents:
+**Contents**
+
+------
 
 .. toctree::
    :maxdepth: 2
@@ -16,4 +18,14 @@ Contents:
    instalar_php_and_laravel
    kde_for_windows
    mongodb_windows
+   odbc_postgres_windows
    olbidar_red
+
+**Categorias**
+
+------
+
+.. toctree::
+   :maxdepth: 2
+
+   visual_studio/index
