@@ -1,6 +1,6 @@
 # Apuntes de informatica #
 
-Estos son los apuntes he ido acumulando durante los últimos años sobre informática que quiero
+Estos son los apuntes que he ido acumulando durante los últimos años sobre informática que quiero
 compartirlos con todos.
 
 Algunos apuntes son sacados de otras paginas y no tengo links de referencia, eran apuntes
@@ -18,9 +18,5 @@ Para verlos puedes visitar
 
 Cualquier sugerencia o corrección snicoper@gmail.com
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="ZHEFMHDL2X6H8">
-    <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
-    <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
-</form>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D9NL2WD7WEMLS">
+    <img src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif"></a>
