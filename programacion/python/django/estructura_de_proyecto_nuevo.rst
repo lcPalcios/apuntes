@@ -70,10 +70,11 @@ nombre_proyecto es la raiz del proyecto
     cd nombre_proyecto
 
     # Crear la estuctura del sitio
-    mkdir templates static media
+    mkdir apps templates static media
 
 Donde
 
++ apps -> Aplicaciones
 + templates -> Archivos .html compartidos
 + static -> archivos .css .js, etc, fonts, img
 + media -> archivos subidos por los usuarios, e.j. imagenes
@@ -93,11 +94,12 @@ La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
 
 .. code-block:: bash
 
+    cd apps
     django-admin.py startapp main
     mkdir -p main/templates/main
     touch main/templates/main/index.html
     touch main/urls.py
-
+    cd ..
     touch templates/base.html
 
 .. note::
@@ -121,7 +123,17 @@ La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
     Es decir, al poner las plantillas dentro de otro directorio llamado
     así por la propia aplicación.
 
-Añadir TEMPLATE_DIRS y STATICFILES_DIRS en setting.py
+Añadir al pythonpath el directorio ``apps``, en el inicio ``setting.py``
+
+.. code-block:: python
+
+    # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+    import os
+    import sys
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+    sys.path.insert(0, BASE_DIR + '/nombre_proyecto/apps/')
+
+Añadir TEMPLATE_DIRS y STATICFILES_DIRS al final de ``setting.py``
 
 .. code-block:: python
 
@@ -133,7 +145,7 @@ Añadir TEMPLATE_DIRS y STATICFILES_DIRS en setting.py
         os.path.join(BASE_DIR, 'nombre_proyecto/static'),
     )
 
-Editar el timezone y language en setting.py
+Editar el timezone y language en ``setting.py``
 buscar y remplazar
 
 .. code-block:: python
@@ -141,12 +153,6 @@ buscar y remplazar
     LANGUAGE_CODE = 'en-us'
 
     TIME_ZONE = 'Europe/Madrid'
-
-Para que pueda leer los ``static``  del ``admin``, añadir en ``urls.py`` principal
-
-.. code-block:: python
-
-    url(r'^static/(?P<path>.*)$', 'serve'),
 
 
 Esqueleto de base.html y main.css
@@ -215,45 +221,34 @@ static/css/main.css
         padding-right: 15px;
     }
 
-    /* Set width on the form input elements since they're 100% wide by default */
-    input,
-    select,
-    textarea {
-        max-width: 280px;
-    }
-
-
 
 Estructura
 **********
 
 .. code-block:: bash
 
-    (venv)snicoper@lxmaq1 ~/projects/python/nombre_proyecto
-    (master) $ pwd
-    /home/snicoper/projects/python/nombre_proyecto
-    (venv)snicoper@lxmaq1 ~/projects/python/nombre_proyecto
-    (master) $ tree
     .
     ├── manage.py
     ├── nombre_proyecto
+    │   ├── apps
+    │   │   └── main
+    │   │       ├── admin.py
+    │   │       ├── __init__.py
+    │   │       ├── migrations
+    │   │       │   └── __init__.py
+    │   │       ├── models.py
+    │   │       ├── templates
+    │   │       │   └── main
+    │   │       │       └── index.html
+    │   │       ├── tests.py
+    │   │       ├── urls.py
+    │   │       └── views.py
     │   ├── __init__.py
-    │   ├── main
-    │   │   ├── admin.py
-    │   │   ├── __init__.py
-    │   │   ├── migrations
-    │   │   │   └── __init__.py
-    │   │   ├── models.py
-    │   │   ├── templates
-    │   │   │   └── main
-    │   │   │       └── index.html
-    │   │   ├── tests.py
-    │   │   ├── urls.py
-    │   │   └── views.py
     │   ├── media
     │   ├── settings.py
     │   ├── static
     │   │   ├── css
+    │   │   │   └── main.css
     │   │   ├── fonts
     │   │   ├── img
     │   │   └── js
@@ -264,4 +259,4 @@ Estructura
     └── requeriments
         └── requeriments.txt
 
-    13 directories, 15 files
+    14 directories, 16 files
