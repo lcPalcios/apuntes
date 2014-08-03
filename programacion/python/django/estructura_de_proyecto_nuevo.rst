@@ -10,6 +10,7 @@ Crear el proyecto
 .. code-block:: bash
 
     django-admin.py startproject nombre_proyecto
+    cd nombre_proyecto
 
 freeze
 ******
@@ -17,7 +18,7 @@ freeze
 .. code-block:: bash
 
     mkdir requeriments
-    pip freeze > reqrequeriments/reqrequeriments.txt
+    pip freeze > requeriments/requeriments.txt
 
 Inicializar Git
 ********************
@@ -83,7 +84,7 @@ Crear las carpetas de js, css, etc dentro de static
 
     cd static
     mkdir js css img fonts
-
+    touch css/main.css
     cd ..
 
 La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
@@ -148,8 +149,8 @@ Para que pueda leer los ``static``  del ``admin``, añadir en ``urls.py`` princi
     url(r'^static/(?P<path>.*)$', 'serve'),
 
 
-Esqueleto de base.html
-**********************
+Esqueleto de base.html y main.css
+*********************************
 
 Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
 
@@ -176,7 +177,7 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    Application name
+                    <a class = "navbar-brand" href="">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -198,6 +199,29 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         {% block scripts %}{% endblock scripts %}
     </body>
     </html>
+
+static/css/main.css
+
+.. code-block:: css
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 280px;
+    }
+
 
 
 Estructura

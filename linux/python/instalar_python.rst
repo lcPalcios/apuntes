@@ -104,6 +104,7 @@ Comandos
 * rmvirtualenv // Elimina un virtualenv existente
 * workon // Cambia el actual virtualenv
 * deactivate // Desactivar virtualenv
+* lsvirtualenv // Listar virtualenvs
 
 Para crear un nuevo virtualenv, ejecutar
 
