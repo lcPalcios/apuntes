@@ -14,11 +14,27 @@ Crear archivo .gitignore_global
 
 .. code-block:: bash
 
-    # Python
-    .idea/
-    __pycache__/
+    # File types #
+    ##############
     *.pyc
+    *.swo
+    *.swp
+    *.swn
 
-    # Global
-    *log*
+    # Directories #
+    ###############
+    __pycache__/
+    logs/
+    .idea/
+
+    # Specific files #
+    ##################
+
+    # OS generated files #
+    ######################
     .directory
+    .DS_Store?
+    ehthumbs.db
+    Icon?
+    Thumbs.db
+    *~

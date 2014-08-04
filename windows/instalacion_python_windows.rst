@@ -6,8 +6,7 @@ Instalacion Python en Windows
 
 Fuentes
 *******
-
-* Libs para windows, no oficiales
+* https://www.python.org/
 * http://www.lfd.uci.edu/~gohlke/pythonlibs/
 * http://www.stickpeople.com/projects/python/win-psycopg/
 
@@ -19,12 +18,12 @@ Fuentes
 Variables de entorno
 ********************
 
-..code-block:: bash
+.. code-block:: bash
 
     C:\Python34\;C:\Python34\Scripts\;
 
-Psycopg2 y Virtualenv
-*********************
+Virtualenv
+**********
 
 .. code-block:: bash
 

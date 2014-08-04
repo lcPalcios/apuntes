@@ -43,12 +43,14 @@ Añadir a .gitignore
     ###############
     logs/
     __pycache__/
+    .idea/
 
     # Specific files #
     ##################
 
     # OS generated files #
     ######################
+    .directory
     .DS_Store?
     ehthumbs.db
     Icon?

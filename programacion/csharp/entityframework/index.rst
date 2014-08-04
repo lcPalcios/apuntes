@@ -10,6 +10,6 @@ Categorias:
     :maxdepth: 2
 
     connectionstring
-    ejemplo_ef6_postgresql
+    ejemplo_mvc5_identity_ef6_pgsql9
     migracion_ef6_basico
     recuperar_datos_de_otras_tablas_basico

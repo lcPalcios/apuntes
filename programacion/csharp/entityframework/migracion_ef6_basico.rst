@@ -5,16 +5,7 @@ Migraciones con EF6
 ###################
 
 .. warning::
-    Por hacer y mejorar.
-
-.. warning::
-    Solo funciona con Sql Server
-
-    Aunque para postgres he leido algo, en alguna parte, lo vi
-    algo lioso.
-
-.. note::
-    Todos los comandos es en Package Manager Console
+    Requiere Npgsql 2.2+ para Npgsql
 
 -------------
 
