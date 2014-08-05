@@ -57,14 +57,6 @@ Añadir a .gitignore
     Thumbs.db
     *~
 
-Primer commit
-=============
-
-.. code-block:: bash
-
-    git add --all
-    git commit -m "Initial commit, added gitignore and requeriments.txt"
-
 nombre_proyecto es la raiz del proyecto
 
 .. code-block:: bash
@@ -90,17 +82,17 @@ Crear las carpetas de js, css, etc dentro de static
     touch css/main.css
     cd ..
 
-La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
+La aplicacion para el index del sitio ``/``, se llama home y crear el archivo
 ``base.html`` dentro de ``~/templates``. Cada app tendra un directorio en
 ``templates/nombre_app`` dentro de ``~/nombre_app``
 
 .. code-block:: bash
 
     cd apps
-    django-admin.py startapp main
-    mkdir -p main/templates/main
-    touch main/templates/main/index.html
-    touch main/urls.py
+    django-admin.py startapp home
+    mkdir -p home/templates/home
+    touch home/templates/home/index.html
+    touch home/urls.py
     cd ..
     touch templates/base.html
 
@@ -125,7 +117,7 @@ La aplicacion para el index del sitio ``/``, se llama main y crear el archivo
     Es decir, al poner las plantillas dentro de otro directorio llamado
     así por la propia aplicación.
 
-Añadir al pythonpath el directorio ``apps``, en el inicio ``setting.py``
+Añadir al pythonpath el directorio ``apps``, en el inicio de ``setting.py``
 
 .. code-block:: python
 
@@ -134,6 +126,17 @@ Añadir al pythonpath el directorio ``apps``, en el inicio ``setting.py``
     import sys
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
     sys.path.insert(0, BASE_DIR + '/nombre_proyecto/apps/')
+
+Añadir la nueva ``app`` en ``INSTALLED_APPS``
+
+``setting.py``
+
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        [...]
+        'home',
+    )
 
 Añadir TEMPLATE_DIRS y STATICFILES_DIRS al final de ``setting.py``
 
@@ -156,11 +159,12 @@ buscar y remplazar
 
     TIME_ZONE = 'Europe/Madrid'
 
-
 Esqueleto de base.html y main.css
 *********************************
 
 Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
+
+``templates/base.html``
 
 .. code-block:: html
 
@@ -174,6 +178,7 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         <title>{% block title %}{% endblock title %}</title>
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
+        <link href="{% static "css/main.css" %}" rel="stylesheet">
     </head>
     <body>
 
@@ -208,7 +213,7 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
     </body>
     </html>
 
-static/css/main.css
+``static/css/main.css``
 
 .. code-block:: css
 
@@ -217,12 +222,23 @@ static/css/main.css
         padding-bottom: 20px;
     }
 
-    /* Set padding to keep content from hitting the edges */
-    .body-content {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+``home/templates/home/index.html``
 
+.. code-block:: css
+
+    {% extends "base.html" %}
+
+    {% block body %}
+        <h1>Pagina inicio</h1>
+    {% endblock body %}
+
+Primer commit
+=============
+
+.. code-block:: bash
+
+    git add --all
+    git commit -m "Initial commit, added gitignore, requeriments.txt and structure"
 
 Estructura
 **********
@@ -233,14 +249,14 @@ Estructura
     ├── manage.py
     ├── nombre_proyecto
     │   ├── apps
-    │   │   └── main
+    │   │   └── home
     │   │       ├── admin.py
     │   │       ├── __init__.py
     │   │       ├── migrations
     │   │       │   └── __init__.py
     │   │       ├── models.py
     │   │       ├── templates
-    │   │       │   └── main
+    │   │       │   └── home
     │   │       │       └── index.html
     │   │       ├── tests.py
     │   │       ├── urls.py

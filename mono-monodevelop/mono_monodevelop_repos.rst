@@ -6,7 +6,7 @@ Repos de Mono y Monodevelop
 
 .. note::
     Para Ubuntu, si se quiere tener los ultmos mono y monodevelop,
-    ver los PPAs
+    ver los PPA's abajo.
 
 Fuentes
 *******
@@ -59,13 +59,31 @@ Editar ~/.bashrc
     sudo chmod g+rwx /opt/mono/etc/mono/registry
     sudo chmod g+rwx /opt/mono/etc/mono/registry/LocalMachine
 
-Ubuntu ultimo Mono and MonoDevelop PPA
+Ubuntu ultimo Mono y MonoDevelop PPA
 **************************************
+
+https://launchpad.net/~ermshiperete/+archive/ubuntu/monodevelop?field.series_filter=trusty
 
 .. code-block:: bash
 
     sudo apt-add-repository ppa:ermshiperete/monodevelop
+    sudo apt-get update
     sudo apt-get install monodevelop mono-xsp4
+
+Otro ppa
+
+https://launchpad.net/~inizan-yannick/+archive/ubuntu/mono?field.series_filter=trusty
+
+.. code-block:: bash
+
+    sudo apt-add-repository ppa:inizan-yannick/mono
+    sudo apt-get update
+    sudo apt-get install monodevelop mono-xsp4
+
+
+En ambos ppa's
+
+.. code-block:: bash
 
     sudo mkdir -p /etc/mono/registry/LocalMachine
     sudo chmod g+rwx /etc/mono/registry

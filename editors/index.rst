@@ -1,8 +1,8 @@
 .. _reference-editors-index:
 
-#######
-Editors
-#######
+########
+Editores
+########
 
 Contents:
 

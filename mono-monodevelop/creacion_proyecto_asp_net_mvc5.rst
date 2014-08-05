@@ -49,5 +49,13 @@ Editar Views/Web.config
     # Por
     System.Web.Mvc, Version=5.1.0.0
 
-.. attention::
-    Poner link de permisos.
+En linux, editar permisos. Las rutas varian segun como se ha instalado ``mono``,
+pero lo que se ha de tener en cuenta es que en el directorio ``mono`` ha de terner
+un directorio ``registry`` y dentro de este, otro llamado ``LocalMachine``
+
+.. code-block:: bash
+
+    sudo mkdir /opt/mono/etc/mono/registry
+    sudo mkdir /opt/mono/etc/mono/registry/LocalMachine
+    sudo chmod g+rwx /opt/mono/etc/mono/registry
+    sudo chmod g+rwx /opt/mono/etc/mono/registry/LocalMachine

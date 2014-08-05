@@ -5,7 +5,10 @@ MVC5 EF6 Identity Postgresql
 ############################
 
 .. warning::
-    Es necesario Npgsql 2.2.0+
+
+    Es necesario Npgsql 2.2.0+ y las todas las tablas las crea tipo text.
+
+    Npgsql 2.2.0 esta en estado **beta**
 
 Npgsql 2.2.0 ya soporta migraciones y supongo que por eso ahora puedo usar
 identity con postgres. Supongo que antes deveria crear las tablas en la
@@ -29,6 +32,7 @@ Editar ``Models > EntityModels.cs`` y añadir
     protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("public");
+
         base.OnModelCreating(modelBuilder);
     }
 
