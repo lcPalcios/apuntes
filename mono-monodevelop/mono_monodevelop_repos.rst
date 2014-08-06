@@ -81,7 +81,8 @@ https://launchpad.net/~inizan-yannick/+archive/ubuntu/mono?field.series_filter=t
     sudo apt-get install monodevelop mono-xsp4
 
 
-En ambos ppa's
+En los dos capos con los ppa hay que crear la carpeta ``registry/LocalMachine``
+y darle permisos de escritura y ejecucion.
 
 .. code-block:: bash
 

@@ -13,49 +13,11 @@ Crear el proyecto
     cd nombre_proyecto
 
 freeze
-******
 
 .. code-block:: bash
 
     mkdir requeriments
     pip freeze > requeriments/requeriments.txt
-
-Inicializar Git
-********************
-
-.. code-block:: bash
-
-    git init .
-    vim .gitignore
-
-Añadir a .gitignore
-
-.. code-block:: bash
-
-    # File types #
-    ##############
-    *.pyc
-    *.swo
-    *.swp
-    *.swn
-
-    # Directories #
-    ###############
-    logs/
-    __pycache__/
-    .idea/
-
-    # Specific files #
-    ##################
-
-    # OS generated files #
-    ######################
-    .directory
-    .DS_Store?
-    ehthumbs.db
-    Icon?
-    Thumbs.db
-    *~
 
 nombre_proyecto es la raiz del proyecto
 
@@ -232,8 +194,43 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         <h1>Pagina inicio</h1>
     {% endblock body %}
 
-Primer commit
-=============
+Git
+********************
+
+.. code-block:: bash
+
+    cd ..
+    git init .
+    vim .gitignore
+
+Añadir a .gitignore
+
+.. code-block:: bash
+
+    # File types #
+    ##############
+    *.pyc
+    *.swo
+    *.swp
+    *.swn
+
+    # Directories #
+    ###############
+    logs/
+    __pycache__/
+    .idea/
+
+    # Specific files #
+    ##################
+
+    # OS generated files #
+    ######################
+    .directory
+    .DS_Store?
+    ehthumbs.db
+    Icon?
+    Thumbs.db
+    *~
 
 .. code-block:: bash
 
