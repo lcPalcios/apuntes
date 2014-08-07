@@ -77,13 +77,13 @@ Gui SQLite
 
 .. code-block:: bash
 
-    sudo apt-get install sqliteman
+    sudo apt-get install -y sqliteman
 
 Muon
 
 .. code-block:: bash
 
-    sudo apt-get install muon
+    sudo apt-get -y install muon
 
 Calligra
 
