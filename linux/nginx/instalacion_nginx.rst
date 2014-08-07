@@ -11,7 +11,7 @@ Instalacion
 
 .. code-block:: bash
 
-    sudo apt install nginx-full
+    sudo apt install nginx
     sudo service nginx start
 
 Si se quiere permitir que puedan verse las paginas desde fuera del localhost
