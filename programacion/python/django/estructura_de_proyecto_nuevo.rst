@@ -162,7 +162,7 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         </div>
 
         <div class="container body-content">
-            {% block body %}{% endblock body %}
+            {% block content %}{% endblock content %}
             <hr />
             <footer>
                 <p>&copy; Footer de la pagina</p>

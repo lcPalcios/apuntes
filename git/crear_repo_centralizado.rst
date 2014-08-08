@@ -7,17 +7,14 @@ Crear repositorio centralizado
 .. warning::
     Quizas este desactualizado
 
-Fuentes
-*******
+**Fuentes**
 
 * http://www.git-scm.com/book/es/Git-en-un-servidor-Preparando-el-servidor
 * http://ymbra.com/es/blog/ramon/gestion-de-repositorios-git-con-gitosis
 * http://www.git-scm.com/book/es/Git-en-un-servidor-Gitosis
 * https://github.com/sitaramc/gitolite#readme
 
-.. note::
-    | La opcion que me mas gusta si lo creo en un servidor, es la de gitolite.
-    | Si lo uso en el mismo PC, la 1º opcion.
+----
 
 Opcion 1
 ********
@@ -118,15 +115,13 @@ Otra manera tambien es crear un server donde almacena todos los repositorios
 de una manera muy comoda.
 ``Probado en Centos 6.x``
 
-Fedora/Centos
-=============
+**Fedora/Centos**
 
 .. code-block:: bash
 
     useradd -d /home/git -s /bin/bash -c 'git control version' git
 
-Ubuntu
-======
+**Ubuntu**
 
 .. code-block:: bash
 

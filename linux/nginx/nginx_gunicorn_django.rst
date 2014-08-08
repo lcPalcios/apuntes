@@ -50,19 +50,26 @@ Dentro ponemos lo siguiente (cambiando rutas y server_name)
     server {
         listen   80;
         server_name lxmaq1.workspace.local;
+
         # no security problem here, since / is alway passed to upstream
-        root /home/snicoper/projects/python/myproject/myproject;
-        # serve directly - analogous for static/staticfiles
-        location /media/ {
-            # if asset versioning is used
-            if ($query_string) {
-                expires max;
-            }
+        root /home/snicoper/projects/python/practicas/practicas;
+
+        # Django media
+        location /media/  {
+            alias /home/snicoper/projects/python/practicas/media/;  # your Django project's media files - amend as required
         }
-        location /admin/media/ {
+
+        # Django static
+        location /static/ {
+            alias /home/snicoper/projects/python/practicas/static/; # your Django project's static files - amend as required
+        }
+
+        # Django static admin
+        location /static/admin/ {
             # this changes depending on your python version
-            root /home/snicoper/projects/python/myproject/venv/lib/python3.4/site-packages/django/contrib;
+            root /home/snicoper/projects/python/venvdefault/lib/python3.4/site-packages/django/contrib/admin/;
         }
+
         location / {
             proxy_pass_header Server;
             proxy_set_header Host $http_host;

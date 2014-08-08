@@ -21,6 +21,7 @@ Packages comunes
 * GitGutter
 * Monokai extended
 * SidebarEnhancements
+* Tabright
 
 Theme
 *****
