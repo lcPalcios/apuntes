@@ -123,6 +123,8 @@ Dentro de ``colors`` le pongo el theme
     syntax on
 
     " Color scheme
+    set background=dark
+    set t_Co=256
     colorscheme Tomorrow-Night-Bright
 
     " Showing line numbers and length

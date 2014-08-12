@@ -8,18 +8,14 @@
 PhpMyAdmin Virtualhost en Nginx
 ################################
 
-Tener instalado MySQL o MariaDB + PHP. |br|
-Las configuraciones del config, son diferentes, pero deverian ser iguales,
-la unica diferencia debe estar en la parte ``"location ~ \.php$ {"``
-
-Es nesario añadir host en hosts o bind
+Tener instalado MySQL o MariaDB + PHP.
 
 Fedora
 ******
 
 .. code-block:: bash
 
-    vim /etc/nginx/conf.d/phpmyadmin.local.conf
+    sudo vim /etc/nginx/conf.d/phpmyadmin.local.conf
 
 .. code-block:: bash
 
@@ -109,6 +105,6 @@ Ubuntu
 
     ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin
 
-    service nginx restart
-    service php5-fpm restart
+    sudo service nginx restart
+    sudo service php5-fpm restart
 

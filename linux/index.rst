@@ -49,4 +49,5 @@ Contents:
    redimensionar_imagen
    saber_donde_esta_un_ejecutable
    tunel_ssh
+   ver_permisos_octal_linux
    virtualbox_problema_con_altgr

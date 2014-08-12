@@ -4,13 +4,11 @@
 Instalacion Laravel
 ###################
 
-Fuentes
-*******
+**Fuentes**
 
 * http://laravel.com/docs/quick#installation
 
-Archivo Phar
-************
+-------
 
 Fedora
 ======
@@ -19,8 +17,8 @@ Fedora
 
     yum install -y php-curl
 
-Centos, si se ha instalado php 5.5
-==================================
+Centos 7, si se ha instalado php 5.5
+====================================
 
 .. code-block:: bash
 
@@ -33,8 +31,23 @@ Ubuntu
 
     apt-get install php5-curl
 
-Todos
-=====
+Composer o Archivo Phar
+=======================
+
+Creo que composer lo tiene mas actualizado ``composer self-update``,
+con archivo Phar, has de estar descargandolo a "mano" cada que se quiera actualizar.
+
+Composer
+********
+
+:ref:`reference-linux-php-composer`
+
+.. code-block:: bash
+
+    composer create-project laravel/laravel your-project-name --prefer-dist
+
+Phar
+====
 
 Como root
 
@@ -44,12 +57,3 @@ Como root
     chmod +x laravel.phar
     mv laravel.phar /usr/local/bin/laravel
     laravel --version
-
-Con Composer
-************
-
-:ref:`reference-linux-php-composer`
-
-.. code-block:: bash
-
-    composer create-project laravel/laravel your-project-name --prefer-dist

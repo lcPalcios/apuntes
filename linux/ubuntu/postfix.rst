@@ -9,7 +9,7 @@ Instalacion
 
 .. code-block:: bash
 
-    apt-get install postfix sasl2-bin dovecot-common dovecot-pop3d dovecot-imapd
+    sudo apt-get install postfix sasl2-bin dovecot-common dovecot-pop3d dovecot-imapd
 
 Postfix
 =======
@@ -19,11 +19,11 @@ Postfix
 
 .. code-block:: bash
 
-    cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
+    sudo cp /usr/lib/postfix/main.cf /etc/postfix/main.cf
 
 .. code-block:: bash
 
-    vim /etc/postfix/main.cf
+    sudo vim /etc/postfix/main.cf
 
 .. code-block:: bash
 
@@ -112,7 +112,7 @@ Postfix
 
 .. code-block:: bash
 
-    vim /etc/postfix/header_checks
+    sudo vim /etc/postfix/header_checks
 
 .. code-block:: bash
 
@@ -122,7 +122,7 @@ Postfix
 
 .. code-block:: bash
 
-    vim /etc/postfix/body_checks
+    sudo vim /etc/postfix/body_checks
 
 .. code-block:: bash
 
@@ -139,19 +139,19 @@ Dovecot
 
 .. code-block:: bash
 
-    vim /etc/dovecot/conf.d/10-auth.conf
+    sudo vim /etc/dovecot/conf.d/10-auth.conf
 
 .. code-block:: bash
 
-    # line 9: uncomment and change ( allow plain text auth )
+    # line 10: uncomment and change ( allow plain text auth )
     disable_plaintext_auth = no
 
-    # line 99: add
+    # line 100: add
     auth_mechanisms = plain login
 
 .. code-block:: bash
 
-    vim /etc/dovecot/conf.d/10-mail.conf
+    sudo vim /etc/dovecot/conf.d/10-mail.conf
 
 .. code-block:: bash
 
@@ -160,7 +160,7 @@ Dovecot
 
 .. code-block:: bash
 
-    vim /etc/dovecot/conf.d/10-master.conf
+    sudo vim /etc/dovecot/conf.d/10-master.conf
 
 .. code-block:: bash
 
@@ -183,7 +183,11 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
 
 .. code-block:: bash
 
-    vim /etc/postfix/main.cf
+    sudo vim /etc/postfix/main.cf
+
+.. note::
+    Usar ``ns1.crt`` y ``ns1.key`` con los mismos nombres que se hayan
+    creado en :ref:`reference-linux-ubuntu-crear_certificado_ssl`
 
 .. code-block:: bash
 
@@ -196,18 +200,18 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
 
 .. code-block:: bash
 
-    vim /etc/postfix/master.cf
+    sudo vim /etc/postfix/master.cf
 
 .. code-block:: bash
 
-    # line 26-28: uncomment
+    # line 28-30: uncomment
     smtps     inet  n       -       -       -       -       smtpd
       -o syslog_name=postfix/smtps
       -o smtpd_tls_wrappermode=yes
 
 .. code-block:: bash
 
-    vim /etc/dovecot/conf.d/10-ssl.conf
+    sudo vim /etc/dovecot/conf.d/10-ssl.conf
 
 .. code-block:: bash
 
@@ -220,5 +224,5 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
 
 .. code-block:: bash
 
-    /etc/init.d/postfix restart
-    initctl restart dovecot
+    sudo /etc/init.d/postfix restart
+    sudo service dovecot restart
