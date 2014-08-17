@@ -34,6 +34,7 @@ Python
 
 * Anaconda
 * Djaneiro
+* Python Imports Sorter
 
 Python varios
 =============

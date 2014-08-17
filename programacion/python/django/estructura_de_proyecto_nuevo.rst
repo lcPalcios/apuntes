@@ -57,6 +57,8 @@ La aplicacion para el index del sitio ``/``, se llama home y crear el archivo
     touch home/urls.py
     cd ..
     touch templates/base.html
+    touch templates/404.html
+    touch templates/500.html
 
 .. note::
     **Copiado y pegado del** `tutorial django <https://docs.djangoproject.com/en/1.6/intro/tutorial03/>`_
@@ -141,10 +143,11 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
         <link href="{% static "css/main.css" %}" rel="stylesheet">
+        {% block styles %}{% endblock styles %}
     </head>
     <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -152,21 +155,24 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class = "navbar-brand" href="">Application name</a>
+                    <a class = "navbar-brand" href="{% url 'books.index' %}">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        <li>Link 1</li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
 
         <div class="container body-content">
             {% block content %}{% endblock content %}
             <hr />
-            <footer>
-                <p>&copy; Footer de la pagina</p>
-            </footer>
+            {% block footer %}
+                <footer>
+                    <p>&copy; Footer de la pagina</p>
+                </footer>
+            {% endblock footer %}
         </div>
 
         <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
@@ -175,12 +181,13 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
     </body>
     </html>
 
+
 ``static/css/main.css``
 
 .. code-block:: css
 
     body {
-        padding-top: 50px;
+        padding-top: 70px;
         padding-bottom: 20px;
     }
 

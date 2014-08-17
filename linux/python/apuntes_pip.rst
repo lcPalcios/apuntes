@@ -74,7 +74,8 @@ Ubuntu
 .. code-block:: bash
 
     sudo apt-get install libtiff4-dev libjpeg8-dev zlib1g-dev \
-        libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
+        libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python3-tk \
+        libjpeg-dev libpng12-0 libpng12-dev
 
 Fedora
 ^^^^^^

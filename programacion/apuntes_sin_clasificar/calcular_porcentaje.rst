@@ -4,6 +4,12 @@
 Calcular porcentaje
 ###################
 
+**Fuentes**
+
+* http://primaria.aulafacil.com/matematicas-sexto-primaria/Curso/Lecc-16.htm
+
+----
+
 Incrementar un %
 ****************
 
