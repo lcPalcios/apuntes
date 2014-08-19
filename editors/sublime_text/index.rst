@@ -15,7 +15,6 @@ Contents:
     instalacion_packages
     key_bindings
     projects_example
-    pythonimproved
     sublime_repl
     typescript_compiler
     user_settings

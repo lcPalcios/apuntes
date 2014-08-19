@@ -5,10 +5,7 @@ Codeintel
 #########
 
 .. attention::
-    Algunas rutas pueden variar
-
-.. note::
-    En el de linux, dejo configuraciones varias, incluyendo para virtualenv de python.
+    Para recordar, me dejo aqui algunos ejemplos, hay que cambiar las rutas.
 
 Configuracion Linux
 *******************
@@ -46,32 +43,4 @@ Configuracion Linux
                 '/home/snicoper/venvs/py3venv/lib/python3.3/site-packages'
             ]
         },
-    }
-
-Configuracion Windows
-*********************
-
-.. code-block:: javascript
-
-    {
-        "PHP": {
-            "php": '/usr/bin/php',
-            "phpExtraPaths": [],
-            "phpConfigFile": '/etc/php.ini'
-        },
-        "JavaScript": {
-            "javascriptExtraPaths": []
-        },
-        "Perl": {
-            "perl": "/usr/bin/perl",
-            "perlExtraPaths": []
-        }
-        "Python": {
-            "python": '/usr/bin/python',
-            "pythonExtraPaths": []
-        },
-        "Python3": {
-            "python": 'C:\Python33',
-            "pythonExtraPaths": []
-        }
     }

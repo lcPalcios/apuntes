@@ -13,8 +13,8 @@ Abrir Preferences > Setting - User
 
     {
         // Colors
-        "color_scheme": "Packages/User/Monokai (SL).tmTheme",
-        "theme": "Soda Dark.sublime-theme",
+        "theme": "Flatland Dark.sublime-theme",
+        "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 
         // Font
         "font_face": "Ubuntu Mono",
@@ -22,7 +22,7 @@ Abrir Preferences > Setting - User
         "font_options": ["subpixel_antialias"],
 
         // Editor view look-and-feel
-        "highlight_line": false,
+        "highlight_line": true,
         "show_minimap": false,
         "show_full_path": true,
 
@@ -66,3 +66,4 @@ Abrir Preferences > Setting - User
             //"Vintage"
         ]
     }
+

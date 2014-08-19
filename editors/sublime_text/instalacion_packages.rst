@@ -19,15 +19,13 @@ Packages comunes
 * Git
 * SideBarGit
 * GitGutter
-* Monokai extended
 * SidebarEnhancements
 * Tabright
 
 Theme
 *****
 
-* Theme - Soda
-* Tomorrow Color Schemes
+* Theme - Flatland
 
 Python
 ******
@@ -35,6 +33,7 @@ Python
 * Anaconda
 * Djaneiro
 * Python Imports Sorter
+* SublimeLinter-pep8
 
 Python varios
 =============
@@ -45,6 +44,9 @@ Python varios
 Otros
 *****
 
+Me dejo aqui algunos addons para recordar el nombre.
+
+* Monokai extended
 * AllAutocomplete
 * SublimeCodeIntel
 * Markdown Preview
@@ -55,3 +57,7 @@ Otros
 * FavoriteFiles
 * TypeScript
 * TypeScript Compiler
+* Tomorrow Color Schemes
+* Theme - Soda
+* Theme - Spacegray
+* Theme - Spacefunk
