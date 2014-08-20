@@ -49,12 +49,10 @@ Descomprimir como usuario
 Eclipse
 *******
 
-Descomprimir como usuario
-
 .. code-block:: bash
 
     su
-    mv eclipse /opt/eclipse/
+    tar -xvzf nombre_eclipse.tar.gz -C /opt
     chmod -R +r /opt/eclipse
     touch /usr/local/bin/eclipse
     chmod 755 /usr/local/bin/eclipse
@@ -77,8 +75,8 @@ Descomprimir como usuario
 
     [Desktop Entry]
     Encoding=UTF-8
-    Name=eclipse
-    Comment=IDE eclipse
+    Name=Eclipse
+    Comment=Eclipse
     Exec=eclipse
     Icon=/opt/eclipse/icon.xpm
     Terminal=false

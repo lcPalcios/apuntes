@@ -16,7 +16,7 @@ Instalacion
 
 .. code-block:: bash
 
-    sudo apt-get install -y postgresql postgresql-client
+    sudo apt-get install -y postgresql postgresql-client postgresql-contrib
 
     # Opcional
     sudo apt-get install -y pgAdmin3

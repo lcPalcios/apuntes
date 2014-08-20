@@ -19,17 +19,19 @@ Abrir Preferences > Setting - User
         // Font
         "font_face": "Ubuntu Mono",
         "font_size": 10.5,
-        "font_options": ["subpixel_antialias"],
+        "font_options": "subpixel_antialias",
 
         // Editor view look-and-feel
         "highlight_line": true,
         "show_minimap": false,
         "show_full_path": true,
+        "bold_folder_labels": true,
 
         // Editor behavior
         "highlight_modified_tabs": true,
         "find_selected_text": true,
-        "shift_tab_unindent" : true,
+        "shift_tab_unindent" : false,
+        "tab_completion": false,
 
         // Word wrapping - follow PEP 8 recommendations
         "rulers": [ 100 ],
@@ -63,7 +65,7 @@ Abrir Preferences > Setting - User
         ],
         "ignored_packages":
         [
-            //"Vintage"
-        ]
+        ],
+        "vintage_start_in_command_mode": true
     }
 

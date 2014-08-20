@@ -48,6 +48,7 @@ Contents:
    montar_particiones_al_iniciar_sistema
    redimensionar_imagen
    saber_donde_esta_un_ejecutable
+   source_code_pro
    tunel_ssh
    ver_permisos_octal_linux
    virtualbox_problema_con_altgr

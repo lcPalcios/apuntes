@@ -21,6 +21,7 @@ Packages comunes
 * GitGutter
 * SidebarEnhancements
 * Tabright
+* BlockCursorEverywhere (https://github.com/jlangston/BlockCursorEverywhere)
 
 Theme
 *****

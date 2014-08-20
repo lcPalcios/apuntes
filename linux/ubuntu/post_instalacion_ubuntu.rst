@@ -40,8 +40,9 @@ Programas basicos
 
     sudo apt-get install -y \
         build-essential \
-        git-core \
+        git \
         gitk \
+        git-cola \
         exuberant-ctags \
         curl \
         wget \
