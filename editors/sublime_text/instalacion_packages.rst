@@ -42,6 +42,16 @@ Python varios
 * SublimeREPL
 * PythonImproved
 
+Javascript Css
+==============
+
+Requiere algunos paquetes de :ref:`reference-linux-instalacion_nodejs`
+
+* less
+* less2css
+* Better Typescript
+* Minifier (ctrl + alt + shift + m)
+
 Otros
 *****
 
@@ -56,8 +66,6 @@ Me dejo aqui algunos addons para recordar el nombre.
 * PHP Getters and Setters
 * php-twig
 * FavoriteFiles
-* TypeScript
-* TypeScript Compiler
 * Tomorrow Color Schemes
 * Theme - Soda
 * Theme - Spacegray

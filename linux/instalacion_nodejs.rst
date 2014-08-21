@@ -20,7 +20,7 @@ Ubuntu
 
 .. code-block:: bash
 
-    sudo apt-get install nodejs
+    sudo apt-get install nodejs npm nodejs-legacy
 
 Algunos programas
 *****************
@@ -32,7 +32,7 @@ less
 
     npm install less -g
 
-para usar lessc archivo.less > archivo.css
+para usar: lessc archivo.less > archivo.css
 
 typescript
 ==========
@@ -41,4 +41,11 @@ typescript
 
     npm install typescript -g
 
-para trnaformar tsc helloworld.ts
+para transformar: tsc helloworld.ts
+
+yuicompressor
+=============
+
+.. code-block:: bash
+
+    npm install yuicompressor -g
