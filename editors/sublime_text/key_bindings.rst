@@ -30,4 +30,8 @@ diferentes, uso esta configuracion en ambos sistemas.
 
         // Alignment (No lo instalo)
         // { "keys": ["ctrl+shift+a"], "command": "alignment" },
+
+        // Reindentar lineas
+        { "keys": ["alt+shift+l"], "command": "reindent" , "args": { "single_line": false } }
     ]
+
