@@ -1,34 +1,23 @@
 .. _reference-linux-php-memcached:
 
-#########
-Memcached
-#########
+############
+PHP Memcahed
+############
+
+:ref:`reference-linux-instalacion_memcached`
+
+-----
 
 Fedora
 ******
 
 .. code-block:: bash
 
-    yum -y install memcached php-pecl-memcached
-
-    systemctl enable memcached.service
-    systemctl start memcached.service
-
-Para editar la configuracion
-
-.. code-block:: bash
-
-    vim /etc/sysconfig/memcached
+    yum -y install php-pecl-memcached
 
 Ubuntu
 ******
 
 .. code-block:: bash
 
-    sudo apt-get install memcached php5-memcached
-
-Para editar la configuracion
-
-.. code-block:: bash
-
-    sudo vim /etc/memcached.conf
+    sudo apt-get install php5-memcached

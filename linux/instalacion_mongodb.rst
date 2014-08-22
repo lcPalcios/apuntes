@@ -1,7 +1,7 @@
 .. _reference-linux-instalacion_mongodb:
 
 ####################
-Instalacion MongoDbB
+Instalacion MongoDb
 ####################
 
 Fedora
@@ -13,4 +13,7 @@ Fedora
 
 Ubuntu
 ******
-**Por hacer**
+
+.. code-block:: bash
+
+    sudo apt-get install mongodb mongodb-server

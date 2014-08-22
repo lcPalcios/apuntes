@@ -17,6 +17,7 @@ Categorias:
    php/index
    postgresql/index
    python/index
+   redis/index
    ruby/index
    scala/index
    ubuntu/index
@@ -41,6 +42,7 @@ Contents:
    dropbox
    formatear_discos_con_mkfs
    generar_clave_para_ssh
+   instalacion_memcached
    instalacion_mongodb
    instalacion_nodejs
    mi_bashrc
