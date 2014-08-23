@@ -45,34 +45,41 @@ Empiezo con requeiments
     cd requeriments
     touch base.txt production.txt development.txt
 
-    echo -r base.txt > production.txt
-    echo -r base.txt > development.txt
+    echo '-r base.txt' > production.txt
+    echo '-r base.txt' > development.txt
 
 Para un ejemplo simple, ``django`` estara tanto en produccion como en desarrollo,
-por lo que se añade a base.
+por lo que se añade a ``base.txt``.
 
-``Sphinx`` y ``django-debug-toolbar`` solo para desarrollo y exclusivo solo
-para produccion ``gunicorn``, asi que editamos los tres archivos.
+``Sphinx`` y ``django-debug-toolbar`` solo para desarrollo,
+``gunicorn`` solo para produccion , asi que editamos los tres archivos.
+
+.. note::
+    Al no poner versiones, bajara la ultima version, si se quiere
+    especificar versioner porner por ejemplo ``Django==1.6.6``.
+
+    Seria buena idea, al menos depues de instalar los paquetes, poner
+    las versiones correspondientes.
 
 .. code-block:: bash
 
     vim base.txt
 
     # Añadir
-    Django==1.6.6
-    psycopg2==2.5.3
+    Django
+    psycopg2
 
     vim development.txt
 
     # Añadir
-    Sphinx==1.2.2
-    django-debug-toolbar==1.2.1
+    Sphinx
+    django-debug-toolbar
 
 
     vim production.txt
 
     # Añadir
-    gunicorn==19.1.1
+    gunicorn
 
 Ahora dependiendo de si estamos en el entorno de desarrollo o
 el de produccion:
@@ -152,7 +159,7 @@ mismas configuraciones, mas tarde las cambiaremos.
 
 Ahora, hay que decirle a ``Django`` que archivos de configuracion usar.
 
-Para el caso de desarrollo, cuando se usa ./manage.py, hay que editar ese mismo
+Para el caso de desarrollo, cuando se usa ``./manage.py``, hay que editar ese mismo
 archivo. ``manage.py``
 
 .. code-block:: bash
@@ -173,7 +180,75 @@ Cambiar dentro de ``settings/settings.py`` algunas configuraciones.
     # Linea 53, cambiar
     WSGI_APPLICATION = 'settings.wsgi.application'
 
-Ahora el sitio con ``./manage.py runserver`` ya deberia funcionar.
+Estados de ``DEBUG`` y ``Database``
+
+Editar en ``settings/settings.py``
+
+.. code-block:: python
+
+    # Eliminar
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+
+    TEMPLATE_DEBUG = True
+
+    ALLOWED_HOSTS = []
+
+    # Eliminar
+    # Database
+    # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+Editar en ``settings/production.py``
+
+.. code-block:: python
+
+    # Añadir
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+
+    TEMPLATE_DEBUG = False
+
+    ALLOWED_HOSTS = []
+
+    # Añadir la base de datos de produccion
+    # Database
+    # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+Editar en ``settings/development.py``
+
+.. code-block:: python
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+
+    TEMPLATE_DEBUG = True
+
+    ALLOWED_HOSTS = []
+
+    # Añadir la base de datos de desarrollo
+    # Database
+    # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 Modificar ``settings/wsgi.py`` para decirle cual es el archivo de configuracion
 de produccion.
