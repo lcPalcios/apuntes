@@ -1,134 +1,222 @@
 .. _reference-programacion-python-django-estructura_de_proyecto_nuevo:
 
-###############################
-Estructura de un proyecto nuevo
-###############################
+##############################
+Creacion de un proyecto Django
+##############################
 
-Crear el proyecto
-*****************
+La creacion de un proyecto en django te permite generar la estuctura de
+directorios que mas te guste/interese, etc.
+
+Yo, voy creandome una que para mi gusto esta bien, pero que para nada
+significa que este bien o que sea la correcta.
+
+Utilizo Virtualenv/Virtualwnvwrapper y tengo creado en env fuera del proyecto.
+
+La instalacion de ``Django`` y cualquier otro paquete lo hago con un entorno
+virtual de python.
+
+Dejo aqui como :ref:`reference-linux-python-instalar_python`
+
+Ahora creo un directorio que es donde estara todo lo relacionado
+con el proyecto, como docs, cron, requeriments, etc.
 
 .. code-block:: bash
 
-    django-admin.py startproject nombre_proyecto
-    cd nombre_proyecto
+    mkdir proyect_name
 
-freeze
-
-.. code-block:: bash
-
-    mkdir requeriments
-    pip freeze > requeriments/requeriments.txt
-
-nombre_proyecto es la raiz del proyecto
+Creo varias carpetas, que mas tarde usare.
 
 .. code-block:: bash
 
-    cd nombre_proyecto
+    cd proyect_name
+    mkdir docs requeriments cron
 
-    # Crear la estuctura del sitio
-    mkdir apps templates static media
+La carpeta de ``cron`` la creo pero no hablare mas de el,
+ya que no se cuando me hara falta generar automatizaciones
+para el servidor (pensado para produccion).
 
-Donde
+Los documentos (docs), lo genero con Sphinx y en requeriments creo tres archivos,
+uno comun y otros dos, uno para desarrollo y otro para produccion.
 
-+ apps -> Aplicaciones
-+ templates -> Archivos .html compartidos
-+ static -> archivos .css .js, etc, fonts, img
-+ media -> archivos subidos por los usuarios, e.j. imagenes
+Empiezo con requeiments
 
-Crear las carpetas de js, css, etc dentro de static
+.. code-block:: bash
+
+    cd requeriments
+    touch base.txt production.txt development.txt
+
+    echo -r base.txt > production.txt
+    echo -r base.txt > development.txt
+
+Para un ejemplo simple, ``django`` estara tanto en produccion como en desarrollo,
+por lo que se añade a base.
+
+``Sphinx`` y ``django-debug-toolbar`` solo para desarrollo y exclusivo solo
+para produccion ``gunicorn``, asi que editamos los tres archivos.
+
+.. code-block:: bash
+
+    vim base.txt
+
+    # Añadir
+    Django==1.6.6
+    psycopg2==2.5.3
+
+    vim development.txt
+
+    # Añadir
+    Sphinx==1.2.2
+    django-debug-toolbar==1.2.1
+
+
+    vim production.txt
+
+    # Añadir
+    gunicorn==19.1.1
+
+Ahora dependiendo de si estamos en el entorno de desarrollo o
+el de produccion:
+
+.. code-block:: bash
+
+    # Para el entorno de desarrollo
+    pip install -r development.txt
+
+    # Para el entorno de produccion
+    pip install -r production.txt
+
+Creacion del proyecto Django
+*****************************
+
+El proyecto para la explicacion se llamara ``mysite``, asi que empezamos con
+``django-admin`` en la raiz de ``proyect_name``.
+
+.. code-block:: bash
+
+    django-admin.py startproject mysite
+
+Renombro ``mysite`` a ``src``
+
+.. code-block:: bash
+
+    mv mysite src
+
+Esto genera una pequeña estructura:
+
+.. code-block:: bash
+
+    src
+    ├── manage.py
+    └── mysite
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+
+Entramos a ``src``
+
+.. code-block:: bash
+
+    cd src
+
+La carpeta ``mysite``, la renombro a ``settings``
+
+.. code-block:: bash
+
+    mv mysite settings
+
+Creo que queda mas claro donde estan los archivos de configuracion.
+
+Ahora, creo dos archivos mas de configuracion, uno para desarrollo y otro
+para produccion dentro de la capeta ``settings``
+
+.. code-block:: bash
+
+    cd settings
+    touch production.py development.py
+    cd ..
+
+El archivo ``settings.py`` lo dejo como base, para las configuraciones que se
+comparten en desarrollo y produccion.
+
+Edito los archivos recien crados y les añado:
+
+.. code-block:: bash
+
+    echo 'from settings.settings import *' > development.py
+    echo 'from settings.settings import *' > production.py
+
+
+De momento, los archivos ``development.py`` y ``production.py``, usan las
+mismas configuraciones, mas tarde las cambiaremos.
+
+Ahora, hay que decirle a ``Django`` que archivos de configuracion usar.
+
+Para el caso de desarrollo, cuando se usa ./manage.py, hay que editar ese mismo
+archivo. ``manage.py``
+
+.. code-block:: bash
+
+    # cambiar
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+
+    # por
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.development")
+
+Cambiar dentro de ``settings/settings.py`` algunas configuraciones.
+
+.. code-block:: bash
+
+    # Linea 51, cambiar
+    ROOT_URLCONF = 'settings.urls'
+
+    # Linea 53, cambiar
+    WSGI_APPLICATION = 'settings.wsgi.application'
+
+Ahora el sitio con ``./manage.py runserver`` ya deberia funcionar.
+
+Modificar ``settings/wsgi.py`` para decirle cual es el archivo de configuracion
+de produccion.
+
+.. code-block:: bash
+
+    # Linea 11, cambiar
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.production")
+
+Lo basico ya esta creado y configurado, ahora los directorios.
+
+Crear directorios para templates, media, etc., Nos situamos en ``src``
+y creamos algunas carpetas.
+
+.. code-block:: bash
+
+    mkdir templates media static
+    cd ..
+
+* **static** - Archivos de imagenes del sitio, css, jss y fonts para Bootstrap
+* **media** - Archivos por el servidos, por usuarios o administracion.
+* **templates** - Archivos .html
+
+Dentro de ``static`` creamos cuatro carpetas, ``img, js, fonts, css``
 
 .. code-block:: bash
 
     cd static
-    mkdir js css img fonts
-    touch css/main.css
-    cd ..
+    mkdir img js fonts css
 
-La aplicacion para el index del sitio ``/``, se llama home y crear el archivo
-``base.html`` dentro de ``~/templates``. Cada app tendra un directorio en
-``templates/nombre_app`` dentro de ``~/nombre_app``
+Ahora descargamos `Bootstrap <http://getbootstrap.com/>`_ y copiamos los archivos
+dentro de cada carpeta en ``static``.
+
+Hacemos los mismo con `JQuery <http://jquery.com/>`_
+
+Dentro de template, creamos algunos archivos ``.html``
 
 .. code-block:: bash
 
-    cd apps
-    django-admin.py startapp home
-    mkdir -p home/templates/home
-    touch home/templates/home/index.html
-    touch home/urls.py
-    cd ..
-    touch templates/base.html
-    touch templates/404.html
-    touch templates/500.html
+    cd templates
+    touch base.html 404.html 500.html _messages.html
 
-.. note::
-    **Copiado y pegado del** `tutorial django <https://docs.djangoproject.com/en/1.6/intro/tutorial03/>`_
-
-    Podríamos tener todas nuestras plantillas juntas, en un solo directorio de
-    plantillas grandes, y que funcionaría perfectamente bien. Sin embargo, esta
-    plantilla pertenece a la aplicación polls, por lo que a diferencia de la
-    plantilla de administración que hemos creado en el tutorial anterior, vamos
-    a poner esto en el directorio de la plantilla de la aplicación (``polls/templates``)
-    y no del proyecto (``templates``).
-
-    Ahora podríamos ser capaces de salirse con poner nuestras plantillas
-    directamente en ``polls/templates`` (en lugar de crear otro subdirectorio
-    polls), pero en realidad sería una mala idea.
-    Django elegirá la primera plantilla que encuentra cuyo nombre coincide,
-    y si has tenido una plantilla con el mismo nombre en una aplicación diferente,
-    Django sería incapaz de distinguir entre ellos.
-    Tenemos que ser capaces de señalar Django la correcta, y la mejor manera
-    de asegurar esto es por el namespacing.
-    Es decir, al poner las plantillas dentro de otro directorio llamado
-    así por la propia aplicación.
-
-Añadir al pythonpath el directorio ``apps``, en el inicio de ``setting.py``
-
-.. code-block:: python
-
-    # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-    import os
-    import sys
-    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-    sys.path.insert(0, BASE_DIR + '/nombre_proyecto/apps/')
-
-Añadir la nueva ``app`` en ``INSTALLED_APPS``
-
-``setting.py``
-
-.. code-block:: python
-
-    INSTALLED_APPS = (
-        [...]
-        'home',
-    )
-
-Añadir TEMPLATE_DIRS y STATICFILES_DIRS al final de ``setting.py``
-
-.. code-block:: python
-
-    TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'nombre_proyecto/templates'),
-    )
-
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'nombre_proyecto/static'),
-    )
-
-Editar el timezone y language en ``setting.py``
-buscar y remplazar
-
-.. code-block:: python
-
-    LANGUAGE_CODE = 'en-us'
-
-    TIME_ZONE = 'Europe/Madrid'
-
-Esqueleto de base.html y main.css
-*********************************
-
-Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
-
-``templates/base.html``
+Editar ``base.html`` y añadir
 
 .. code-block:: html
 
@@ -137,16 +225,18 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
     <html lang="es">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock title %}</title>
+        <!-- Bootstrap -->
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
         <link href="{% static "css/main.css" %}" rel="stylesheet">
         {% block styles %}{% endblock styles %}
     </head>
     <body>
-
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -155,130 +245,80 @@ Plantilla base, usa bootstrap y jquery, comprobar las versiones si corresponden
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class = "navbar-brand" href="{% url 'books.index' %}">Application name</a>
+                    <a class="navbar-brand" href="{% url 'home.index' %}">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>Link 1</li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <div class="container body-content">
+
             {% block content %}{% endblock content %}
-            <hr />
+
+            <hr/>
             {% block footer %}
                 <footer>
-                    <p>&copy; Footer de la pagina</p>
+                    <div>
+                        &copy; Footer de la pagina
+                    </div>
                 </footer>
             {% endblock footer %}
         </div>
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static "js/bootstrap.min.js" %}"></script>
         {% block scripts %}{% endblock scripts %}
     </body>
     </html>
 
+GIT
+***
 
-``static/css/main.css``
-
-.. code-block:: css
-
-    body {
-        padding-top: 70px;
-        padding-bottom: 20px;
-    }
-
-``home/templates/home/index.html``
-
-.. code-block:: css
-
-    {% extends "base.html" %}
-
-    {% block body %}
-        <h1>Pagina inicio</h1>
-    {% endblock body %}
-
-Git
-********************
+Nos situamos en ``src`` e inicializamos git
 
 .. code-block:: bash
 
-    cd ..
     git init .
-    vim .gitignore
-
-Añadir a .gitignore
-
-.. code-block:: bash
-
-    # File types #
-    ##############
-    *.pyc
-    *.swo
-    *.swp
-    *.swn
-
-    # Directories #
-    ###############
-    logs/
-    __pycache__/
-    .idea/
-
-    # Specific files #
-    ##################
-
-    # OS generated files #
-    ######################
-    .directory
-    .DS_Store?
-    ehthumbs.db
-    Icon?
-    Thumbs.db
-    *~
-
-.. code-block:: bash
-
     git add --all
-    git commit -m "Initial commit, added gitignore, requeriments.txt and structure"
+    git commit -m 'Initial commmit'
 
-Estructura
-**********
+
+Resultado final de la estructura:
 
 .. code-block:: bash
 
     .
-    ├── manage.py
-    ├── nombre_proyecto
-    │   ├── apps
-    │   │   └── home
-    │   │       ├── admin.py
-    │   │       ├── __init__.py
-    │   │       ├── migrations
-    │   │       │   └── __init__.py
-    │   │       ├── models.py
-    │   │       ├── templates
-    │   │       │   └── home
-    │   │       │       └── index.html
-    │   │       ├── tests.py
-    │   │       ├── urls.py
-    │   │       └── views.py
-    │   ├── __init__.py
-    │   ├── media
-    │   ├── settings.py
-    │   ├── static
-    │   │   ├── css
-    │   │   │   └── main.css
-    │   │   ├── fonts
-    │   │   ├── img
-    │   │   └── js
-    │   ├── templates
-    │   │   └── base.html
-    │   ├── urls.py
-    │   └── wsgi.py
-    └── requeriments
-        └── requeriments.txt
+    ├── cron
+    ├── docs
+    ├── requeriments
+    │   ├── base.txt
+    │   ├── development.txt
+    │   └── production.txt
+    └── src
+        ├── manage.py
+        ├── media
+        ├── settings
+        │   ├── development.py
+        │   ├── __init__.py
+        │   ├── production.py
+        │   ├── settings.py
+        │   ├── urls.py
+        │   └── wsgi.py
+        ├── static
+        │   ├── css
+        │   ├── fonts
+        │   ├── img
+        │   └── js
+        └── templates
+            ├── 404.html
+            ├── 500.html
+            ├── base.html
+            └── _messages.html
 
-    14 directories, 16 files
+    12 directories, 14 files

@@ -158,3 +158,12 @@ Create a superuser user:
     ALTER USER mysuper WITH SUPERUSER;
     # or even better
     ALTER USER mysuper WITH SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION
+
+Sabar el tamaño usado las tablas en una base de datos:
+
+Ver mas:
+http://www.niwi.be/2013/02/17/postgresql-database-table-indexes-size/
+
+.. code-block:: bash
+
+    SELECT pg_size_pretty(pg_database_size('dbname'));
