@@ -288,6 +288,35 @@ Nos situamos en ``src`` e inicializamos git
     git add --all
     git commit -m 'Initial commmit'
 
+Crear .gitignore
+
+.. code-block:: bash
+
+    # File types #
+    ##############
+    *.pyc
+    *.swo
+    *.swp
+    *.swn
+
+    # Directories #
+    ###############
+    __pycache__/
+    logs/
+    .idea/
+
+    # Specific files #
+    ##################
+
+    # OS generated files #
+    ######################
+    .directory
+    .DS_Store?
+    ehthumbs.db
+    Icon?
+    Thumbs.db
+    *~
+
 
 Resultado final de la estructura:
 
