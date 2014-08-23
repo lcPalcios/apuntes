@@ -233,7 +233,7 @@ Editar ``base.html`` y añadir
         <!-- Bootstrap -->
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
-        <link href="{% static "css/main.css" %}" rel="stylesheet">
+        <link href="{% static "css/main.min.css" %}" rel="stylesheet">
         {% block styles %}{% endblock styles %}
     </head>
     <body>
@@ -249,13 +249,14 @@ Editar ``base.html`` y añadir
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li></li>
+                        <li><a href="#">Home</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <div class="container body-content">
+            {% include "_messages.html" %}
 
             {% block content %}{% endblock content %}
 
@@ -269,13 +270,204 @@ Editar ``base.html`` y añadir
             {% endblock footer %}
         </div>
 
+        <diV class="go-top">
+            <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
+        </diV>
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static "js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/common.min.js" %}"></script>
         {% block scripts %}{% endblock scripts %}
     </body>
     </html>
+
+Editar ``_messages.html`` y añadir:
+
+.. code-block:: html
+
+    {% if messages %}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% else %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+Con esto saldra un mensaje de ``django.contrib.messages`` un mensaje en al cabezera
+de la pagina.
+
+Editar ``404.html`` y añadir
+
+.. code-block:: bash
+
+    {% extends 'base.html' %}
+    {% block title %}Pagina no encontrada{% endblock title %}
+
+    {% block content %}
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+                <h3>Pagina no encontrada</h3>
+            </div>
+        </div>
+    {% endblock content %}
+
+Ir a ``src/templates/js``, crear un archivo ``common.js`` y añadir
+
+.. code-block:: javascript
+
+    // Show or hide the sticky footer button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.go-top').fadeIn(200);
+        } else {
+            $('.go-top').fadeOut(200);
+        }
+    });
+
+    // Animate the scroll to top
+    $('.go-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 300);
+    })
+
+Creara un pequeño scroll en la parte inferior derecha de la pagina
+para subir a la cabezera.
+
+Ir a ``src/templates/css``, crear un archivo ``main.css`` y añadir
+
+.. code-block:: css
+
+    body {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+
+Editar ``src/settings/settings.py`` y añadir al final
+
+.. code-block:: python
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
+    TEMPLATE_DIRS = (
+        os.path.join(BASE_DIR, 'templates'),
+    )
+
+APPs
+****
+
+Las ``apps`` se puede poner en ``src/`` o crear un directorio ``src/apps``, si se ponen en
+``src/``, no hacer nada, si se crea ``src/apps`` modificar ``src/settings/settings.py``.
+
+.. code-block:: python
+
+    # Solo si se van a crear las apps en ~/src/apps/
+
+    # Debajo de:
+    import os
+
+    # Insertar:
+    import sys
+
+    # Debajo de:
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+    Insertar:
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+
+    # Quedando asi:
+    import os
+    import sys
+
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+
+Crear app home
+**************
+
+Si se ha creado el directorio ``src/apps`` navegar hasta ``src/apps``,
+de lo contrario navegar hasta ``src/``
+
+.. code-block:: bash
+
+    # En src/
+    ./manage.py startapp home
+    mkdir -p home/templates/home
+    touch home/templates/home/index.html
+    touch home/urls.py
+
+    # Si es en src/apps, desde src/apps
+    django-admin.py startapp home
+    mkdir -p apps/home/templates/home
+    touch apps/home/templates/home/index.html
+    touch apps/home/urls.py
+
+Añadir al index recien creado
+
+.. code-block:: html
+
+    {% extends "base.html" %}
+
+    {% block title %}Home{% endblock title %}
+
+    {% block content %}
+        <h2>Home page</h2>
+    {% endblock content %}
+
+Editar ``settings/urls.py``
+
+.. code-block:: python
+
+    from django.conf.urls import patterns, include, url
+    from django.contrib import admin
+
+    urlpatterns = patterns(
+        '',
+        url(r'^admin/', include(admin.site.urls)),
+        url(r'^$', include('home.urls')),
+    )
+
+Editar ``home/urls.py``
+
+.. code-block:: python
+
+    from django.conf.urls import patterns, url
+
+    urlpatterns = patterns(
+        'home.views',
+        url(r'^$', 'index', name='home.index'),
+    )
+
+
+Ahora ya solo quedar añadir la ``app`` en ``settings/settings.py``
+
+.. code-block:: python
+
+    # Application definition
+
+    INSTALLED_APPS = (
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+    )
+
+    # Local APPS
+    INSTALLED_APPS += (
+        'home',
+    )
 
 GIT
 ***
@@ -330,6 +522,19 @@ Resultado final de la estructura:
     │   ├── development.txt
     │   └── production.txt
     └── src
+        ├── apps
+        │   └── home
+        │       ├── admin.py
+        │       ├── __init__.py
+        │       ├── migrations
+        │       │   └── __init__.py
+        │       ├── models.py
+        │       ├── templates
+        │       │   └── home
+        │       │       └── index.html
+        │       ├── tests.py
+        │       ├── urls.py
+        │       └── views.py
         ├── manage.py
         ├── media
         ├── settings
@@ -341,13 +546,35 @@ Resultado final de la estructura:
         │   └── wsgi.py
         ├── static
         │   ├── css
+        │   │   ├── bootstrap.css
+        │   │   ├── bootstrap.css.map
+        │   │   ├── bootstrap.min.css
+        │   │   ├── bootstrap-theme.css
+        │   │   ├── bootstrap-theme.css.map
+        │   │   ├── bootstrap-theme.min.css
+        │   │   ├── main.css
+        │   │   └── main.min.css
         │   ├── fonts
+        │   │   ├── glyphicons-halflings-regular.eot
+        │   │   ├── glyphicons-halflings-regular.svg
+        │   │   ├── glyphicons-halflings-regular.ttf
+        │   │   └── glyphicons-halflings-regular.woff
         │   ├── img
         │   └── js
+        │       ├── bootstrap.js
+        │       ├── bootstrap.min.js
+        │       ├── common.js
+        │       ├── common.min.js
+        │       └── jquery-2.1.1.min.js
         └── templates
             ├── 404.html
             ├── 500.html
             ├── base.html
             └── _messages.html
 
-    12 directories, 14 files
+
+Si todo ha salido bien
+
+.. code-block:: bash
+
+    ./manage.py runserver
