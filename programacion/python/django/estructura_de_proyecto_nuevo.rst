@@ -662,3 +662,7 @@ Si todo ha salido bien
 .. code-block:: bash
 
     ./manage.py runserver
+
+Me dejo en github una plantilla creada
+
+`GitHub <https://github.com/snicoper/structura-dj>`_
