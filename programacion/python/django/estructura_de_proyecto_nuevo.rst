@@ -29,7 +29,7 @@ Creo varias carpetas, que mas tarde usare.
 .. code-block:: bash
 
     cd proyect_name
-    mkdir docs requeriments cron logs
+    mkdir docs requeriments cron logs bin
 
 La carpeta de ``cron`` la creo pero no hablare mas de el,
 ya que no se cuando me hará falta generar automatizaciones
@@ -227,6 +227,8 @@ Editar en ``settings/production.py``
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+En ``ALLOWED_HOSTS = []`` Añadir un string con el dominio o ip.
 
 Editar en ``settings/development.py``
 
@@ -602,8 +604,12 @@ Resultado final de la estructura:
 .. code-block:: bash
 
     .
+    ├── bin
+    │   └── gunicorn.sh
     ├── cron
     ├── docs
+    ├── logs
+    ├── README.md
     ├── requeriments
     │   ├── base.txt
     │   ├── development.txt
@@ -659,6 +665,8 @@ Resultado final de la estructura:
             ├── base.html
             └── _messages.html
 
+    19 directories, 44 files
+
 
 Si todo ha salido bien
 
@@ -669,11 +677,11 @@ Si todo ha salido bien
 Gunicorn
 ********
 
-En la raiz del proyecto, en ``proyect_name``, creamos un archivo ``gunicorn.sh``
+En ``proyect_name/bin``, creamos un archivo ``gunicorn.sh``
 
 .. code-block:: bash
 
-    vim gunicorn.sh
+    vim bin/gunicorn.sh
 
     # Añadimos
     #!/bin/bash
@@ -699,7 +707,8 @@ Permisos de ejecución
 
 .. code-block:: bash
 
-    chmod +x gunicorn.sh
+    chmod +x bin/gunicorn.sh
+
 
 **Nginx**
 
