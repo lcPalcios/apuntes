@@ -1,23 +1,23 @@
 .. _reference-programacion-python-django-estructura_de_proyecto_nuevo:
 
 ##############################
-Creacion de un proyecto Django
+Creación de un proyecto Django
 ##############################
 
-La creacion de un proyecto en django te permite generar la estuctura de
+La creación de un proyecto en Django te permite generar la estructura de
 directorios que mas te guste/interese, etc.
 
-Yo, voy creandome una que para mi gusto esta bien, pero que para nada
+Yo, voy creándome una que para mi gusto esta bien, pero que para nada
 significa que este bien o que sea la correcta.
 
-Utilizo Virtualenv/Virtualwnvwrapper y tengo creado en env fuera del proyecto.
+Utilizo Virtualenv/Virtualenvwrapper y tengo creado en env fuera del proyecto.
 
-La instalacion de ``Django`` y cualquier otro paquete lo hago con un entorno
-virtual de python.
+La instalación de ``Django`` y cualquier otro paquete lo hago con un entorno
+virtual de Python.
 
-Dejo aqui como :ref:`reference-linux-python-instalar_python`
+Dejo aquí como :ref:`reference-linux-python-instalar_python`
 
-Ahora creo un directorio que es donde estara todo lo relacionado
+Ahora creo un directorio que es donde estará todo lo relacionado
 con el proyecto, como docs, cron, requeriments, etc.
 
 .. code-block:: bash
@@ -32,13 +32,13 @@ Creo varias carpetas, que mas tarde usare.
     mkdir docs requeriments cron
 
 La carpeta de ``cron`` la creo pero no hablare mas de el,
-ya que no se cuando me hara falta generar automatizaciones
-para el servidor (pensado para produccion).
+ya que no se cuando me hará falta generar automatizaciones
+para el servidor (pensado para producción).
 
 Los documentos (docs), lo genero con Sphinx y en requeriments creo tres archivos,
-uno comun y otros dos, uno para desarrollo y otro para produccion.
+uno común y otros dos, uno para desarrollo y otro para producción.
 
-Empiezo con requeiments
+Empiezo con requeriments
 
 .. code-block:: bash
 
@@ -48,17 +48,17 @@ Empiezo con requeiments
     echo '-r base.txt' > production.txt
     echo '-r base.txt' > development.txt
 
-Para un ejemplo simple, ``django`` estara tanto en produccion como en desarrollo,
+Para un ejemplo simple, ``Django`` estará tanto en producción como en desarrollo,
 por lo que se añade a ``base.txt``.
 
 ``Sphinx`` y ``django-debug-toolbar`` solo para desarrollo,
-``gunicorn`` solo para produccion , asi que editamos los tres archivos.
+``Gunicorn`` solo para producción , así que editamos los tres archivos.
 
 .. note::
-    Al no poner versiones, bajara la ultima version, si se quiere
-    especificar versioner porner por ejemplo ``Django==1.6.6``.
+    Al no poner versiones, bajara la ultima versión, si se quiere
+    especificar la versión poner por ejemplo ``Django==1.6.6``.
 
-    Seria buena idea, al menos depues de instalar los paquetes, poner
+    Seria buena idea, al menos después de instalar los paquetes, poner
     las versiones correspondientes.
 
 .. code-block:: bash
@@ -82,21 +82,21 @@ por lo que se añade a ``base.txt``.
     gunicorn
 
 Ahora dependiendo de si estamos en el entorno de desarrollo o
-el de produccion:
+el de producción:
 
 .. code-block:: bash
 
-    # Para el entorno de desarrollo
+    # Para el entorno de desarrollo.
     pip install -r development.txt
 
-    # Para el entorno de produccion
+    # Para el entorno de producción.
     pip install -r production.txt
 
 Creacion del proyecto Django
 *****************************
 
-El proyecto para la explicacion se llamara ``mysite``, asi que empezamos con
-``django-admin`` en la raiz de ``proyect_name``.
+El proyecto para la explicación se llamara ``mysite``, así que empezamos con
+``django-admin`` en la raíz de ``proyect_name``.
 
 .. code-block:: bash
 
@@ -132,10 +132,10 @@ La carpeta ``mysite``, la renombro a ``settings``
 
     mv mysite settings
 
-Creo que queda mas claro donde estan los archivos de configuracion.
+Creo que queda mas claro donde están los archivos de configuración.
 
-Ahora, creo dos archivos mas de configuracion, uno para desarrollo y otro
-para produccion dentro de la capeta ``settings``
+Ahora, creo dos archivos mas de configuración, uno para desarrollo y otro
+para producción dentro de la capeta ``settings``
 
 .. code-block:: bash
 
@@ -144,9 +144,9 @@ para produccion dentro de la capeta ``settings``
     cd ..
 
 El archivo ``settings.py`` lo dejo como base, para las configuraciones que se
-comparten en desarrollo y produccion.
+comparten en desarrollo y producción.
 
-Edito los archivos recien crados y les añado:
+Edito los archivos recién creados y les añado:
 
 .. code-block:: bash
 
@@ -157,7 +157,7 @@ Edito los archivos recien crados y les añado:
 De momento, los archivos ``development.py`` y ``production.py``, usan las
 mismas configuraciones, mas tarde las cambiaremos.
 
-Ahora, hay que decirle a ``Django`` que archivos de configuracion usar.
+Ahora, hay que decirle a ``Django`` que archivos de configuración usar.
 
 Para el caso de desarrollo, cuando se usa ``./manage.py``, hay que editar ese mismo
 archivo. ``manage.py``
@@ -250,15 +250,15 @@ Editar en ``settings/development.py``
         }
     }
 
-Modificar ``settings/wsgi.py`` para decirle cual es el archivo de configuracion
-de produccion.
+Modificar ``settings/wsgi.py`` para decirle cual es el archivo de configuración
+de producción.
 
 .. code-block:: bash
 
     # Linea 11, cambiar
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.production")
 
-Lo basico ya esta creado y configurado, ahora los directorios.
+Lo básico ya esta creado y configurado, ahora los directorios.
 
 Crear directorios para templates, media, etc., Nos situamos en ``src``
 y creamos algunas carpetas.
@@ -268,8 +268,8 @@ y creamos algunas carpetas.
     mkdir templates media static
     cd ..
 
-* **static** - Archivos de imagenes del sitio, css, jss y fonts para Bootstrap
-* **media** - Archivos por el servidos, por usuarios o administracion.
+* **static** - Archivos de imágenes del sitio, css, jss y fonts para Bootstrap
+* **media** - Archivos por el servidos, por usuarios o administración.
 * **templates** - Archivos .html
 
 Dentro de ``static`` creamos cuatro carpetas, ``img, js, fonts, css``
@@ -284,7 +284,7 @@ dentro de cada carpeta en ``static``.
 
 Hacemos los mismo con `JQuery <http://jquery.com/>`_
 
-Dentro de template, creamos algunos archivos ``.html``
+Dentro de templates, creamos algunos archivos ``.html``
 
 .. code-block:: bash
 
@@ -376,7 +376,7 @@ Editar ``_messages.html`` y añadir:
         </div>
     {% endif %}
 
-Con esto saldra un mensaje de ``django.contrib.messages`` un mensaje en al cabezera
+Con esto saldrá un mensaje de ``django.contrib.messages`` un mensaje en al cabecera
 de la pagina.
 
 Editar ``404.html`` y añadir
@@ -414,7 +414,7 @@ Ir a ``src/templates/js``, crear un archivo ``common.js`` y añadir
     })
 
 Creara un pequeño scroll en la parte inferior derecha de la pagina
-para subir a la cabezera.
+para subir a la cabecera.
 
 Ir a ``src/templates/css``, crear un archivo ``main.css`` y añadir
 
@@ -487,7 +487,7 @@ de lo contrario navegar hasta ``src/``
     touch apps/home/templates/home/index.html
     touch apps/home/urls.py
 
-Añadir al index recien creado
+Añadir al index recién creado
 
 .. code-block:: html
 
@@ -523,6 +523,15 @@ Editar ``home/urls.py``
         url(r'^$', 'index', name='home.index'),
     )
 
+Editar ``home/views.py``
+
+.. code-block:: python
+
+    from django.shortcuts import render
+
+
+    def index(request):
+        return render(request, 'home/index.html')
 
 Ahora ya solo quedar añadir la ``app`` en ``settings/settings.py``
 
@@ -571,6 +580,7 @@ Crear .gitignore
     __pycache__/
     logs/
     .idea/
+    build/
 
     # Specific files #
     ##################
@@ -583,7 +593,6 @@ Crear .gitignore
     Icon?
     Thumbs.db
     *~
-
 
 Resultado final de la estructura:
 
