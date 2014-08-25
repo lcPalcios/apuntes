@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-sufijos_tipos_numericos:
 
 ############################
-Sufijos para tipos numericos
+Sufijos para tipos numéricos
 ############################
 
 Fuentes

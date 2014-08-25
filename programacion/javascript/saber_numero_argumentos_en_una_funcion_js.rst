@@ -1,7 +1,7 @@
 .. _reference-programacion-javascript-saber_numero_argumentos_en_una_funcion_js:
 
 ###########################################################
-Saber el numeros de argumentos se han pasado en una funcion
+Saber el números de argumentos se han pasado en una función
 ###########################################################
 
 Fuentes
@@ -10,7 +10,7 @@ Fuentes
 
 -------------
 
-Para saber cuantos argumentos se han pasado en una funcion, se ha de usar el
+Para saber cuantos argumentos se han pasado en una función, se ha de usar el
 objeto arguments.
 
 Arguments, aunque es un objeto, se trata como si fuera un array.

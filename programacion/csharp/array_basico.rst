@@ -1,10 +1,10 @@
 .. _reference-programacion-csharp-array_basico:
 
 ############
-Array Basico
+Array Básico
 ############
 
-Arrays una dimension
+Arrays una dimensión
 ********************
 
 Declarar e inicializar un array:
@@ -43,7 +43,7 @@ Para declarar una se usa la siguiente sintaxis:
 
     int[,] matrix = new int[4, 2];
 
-Esto crea una "tabla mas o menos asi"
+Esto crea una "tabla mas o menos así"
 
 .. code-block:: none
 
@@ -52,7 +52,7 @@ Esto crea una "tabla mas o menos asi"
     x x
     x x
 
-Una manera rapida seria:
+Una manera rápida seria:
 
 .. code-block:: c#
 
@@ -73,7 +73,7 @@ Donde:
 Arrays de Arrays
 ****************
 
-Tambien llamadas arrays escalonada, ya que cada fila puede tener un numero x de elementos.
+También llamadas arrays escalonada, ya que cada fila puede tener un numero x de elementos.
 
 Un ejemplo rapido:
 

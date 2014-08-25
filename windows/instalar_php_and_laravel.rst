@@ -4,7 +4,7 @@
 Instalar PHP y Laravel
 ######################
 
-Instalacion de PHP y Laravel, para una instalacion mas completa, apache o nginx
+Instalación de PHP y Laravel, para una instalación mas completa, apache o nginx
 instalar `xampp <https://www.apachefriends.org/es/index.html>`_ o
 `wpn-xm <http://wpn-xm.org/>`_
 

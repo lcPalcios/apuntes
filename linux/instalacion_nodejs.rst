@@ -2,10 +2,10 @@
 
 
 ##################
-Instalacion NodeJS
+Instalación NodeJS
 ##################
 
-Instalacion
+Instalación
 ***********
 
 Fedora

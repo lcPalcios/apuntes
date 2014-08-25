@@ -1,7 +1,7 @@
 .. _reference-linux-postgresql-instalacion_postgresql:
 
 #########################
-Instalacion de PostgreSQL
+Instalación de PostgreSQL
 #########################
 
 Fuentes
@@ -12,7 +12,7 @@ Fuentes
 Ubuntu
 ******
 
-Instalacion
+Instalación
 
 .. code-block:: bash
 
@@ -21,7 +21,7 @@ Instalacion
     # Opcional
     sudo apt-get install -y pgAdmin3
 
-Si se quiere instalar psycopg2 con python pip
+Si se quiere instalar psycopg2 con Python pip
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Crear usuario snicoper y database practicas
     CREATE DATABASE practicas WITH OWNER snicoper;
     \q
 
-Configuracion PostgreSQL
+Configuración PostgreSQL
 
 .. code-block:: bash
 
@@ -64,9 +64,9 @@ Fedora y Centos
 ***************
 
 .. warning::
-    En centos 7 no lo he probado, pero debe ser la misma que en fedora 19, 20
+    En Centos 7 no lo he probado, pero debe ser la misma que en Fedora 19, 20
 
-Instalacion
+Instalación
 
 .. code-block:: bash
 
@@ -95,7 +95,7 @@ Establecer contraseña de postgres
     CREATE DATABASE practicas WITH OWNER snicoper;
     \q
 
-Configuracion
+Configuración
 
 .. code-block:: bash
 

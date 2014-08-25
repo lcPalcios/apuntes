@@ -5,7 +5,7 @@ ASP .NET en Nginx
 #################
 
 .. note::
-    No esta del todo completada y solo esta de momento, para ubuntu.
+    No esta del todo completada y solo esta de momento, para Ubuntu.
 
 Ubuntu
 ******
@@ -16,7 +16,7 @@ Crear el sitio donde se alojaran los archivos.
 
     mkdir ~/public_html/asp
 
-Configurar un entorno virtual para nginx
+Configurar un entorno virtual para Nginx
 
 .. code-block:: bash
 
@@ -89,4 +89,4 @@ Una pagina de prueba
     </html>
 
 .. note::
-    Falta por hacer autoinicio de XPS4
+    Falta por hacer auto inicio de XPS4

@@ -86,5 +86,5 @@ como override, el resultado es el siguiente:
         }
     }
 
-Con new, si una clase es downgradeada, mostrara el resultado del metodo base, en cambio
+Con new, si una clase es downgradeada, mostrara el resultado del método base, en cambio
 con override, lo sobrescribe siempre y muestra el valor de la clase derivada.

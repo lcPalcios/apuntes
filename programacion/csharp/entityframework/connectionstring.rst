@@ -54,7 +54,7 @@ Editar ``web.config`` de la reaiz del proyecto **ASP.NET MVC**
 SQL Server Express
 ******************
 
-Editar ``web.config`` de la reaiz del proyecto **ASP.NET MVC**
+Editar ``web.config`` de la raíz del proyecto **ASP.NET MVC**
 
 .. code-block:: xml
 

@@ -11,7 +11,7 @@ MVC5 EF6 Identity Postgresql
     Npgsql 2.2.0 esta en estado **beta**
 
 Npgsql 2.2.0 ya soporta migraciones y supongo que por eso ahora puedo usar
-identity con postgres. Supongo que antes deveria crear las tablas en la
+identity con postgres. Supongo que antes debería crear las tablas en la
 base de datos a mano.
 
 De momento, genera las tablas en la db y puedo usarlas.

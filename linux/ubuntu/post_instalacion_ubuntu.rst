@@ -68,7 +68,7 @@ KDE
 
 Si se configura Akonadi con SQLite
 
-Cambiar en Menu y buscar Akonadi Server Configuraction
+Cambiar en Menú y buscar Akonadi Server Configuration
 
 .. code-block:: bash
 
@@ -220,7 +220,7 @@ qtcreator
 
     sudo apt-get -y install qtcreator
 
-No mostrar la opcion de cuenta de envitado al hacer login con kde
+No mostrar la opción de cuenta de invitado al hacer login con kde
 
 .. code-block:: bash
 

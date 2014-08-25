@@ -8,7 +8,7 @@ Comando find
 
     find ./ -name '*.php' -type f -exec chmod 777 {} \;
 
-Con esto busca en el arbol ./ los archivos que contienen .php tipo file y
+Con esto busca en el árbol ./ los archivos que contienen .php tipo file y
 ejecuta chmod 777 a todos los archivos, omitir -name '\*.php' para que sean todos
 los archivos
 

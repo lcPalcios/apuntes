@@ -8,7 +8,7 @@ Poner password a un usuario desde la consola
 
     SET PASSWORD FOR 'user'@'localhost' = PASSWORD('pass');
 
-Otra manera ya que los passwords y usuarios estan en la tabla mysql.user seria
+Otra manera ya que los passwords y usuarios están en la tabla mysql.user seria
 
 .. code-block:: sql
 

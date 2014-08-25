@@ -57,7 +57,7 @@ Copiar el sitio creado a sites-enabled
 
 **Si instalo phpmyadmin**
 
-En ubuntu ademas, hago un enlace simbolico de phpmyadmin en la carpeta home,
+En Ubuntu además, hago un enlace simbólico de phpmyadmin en la carpeta home,
 para acceder luego a phpmyadmin http://www.workspace.local/phpmyadmin y me ahorro
 tener que crear un nuevo vhost para phpmyadmin.
 
@@ -128,7 +128,7 @@ Todo como root
     Ver :ref:`reference-linux-fedora-centos-reglas_selinux`
 
 .. warning::
-    PRO PROVAR |br|
+    POR PROVAR |br|
     Creo que me deberia dar error SELinux...
 
 .. code-block:: bash

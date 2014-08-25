@@ -4,9 +4,9 @@
 keyframes css
 #############
 
-keyframes es una animacion que puede hacerse infinitamente
+keyframes es una animación que puede hacerse infinitamente
 
-Lo primo es crear una animacion:
+Lo primo es crear una animación:
 
 .. code-block:: css
 

@@ -4,7 +4,7 @@
 Consulta fechas
 ###############
 
-Consultas basicas de MySQL
+Consultas básicas de MySQL
 
 Comparar fechas, por ejemplo buscar usuarios que han nacido en un mes actual
 

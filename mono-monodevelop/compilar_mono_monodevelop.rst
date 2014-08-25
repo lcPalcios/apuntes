@@ -8,7 +8,7 @@ Compilar Mono y Monodevelop
     Falta Monodevelop
 
 .. note::
-    En ubuntu tiene un ppa muy actualizado [Poner link cuando lo tenga]
+    En ubuntu tiene un ppa muy actualizado :ref:`reference-mono-monodevelop-mono_monodevelop_repos`
 
 Fuentes
 *******
@@ -20,7 +20,7 @@ Fuentes
 
 ------------------
 
-Herramientas de compilacion
+Herramientas de compilación
 
 .. code-block:: bash
 

@@ -1,7 +1,7 @@
 .. _reference-linux-php-instalacion_php:
 
 ###############
-Instalacion PHP
+Instalación PHP
 ###############
 
 Ubuntu
@@ -16,10 +16,10 @@ Apache y Nginx
 
 .. note::
     Si se instala Nginx, desactivar uno de los dos, ver carpeta de
-    ubuntu para desactivar servicios.
+    Ubuntu para desactivar servicios.
 
 .. important::
-    Crear enlace cuando este creado el archivo de ubuntu para desactivar
+    Crear enlace cuando este creado el archivo de Ubuntu para desactivar
     servicios.
 
 Apache
@@ -108,8 +108,8 @@ Fedora Centos
 *************
 
 .. note::
-    Para php 5.5 en centos usar: yum --enablerepo=remi,remi-php55, yo
-    lo omito por que todo lo demas es igual en fedora que en centos.
+    Para php 5.5 en Centos usar: yum --enablerepo=remi,remi-php55, yo
+    lo omito por que todo lo demás es igual en Fedora que en Centos.
 
 .. code-block:: bash
 
@@ -161,7 +161,7 @@ Buscar y editar
 Configuracion de php-opcache
 ============================
 
-En la linea 1872 (fedora) 1836 (centos), debajo de [opcache], añadir
+En la linea 1872 (Fedora) 1836 (Centos), debajo de [opcache], añadir
 
 .. code-block:: bash
 

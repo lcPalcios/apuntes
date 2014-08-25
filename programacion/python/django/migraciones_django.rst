@@ -9,7 +9,7 @@ Crear migraciones
 
 .. code-block:: bash
 
-    python manage.py makemigrations polls
+    ./manage.py makemigrations polls
 
 Mediante la ejecución de makemigrations, le estás diciendo a Django que
 has hecho algunos cambios a sus modelos y que desea que los cambios se
@@ -37,7 +37,7 @@ el premer numero ``0001`` o ``0002``
 
 .. code-block:: bash
 
-    python manage.py sqlmigrate polls 0001
+    ./manage.py sqlmigrate polls 0001
 
 Comprobar el modelo
 *******************
@@ -46,7 +46,7 @@ Esto solo comprueba si hay algun error en el modelo, pero no ejecuta nada.
 
 .. code-block:: bash
 
-    python manage.py check
+    ./manage.py check
 
 
 Migrar las base de datos
@@ -54,7 +54,7 @@ Migrar las base de datos
 
 .. code-block:: bash
 
-    python manage.py migrate
+    ./manage.py migrate
 
 El comando migrate toma todas las migraciones que no han sido aplicadas
 (pistas de Django cuáles se aplican mediante una tabla especial en su base

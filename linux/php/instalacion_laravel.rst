@@ -1,7 +1,7 @@
 .. _reference-linux-php-instalacion_laravel:
 
 ###################
-Instalacion Laravel
+Instalación Laravel
 ###################
 
 **Fuentes**
@@ -35,7 +35,7 @@ Composer o Archivo Phar
 =======================
 
 Creo que composer lo tiene mas actualizado ``composer self-update``,
-con archivo Phar, has de estar descargandolo a "mano" cada que se quiera actualizar.
+con archivo Phar, has de estar descargándolo a "mano" cada que se quiera actualizar.
 
 Composer
 ********

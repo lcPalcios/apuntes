@@ -1,16 +1,16 @@
 .. _reference-programacion-mariadb-claves_foraneas_mariadb:
 
 #######################
-Claves Foraneas MariaDB
+Claves Foráneas MariaDB
 #######################
 
-Para la creacion de las claves foraneas, existen 2 tablas, una tabla padre que
-es la que contiene un id unico y una tabla que contiene un id que hace referencia
+Para la creación de las claves foráneas, existen 2 tablas, una tabla padre que
+es la que contiene un id único y una tabla que contiene un id que hace referencia
 a la clase padre.
 
 .. note::
     Me he dado cuenta que para que se pueda crear bien la foreign key, si la
-    tabla padre la id es ``UNSIGNED`` la id hija ha de serlo tambien.
+    tabla padre la id es ``UNSIGNED`` la id hija ha de serlo también.
 
 .. code-block:: sql
 
@@ -21,7 +21,7 @@ a la clase padre.
         PRIMARY KEY(id_usr)
     ) ENGINE = InnoDB;
 
-La clase hija tiene una id que hace referencia a la clase padre y no se podra
+La clase hija tiene una id que hace referencia a la clase padre y no se podrá
 poner una id donde no exista en la clase padre.
 Las id ha de ser un tipo ``KEY/INDEX, PRIMARY KEY``, etc, en caso de
 no existir a partir de MySQL 5 crea un index para las tablas.
@@ -42,7 +42,7 @@ no existir a partir de MySQL 5 crea un index para las tablas.
     ) ENGINE = InnoDB;
 
 Las clases hijas son las que tienen la foreign key y hay dos formas de crear una
-foreign key, o bien dentro de la creacion de la tabla
+foreign key, o bien dentro de la creación de la tabla
 
 .. code-block:: sql
 
@@ -82,8 +82,8 @@ SET NULL:
     soporta tanto ON DELETE SET NULL como ON UPDATE SET NULL.
 NO ACTION:
     En el estándar ANSI SQL-92, NO ACTION significa ninguna acción en el sentido
-    de que unintento de borrar o actualizar un valor de clave primaria no sera
-    permitido si en la tabla referenciada hay una valor de clave foránea
+    de que un intento de borrar o actualizar un valor de clave primaria no sera
+    permitido si en la tabla reverenciada hay una valor de clave foránea
     relacionado. (Gruber, Mastering SQL, 2000:181). En MySQL 5.0, InnoDB rechaza
     la operación de eliminación o actualización en la tabla padre
 RESTRICT:

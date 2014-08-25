@@ -18,7 +18,7 @@ de estos elementos en una clase derivada.
 No puede utilizar el modificador virtual con los modificadores static, abstract,
 private u override.
 
-Para poder sobre-escribir un metodo (por ejemplo) en una subclase, es necesario
+Para poder sobre-escribir un método (por ejemplo) en una subclase, es necesario
 que la clase padre tenga declarado un virtual.
 
 Por ejemplo
@@ -33,8 +33,8 @@ Por ejemplo
         public override void Mostrar() {}
     }
 
-La class B daria error, por que el metodo Mostrar() en la clase A, no se deja
-sobre-escribir, para poder hacerlo, vasta con declarar el metodo de la clase A
+La class B daría error, por que el método Mostrar() en la clase A, no se deja
+sobre-escribir, para poder hacerlo, vasta con declarar el método de la clase A
 como virtual.
 
 .. code-block:: c#
@@ -47,7 +47,7 @@ como virtual.
         public override void Mostrar() {}
     }
 
-Cuando simplemente se quiere "sobre-escribir un metodo padre":
+Cuando simplemente se quiere "sobre-escribir un método padre":
 
 .. code-block:: c#
 

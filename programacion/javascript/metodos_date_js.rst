@@ -1,15 +1,15 @@
 .. _reference-programacion-javascript-metodos_date_js:
 
 ##################
-Metodos de Date JS
+Métodos de Date JS
 ##################
 
 getTime()
-    Devuelve una representacion en milisegundo de la fecha, lo mismo que
+    Devuelve una representación en milisegundo de la fecha, lo mismo que
     valuesOf(),
 
 setTime(milisegundos)
-    Establece una representacion en milisegundos de una fecha, cambiando
+    Establece una representación en milisegundos de una fecha, cambiando
     la fecha.
 
 getFullYear()
@@ -19,7 +19,7 @@ getUTCFullGear()
     Devuelve 4 digitos para el año en UTC.
 
 setFullYear(year)
-    Establecer el año de la fecha, el año se a de establecer con 4 digitos.
+    Establecer el año de la fecha, el año se a de establecer con 4 dígitos.
 
 setUTCFullYear(year)
     Lo mimso que setFullYear() pero el año en UTC
@@ -43,15 +43,15 @@ getUTCMonth()
     Igual que getDate() pero en UTC
 
 setDate(date)
-    Establecer el dia de una fecha (1 - 31), si el dia es mayor a los dias que
-    tiene el mes, el mes tambien sera incrementado.
+    Establecer el día de una fecha (1 - 31), si el día es mayor a los días que
+    tiene el mes, el mes también sera incrementado.
 
 setUTCDate(date)
     Lo mismo que setDate(date) pero en UTC
 
 getDay()
-    Obtener el dia de la semana como un numero, donde 0 es represntado por
-    domingo y 6 como sabado
+    Obtener el día de la semana como un numero, donde 0 es representado por
+    domingo y 6 como sábado
 
 getHours()
     Obtener la hora como un numero entre 0 y 23
@@ -60,8 +60,8 @@ getUTCHours()
     Lo mismo que getHours() pero UTC
 
 setHours(hours)
-    Establecer la hora de una fecha, hours es un valor numerico entre 0 y 23
-    Si el valor es mayor de 23, el dia es incrementado.
+    Establecer la hora de una fecha, hours es un valor numérico entre 0 y 23
+    Si el valor es mayor de 23, el día es incrementado.
 
 setUTCHours(hours)
     Igual que setHours(hours) pero en UTC

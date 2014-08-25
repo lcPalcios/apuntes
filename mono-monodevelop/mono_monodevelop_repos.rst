@@ -5,7 +5,7 @@ Repos de Mono y Monodevelop
 ###########################
 
 .. note::
-    Para Ubuntu, si se quiere tener los ultmos mono y monodevelop,
+    Para Ubuntu, si se quiere tener los últimos mono y monodevelop,
     ver los PPA's abajo.
 
 Fuentes
@@ -81,8 +81,8 @@ https://launchpad.net/~inizan-yannick/+archive/ubuntu/mono?field.series_filter=t
     sudo apt-get install monodevelop mono-xsp4
 
 
-En los dos capos con los ppa hay que crear la carpeta ``registry/LocalMachine``
-y darle permisos de escritura y ejecucion.
+En los dos casos con los ppa hay que crear la carpeta ``registry/LocalMachine``
+y darle permisos de escritura y ejecución.
 
 .. code-block:: bash
 

@@ -11,7 +11,7 @@ Fuentes
 
 --------
 
-Bosing se refiere a la conversión de un tipo valor a un tipo object ajustable.
+Boxing se refiere a la conversión de un tipo valor a un tipo object ajustable.
 
 Unboxing es lo contrario, un tipo objeto a un tipo valor
 (siempre que sea posible), además se debe hacer de manera explícita.

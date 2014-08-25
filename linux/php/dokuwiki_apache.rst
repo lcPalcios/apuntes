@@ -7,7 +7,7 @@ DokuWiki Apache
 Fedora
 ******
 
-Copiar el contenido por ejemplo en ~/public_html/wiki, despues
+Copiar el contenido por ejemplo en ~/public_html/wiki, después
 dar permisos.
 
 .. code-block:: bash

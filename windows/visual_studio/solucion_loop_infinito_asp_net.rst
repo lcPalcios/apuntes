@@ -1,7 +1,7 @@
 .. _reference--windows-visual_studio-solucion_loop_infinito_asp_net:
 
 #####################################
-Solucion Loop infinito en ASP.NET IIS
+Solución Loop infinito en ASP.NET IIS
 #####################################
 
 **Fuentes**
@@ -10,7 +10,7 @@ Solucion Loop infinito en ASP.NET IIS
 
 -------
 
-Cree un proyecto en asp.net con un nombre que ya habia usado en otro proyecto,
+Cree un proyecto en asp.net con un nombre que ya había usado en otro proyecto,
 el que biene por defecto.
 
 Al cargar la pagina para probarla, me hacia un loop infinito en la barra de

@@ -1,7 +1,7 @@
 .. _reference--windows-instalacion_postgresql_win:
 
 #################################
-Instalacion de PostgreSQL Windows
+Instalación de PostgreSQL Windows
 #################################
 
 Fuentes
@@ -16,10 +16,10 @@ Fuentes
 ------------------------
 
 .. note::
-    Para una instalacion rapida, descargar el instalador y solo añadirlo al ``PATH``,
-    me creo la menera del ``.zip`` por pura curiosidad.
+    Para una instalación rápida, descargar el instalador y solo añadirlo al ``PATH``,
+    me creo la menear del ``.zip`` por pura curiosidad.
 
-    La version probada es **9.3.4**, cambiar segun version.
+    La versión probada es **9.3.4**, cambiar según versión.
 
 * Descargar el archivo ``.zip``
 * Crear carpeta ``C:\Postgresql``

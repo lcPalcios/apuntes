@@ -12,7 +12,7 @@ Fuentes
 -----------------
 
 Aunque esta bastante incompleto, pero me dejo una pequeña referencia para saber
-como se llaman las formas de hacer las cosas y la pagina donde lo lei.
+como se llaman las formas de hacer las cosas y la pagina donde lo leí.
 
 Imaginando que tenemos 2 modelos
 
@@ -52,7 +52,7 @@ Imaginando que tenemos 2 modelos
 La base de datos, son 3 tablas Usuarios, Posts y UsuarioPosts.
 
 Con postgres la tabla ``UsuarioPosts`` hay que crearla a mano
-y aun no se como hacer las relacion en EF.
+y aun no se como hacer las relación en EF.
 
 Lazy loading (Carga diferida)
 *****************************

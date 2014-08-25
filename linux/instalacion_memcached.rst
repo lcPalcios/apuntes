@@ -1,7 +1,7 @@
 .. _reference-linux-instalacion_memcached:
 
 ########################
-Instalacion de Memcached
+Instalación de Memcached
 ########################
 
 Fedora
@@ -14,7 +14,7 @@ Fedora
     systemctl enable memcached.service
     systemctl start memcached.service
 
-Para editar la configuracion
+Para editar la configuración
 
 .. code-block:: bash
 
@@ -27,7 +27,7 @@ Ubuntu
 
     sudo apt-get install memcached libmemcached-tools
 
-Para editar la configuracion
+Para editar la configuración
 
 .. code-block:: bash
 

@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-csharp_script-envio_email_smtp_csharp:
 
 ##########################
-Envio Email usando SMTP C#
+Envío Email usando SMTP C#
 ##########################
 
 .. code-block:: c#
@@ -11,7 +11,7 @@ Envio Email usando SMTP C#
     /// <summary>
     /// Enviar un email
     /// </summary>
-    /// <returns>true en caso de exito, false en caso contrario.</returns>
+    /// <returns>true en caso de éxito, false en caso contrario.</returns>
     public bool Send()
     {
         try
@@ -45,7 +45,7 @@ Envio Email usando SMTP C#
     }
 
 .. note::
-    Tambien puede interesar.
+    También puede interesar.
 
     * https://github.com/jstedfast/MailKit
     * https://github.com/jstedfast/MimeKit

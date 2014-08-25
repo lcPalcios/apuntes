@@ -1,7 +1,7 @@
 .. _reference-linux-python-instalar_python:
 
 #####################
-Instalacion de Python
+Instalación de Python
 #####################
 
 Fedora
@@ -51,10 +51,10 @@ User Pip
     # en python 3
     pip3 install nombre_paquete
 
-Virtualenv y Virtualwnvwrapper en Fedora/Ubuntu
+Virtualenv y Virtualenvwrapper en Fedora/Ubuntu
 ***********************************************
 
-Instalacion
+Instalación
 
 .. code-block:: bash
 
@@ -64,7 +64,7 @@ Instalacion
 Virtualenv con python 3
 =======================
 
-Si se va a usar Virtualwnvwrapper omitir esta parte
+Si se va a usar Virtualenvwrapper omitir esta parte
 
 .. code-block:: bash
 
@@ -77,7 +77,7 @@ Para desactivar
 
     deactivate
 
-Instalar virtualenvwrapper
+Instalar Virtualenvwrapper
 ==========================
 
 .. code-block:: bash

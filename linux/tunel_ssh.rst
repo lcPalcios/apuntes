@@ -12,7 +12,7 @@ Tunel SSH
 
     ssh snicoper@lxmaq1.workspace.local -L 3307:localhost:3306 -N
 
-**3307**: Es el puerto que asigno a la maquita cliente |br|
+**3307**: Es el puerto que asigno a la maquina cliente |br|
 **3306**: El puerto del host
 
 Ahora desde el cliente

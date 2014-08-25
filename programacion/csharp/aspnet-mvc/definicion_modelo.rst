@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-aspnet-mvc-definicion_modelo:
 
 #################
-Definicion modelo
+Definición modelo
 #################
 
 Fuentes

@@ -1,7 +1,7 @@
 .. _reference-linux-kde-montar_particion_ssh:
 
 #######################################
-Montar particion SSH al iniciar sistema
+Montar partición SSH al iniciar sistema
 #######################################
 
 Fuentes

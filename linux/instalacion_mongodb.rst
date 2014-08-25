@@ -1,7 +1,7 @@
 .. _reference-linux-instalacion_mongodb:
 
 ####################
-Instalacion MongoDb
+Instalación MongoDb
 ####################
 
 Fedora

@@ -1,13 +1,13 @@
 .. _reference-programacion-html_css-medidas_relativas_tipografia_cajas:
 
 #####################################
-Medidas relativas tipografias y cajas
+Medidas relativas tipografías y cajas
 #####################################
 
 Para hacer paginas Web Responsive Desing solo se ha de tener presente unos
-pequeños calculos.
+pequeños cálculos.
 
-Aqui me anoto algunas reglas basicas a tener en cuenta.
+Aquí me anoto algunas reglas básicas a tener en cuenta.
 
 En la regla del body en css, poner el font-size: 16px
 
@@ -16,10 +16,10 @@ se quiere pasar de una anchura, especificarlo con max-width.
 
 En cuanto tamaño, no ponerlo en el body por si acaso, para mas adelante
 
-Tomar como referencia ``960px`` al hacer la division en contenidos hijos de #page
+Tomar como referencia ``960px`` al hacer la división en contenidos hijos de #page
 aunque sea un %, contar siempre como si fueran 960px
 
-Los calculos para los ems:
+Los cálculos para los ems:
 
 .. code-block:: none
 
@@ -34,7 +34,7 @@ Para poner un ``h1`` que ahora esta con ``16px`` (con resset de Eric Meyer) en
 
 Serian 1.5em
 
-Los calculos para los % seria:
+Los cálculos para los % seria:
 
 .. code-block:: none
 
@@ -67,7 +67,7 @@ Omito en la suma el relleno, por eso 178px
     margin: 1.0416667%;
     padding: 1.0416667%;
 
-Para cajas con ems en referencia a la tipografia
+Para cajas con ems en referencia a la tipografía
 
 Ejemplo:
 
@@ -78,6 +78,4 @@ Ejemplo:
     400 / 16 = 25
 
 25ems seria una caja de 400px, pero si se aumenta a 18 en un futuro
-la caja pasaria a ser de 448px, tener cuidado con esto.
-
-
+la caja pasaría a ser de 448px, tener cuidado con esto.

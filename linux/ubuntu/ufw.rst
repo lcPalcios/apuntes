@@ -11,7 +11,7 @@ Fuentes
 
 -----------
 
-Estos son comandos muy basicos, para mas info en Fuentes
+Estos son comandos muy básicos, para mas info en Fuentes
 
 Habiliar
 
@@ -45,7 +45,7 @@ Para eliminar una regla
     sudo ufw delete allow 22
     sudo ufw delete allow proto tcp from 192.168.1.0/24 to any port 22
 
-Es insertar lo mismo pero con delete despues de 'sudo ufw delete (comando que se añadio)'
+Es insertar lo mismo pero con delete después de 'sudo ufw delete (comando que se añadió)'
 
 .. code-block:: bash
 

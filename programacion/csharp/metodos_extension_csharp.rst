@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-metodos_extension_csharp:
 
 #######################
-Metodos de Extension C#
+Métodos de Extensión C#
 #######################
 
 Fuentes
@@ -28,7 +28,7 @@ Cita de MSDN
 Ejemplo simple
 **************
 
-Los metodos de extension deven estar en una clase ``static`` y el metodo tambien
+Los métodos de extensión deben estar en una clase ``static`` y el método también
 ha de ser ``static``.
 
 .. code-block:: c#
@@ -47,12 +47,12 @@ ha de ser ``static``.
         }
     }
 
-El primer parametro ``UcFirst(this string str)`` con ``this`` le decimos
-a que hace referencia, en este caso es un tipo ``string``, pero podria
+El primer parámetro ``UcFirst(this string str)`` con ``this`` le decimos
+a que hace referencia, en este caso es un tipo ``string``, pero podría
 ser cualquier tipo.
 
-Despues del pirmer parametro, se pueden poner tantos como se quiera,
-lo que al llamar al metodo, el "primer" argumento se omite.
+Después del primer parámetro, se pueden poner tantos como se quiera,
+lo que al llamar al método, el "primer" argumento se omite.
 
 .. code-block:: c#
 
@@ -60,5 +60,5 @@ lo que al llamar al metodo, el "primer" argumento se omite.
 
     Console.WriteLine(nombre.UcFirst()); // Salvador
 
-Al ser una extension de ``string`` al ``nombre.MyExtension()`` es como si
-el metodo fuera parte del string.
+Al ser una extensión de ``string`` al ``nombre.MyExtension()`` es como si
+el método fuera parte del string.

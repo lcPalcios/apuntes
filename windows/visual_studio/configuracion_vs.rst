@@ -1,12 +1,12 @@
 .. _reference--windows-visual_studio-configuracion_vs:
 
 ###########################
-Configuracion Visual Studio
+Configuración Visual Studio
 ###########################
 
 Configruacion de Visual Studio 2013
 
-Si se quiere restablecer la configuracion por cmd (no lo he probado)
+Si se quiere restablecer la configuración por cmd (no lo he probado)
 
 .. code-block:: bash
 

@@ -1,7 +1,7 @@
 .. _reference-linux-ubuntu-crear_certificado_ssl:
 
 ####################
-Crear cerificado SSL
+Crear certificado SSL
 ####################
 
 Pongo el nombre de ns1 para el servidor principal, cambiar si es otro servidor

@@ -11,7 +11,7 @@ Fuentes
 
 ---------
 
-Muy utiles para comprobar un caracter dado.
+Muy útiles para comprobar un carácter dado.
 
 =========================   =============================================================
 char.IsDigit(ch)            returns true if the character is a digit (0 to 9)

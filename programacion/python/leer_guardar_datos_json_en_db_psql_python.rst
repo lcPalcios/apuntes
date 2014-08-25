@@ -6,7 +6,7 @@ Leer y guardar datos json en la db
 
 Leer y guardar datos JSON en una base de datos con psycopg2.
 
-El ejemplo es muy simple, pero para una rapida referencia, lo guardo.
+El ejemplo es muy simple, pero para una rápida referencia, lo guardo.
 
 .. code-block:: python
 

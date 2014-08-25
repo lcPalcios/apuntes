@@ -1,7 +1,7 @@
 .. _reference-linux-mariadb-instalacion_mariadb:
 
 ###################
-Instalacion MariaDB
+Instalación MariaDB
 ###################
 
 
@@ -9,8 +9,8 @@ Instalacion MariaDB
     Cuidado con las versiones, la 10+, no tiene la misma compatibilidad que
     las 5.x.
 
-En fedora 20+, MySQL Workbench no esta en los repositorios, tampoco he probado Workbench
-con MariaDB 10+ en ningun sistema.
+En Fedora 20+, MySQL Workbench no esta en los repositorios, tampoco he probado Workbench
+con MariaDB 10+ en ningún sistema.
 
 Fedora
 ******
@@ -29,7 +29,7 @@ Fedora
 Ubuntu
 ******
 
-En ubuntu, hay que instalarlo con los repos de MariaDB:
+En Ubuntu, hay que instalarlo con los repos de MariaDB:
 
 * https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs
 

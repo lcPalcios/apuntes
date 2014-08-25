@@ -10,7 +10,7 @@ Un campo es el equivalente de una propiedad en PHP.
 
     private string nombre;
 
-Una propiedad es un setters/getter con posible logica sobre un campo.
+Una propiedad es un setters/getter con posible lógica sobre un campo.
 
 .. code-block:: c#
 
@@ -31,7 +31,7 @@ Una propiedad es un setters/getter con posible logica sobre un campo.
     }
 
 A groso modo, se puede decir que un campo(field) son como las propiedades en PHP
-y las propiedades son los metodos accesores en PHP.
+y las propiedades son los métodos accesores en PHP.
 
-Internamente cuando lo convierte a ¿``CIL``?, crea metodos accesores como en PHP, es un
+Internamente cuando lo convierte a ¿``CIL``?, crea métodos accesores como en PHP, es un
 atajo para el desarrollador.

@@ -14,7 +14,7 @@ Login usuario postgres:
 
     $ sudo su - postgres
 
-Creacion de un usuario:
+Creación de un usuario:
 
 .. code-block:: bash
 

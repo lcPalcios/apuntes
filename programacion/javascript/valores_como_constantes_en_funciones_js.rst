@@ -5,9 +5,9 @@ Valores como constantes en funciones
 ####################################
 
 
-Para crear un valor constante en una funcion, una manera simple seria
-crear una variable fuera de la funcion (una variable global) y despues
-dentro de la function cambiar el valor de dicha variable global.
+Para crear un valor constante en una función, una manera simple seria
+crear una variable fuera de la función (una variable global) y después
+dentro de la funcionan cambiar el valor de dicha variable global.
 
 .. code-block:: javascript
 
@@ -23,13 +23,13 @@ dentro de la function cambiar el valor de dicha variable global.
     aumentar(); // 3
 
 Una forma mas interesante seria de la siguiente manera.
-Como las funciones son un tipo de objeto, crear una propiedad de funcion
-y luego dentro de la funcion incrementar el valor.
+Como las funciones son un tipo de objeto, crear una propiedad de función
+y luego dentro de la función incrementar el valor.
 
 .. code-block:: javascript
 
     /* Opcion 2 */
-    // aumentar.num = 0; // Es posible crearlo antes de la definicion de la function
+    // aumentar.num = 0; // Es posible crearlo antes de la definición de la funcionan
     function aumentar() {
         aumentar.num = (aumentar.num === undefined) ? 1 : ++aumentar.num;
 

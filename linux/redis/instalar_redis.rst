@@ -14,13 +14,8 @@ Instalar Redis
 
     sudo apt-get install redis-server
 
-Backup del archivo de configuracion
+Backup del archivo de configuración
 
 .. code-block:: bash
 
     cp /etc/redis/redis.conf /etc/redis/redis.conf.default
-
-
-
-
-

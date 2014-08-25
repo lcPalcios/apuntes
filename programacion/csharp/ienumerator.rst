@@ -4,7 +4,7 @@
 IEnumerator
 ###########
 
-Pequeño ejemplo que implementa IEnumerator con genericos
+Pequeño ejemplo que implementa IEnumerator con genéricos.
 
 .. code-block:: c#
 

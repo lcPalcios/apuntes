@@ -17,8 +17,8 @@ Cuando se usa en los controladores una propiedad tipo:
 
 Hay que asegurarse de que quedan cerradas al finalizar las tareas.
 
-Para asegurarse de que se cierra, en el controllador se escribe un metodo
-override Dispose, para asegurarnos de que siempre quedara cerrala la conexion
+Para asegurarse de que se cierra, en el controlador se escribe un método
+override Dispose, para asegurarnos de que siempre quedara cerrada la conexión
 de la base de datos.
 
 .. code-block:: c#

@@ -24,7 +24,7 @@ y que 'undefined' es un string. typeof siempre devuelve un string!
     typeof var2; // 'undefined'
 
 Pero por lo menos, aunque se aya inicializado pero no asignado un valor,
-se puede volver al crear y asignar un valor si es nacesario sabiendo
+se puede volver al crear y asignar un valor si es necesario sabiendo
 que no modificaremos un valor existente.
 
 .. code-block:: javascript

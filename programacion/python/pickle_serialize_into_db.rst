@@ -17,7 +17,7 @@ Base de datos para el ejemplo
       CONSTRAINT pk_id_datas PRIMARY KEY (id)
     )
 
-Ejemplor serializando un unico objeto
+Ejemplo serializando un único objeto
 
 .. code-block:: python
 

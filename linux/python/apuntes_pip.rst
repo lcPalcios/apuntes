@@ -53,7 +53,7 @@ Python y MySQL
 .. warning::
     | **Por hacer**
     | Ver `Conector 1 <http://github.com/davispuh/MySQL-for-Python-3/>`_
-    | Ver `Conecttor 2 <http://dev.mysql.com/downloads/connector/python/#downloads>`_
+    | Ver `Conector 2 <http://dev.mysql.com/downloads/connector/python/#downloads>`_
 
 lxml, Manejo de archivos XML
 ============================

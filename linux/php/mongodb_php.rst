@@ -5,7 +5,7 @@ PHP MongoDB
 ###########
 
 .. warning::
-    Poner enlaces de instalacion a mongodb
+    Poner enlaces de instalación a mongodb
 
 Fedora
 ******

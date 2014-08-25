@@ -11,4 +11,4 @@ Fuentes
 
 ---------------------
 
-Boton derecho en ``Volumen`` del menu y seleccionar ``Select master chanel``
+Boton derecho en ``Volumen`` del menú y seleccionar ``Select master chanel``

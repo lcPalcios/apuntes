@@ -27,7 +27,7 @@ Fedora
 
 **Por hacer**
 
-Configuracion Red
+Configuración Red
 *****************
 
 Ubuntu

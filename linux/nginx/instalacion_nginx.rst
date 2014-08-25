@@ -1,7 +1,7 @@
 .. _reference-linux-nginx-instalacion_nginx:
 
 #################
-Instalacion Nginx
+Instalación Nginx
 #################
 
 Ubuntu
@@ -25,7 +25,7 @@ añadir regla en ufw
 Fedora
 ******
 
-Instalacion
+Instalación
 
 .. code-block:: bash
 
@@ -34,7 +34,7 @@ Instalacion
 Centos
 ******
 
-    En la wiki dice lo siguiente:
+    En la Wiki dice lo siguiente:
 
 .. code-block:: bash
 

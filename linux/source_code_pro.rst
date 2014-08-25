@@ -13,7 +13,7 @@ Source Code Pro
 
 Descargar de sourceforge ``SourceCodePro_WebFontsOnly-(version)``.
 
-Despues de descomprimir crear carpeta ~/.fonts
+Después de descomprimir crear carpeta ~/.fonts
 
 .. code-block:: bash
 

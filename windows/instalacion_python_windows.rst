@@ -1,7 +1,7 @@
 .. _reference--windows-instalacion_python_windows:
 
 #############################
-Instalacion Python en Windows
+Instalación Python en Windows
 #############################
 
 Fuentes

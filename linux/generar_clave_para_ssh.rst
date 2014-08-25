@@ -8,7 +8,7 @@ Generar clave para SSH
 
     ssh-keygen -t rsa
 
-La carpeta ~/.ssh deve tener permisos 700 y los archivos de dentro de ~/.ssh han de ser de 600
+La carpeta ~/.ssh debe tener permisos 700 y los archivos de dentro de ~/.ssh han de ser de 600
 
 .. code-block:: bash
 

@@ -5,11 +5,11 @@ Redireccionar dentro de un controlador
 ######################################
 
 Hay dos maneras para hacerlo, las dos el metodo debe devolver un ``RedirectToRouteResult``,
-y dentro del metodo deve usar ``RedirectToRoute`` o ``RedirectToAction``.
+y dentro del método debe usar ``RedirectToRoute`` o ``RedirectToAction``.
 
 Ambos tienen el mismo efecto y coinciden en sus argumentos.
 
-Ejemplo basico de RedirectToRoute
+Ejemplo básico de RedirectToRoute
 
 .. code-block:: c#
 
@@ -20,8 +20,8 @@ Ejemplo basico de RedirectToRoute
                 user = "snicoper", password = "123456" });
     }
 
-Ejemplo basico de ``RedirectToAction``, ``user`` y ``password`` son
-parametros para la accion.
+Ejemplo básico de ``RedirectToAction``, ``user`` y ``password`` son
+parámetros para la acción.
 
 .. code-block:: c#
 
@@ -63,6 +63,6 @@ O tambien devolviendo un ``RedirectResult``
     que cualquier cambio en el esquema de enrutamiento significa que hay que
     ir a través del código y actualizar las direcciones URL.
 
-    En cambio con ``Redirect``, si el router cambia, se tendra que
+    En cambio con ``Redirect``, si el router cambia, se tendrá que
     buscar/modificar las rutas.
 

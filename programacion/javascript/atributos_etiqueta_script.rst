@@ -22,7 +22,7 @@ La etiqueta <script> tiene seis atributos:
 - defer:
 
     Opcional. Es parecido a async, lo que hace que aunque este en la cabecera
-    del html lo trata como si estubiera al final del documento.
+    del html lo trata como si estuviera al final del documento.
     En caso de necesitarlo, usar async.
 
 - languaje:

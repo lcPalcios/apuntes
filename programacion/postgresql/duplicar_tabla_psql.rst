@@ -24,4 +24,4 @@ datos existentes, se puede poner un ``WHERE`` en la consulta.
     AS SELECT 'tabla_a_copiar'
     WHERE 1 = 2;
 
-Como 1 no es igual a 2, no se insertara ningun dato de la 1º tabla.
+Como 1 no es igual a 2, no se insertara ningún dato de la 1º tabla.

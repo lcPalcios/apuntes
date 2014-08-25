@@ -8,7 +8,7 @@ GNOME
 *****
 
 .. warning::
-    Posiblemente desactualizado
+    Posiblemente des-actualizado
 
 .. code-block:: bash
 
@@ -51,4 +51,4 @@ Iniciar por primera vez
     ~/.dropbox-dist/dropboxd &
 
 .. note::
-    No recuerdo si habia que ponerlo en inicio de session o no
+    No recuerdo si había que ponerlo en inicio de sesión o no

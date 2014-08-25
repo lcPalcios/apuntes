@@ -11,8 +11,8 @@ Fuentes
 
 ----------
 
-Cuado renderizamos de una action a una vista 'return View()', el orden de busqueda
-(o las busquedas), en un action public ActionResult Prueba() {}:
+Cuando renderizamos de una action a una vista 'return View()', el orden de búsqueda
+(o las búsquedas), en un action public ActionResult Prueba() {}:
 
 .. code-block:: none
 
@@ -59,12 +59,12 @@ Ahora el resultado es el siguiente:
     ~/Views/Shared/Prueba.vbhtml
 
 
-Otra menera de hacerlo
+Otra manera de hacerlo
 **********************
 
-Personalizando el motor de razor para las busquedas de archivo cshtml
+Personalizando el motor de razor para las búsquedas de archivo cshtml
 
-Crear carpeta ``Infrastructure`` en la raiz
+Crear carpeta ``Infrastructure`` en la raíz
 
 Crear clae ``CustomLocationViewEngine.cs``
 
@@ -87,7 +87,7 @@ Crear clae ``CustomLocationViewEngine.cs``
         }
     }
 
-Modificar Metodo Application_Start en ``Global.asax.cs``
+Modificar Método Application_Start en ``Global.asax.cs``
 
 .. code-block:: c#
 

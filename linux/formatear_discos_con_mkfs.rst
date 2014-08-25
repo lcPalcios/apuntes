@@ -9,7 +9,7 @@ Formatear discos con mkfs
     asegurarse de poner bien las particiones con las que
     se quiere operar.
 
-Desmontar la particion
+Desmontar la partición
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ btrfs
 
     mkfs.btrfs -f /dev/sdb?
 
-Poner label en una particion
+Poner label en una partición
 
 .. code-block:: bash
 

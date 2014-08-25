@@ -15,7 +15,7 @@ Por ejemplo
     byte b = 210;
     byte result = (byte)(a + b);
 
-El comportamiento por defecto, depende de la configuracion de compilacion, pero
+El comportamiento por defecto, depende de la configuración de compilación, pero
 creo que es ``unchecked``.
 
 .. code-block:: c#
@@ -27,10 +27,10 @@ creo que es ``unchecked``.
         byte result = (byte)(a + b);
     }
 
-El ejemplo anterior, dara como resultado 9, ya que un byte solo puede contener un
+El ejemplo anterior, dará como resultado 9, ya que un byte solo puede contener un
 entero entre 0 y 255.
 
-La suma es de 210 + 55 = 265 (supera en 10 al maximo), por lo que que cuando llega a
+La suma es de 210 + 55 = 265 (supera en 10 al máximo), por lo que que cuando llega a
 255 el siguiente numero es 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 que son los 10 extras.
 
 Con checked
@@ -46,4 +46,4 @@ Con checked
 
 Lanzara una ``System.OverflowException``
 
-Conclusion, si es importante que no sobrepase el maximo de un tipo, usar ``checked``
+Conclusión, si es importante que no sobrepase el máximo de un tipo, usar ``checked``

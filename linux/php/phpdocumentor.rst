@@ -35,4 +35,4 @@ Instalar :ref:`reference-linux-php-composer`
 
     composer require --dev phpdocumentor/phpdocumentor dev-master
 
-Despues se podra ejecutar phpDocumentor directamente desde el directorio ``vendor``:
+Después se podrá ejecutar phpDocumentor directamente desde el directorio ``vendor``:

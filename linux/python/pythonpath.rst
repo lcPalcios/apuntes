@@ -17,5 +17,5 @@ Añadir
     PYTHONPATH="/home/snicoper/.virtualenvs/py3venv/lib/python3.4/site-packages/":"${PYTHONPATH}"
     export PYTHONPATH
 
-Donde ``/home/snicoper/.virtualenvs/py3venv/lib/python3.4/site-packages/`` sustiruirlo
+Donde ``/home/snicoper/.virtualenvs/py3venv/lib/python3.4/site-packages/`` sustituirlo
 por un directorio.

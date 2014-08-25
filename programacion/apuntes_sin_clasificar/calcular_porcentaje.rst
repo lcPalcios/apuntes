@@ -15,7 +15,7 @@ Incrementar un %
 
 Incrementar un % a una cantidad.
 
-+ Cantidad initial -> 200
++ Cantidad inicial -> 200
 + % a incrementar -> 1.10
 
 .. code-block:: bash
@@ -23,7 +23,7 @@ Incrementar un % a una cantidad.
     200 * 1.10 = 220
 
 Por el ejemplo, si el porcentaje que se quiere averiguar es 8%, 8 es un integer
-y para poderlo pasar a %, se deve hacer la conversion.
+y para poderlo pasar a %, se debe hacer la conversión.
 
 Obtener que % se ha aplicado a una cantidad.
 ********************************************

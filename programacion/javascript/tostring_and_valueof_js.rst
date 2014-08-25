@@ -4,7 +4,7 @@
 toString y valueOf
 ##################
 
-Tanto toString como valueOf se puede usar para otener datos rapidamente de un
+Tanto toString como valueOf se puede usar para obtener datos rápidamente de un
 objeto.
 
 valueOf tiene precedencia sobre toString.
@@ -12,7 +12,7 @@ valueOf tiene precedencia sobre toString.
 Cuando se quiere convertir un objeto en un dato primitivo, javascript intenta
 por medio de valueOf obtener un datos primitivo.
 En caso de no existir, comprobara si toString existe y en caso de que tampoco
-exista, devolvera [object object]
+exista, devolverá [object object]
 
 Por ejemplo
 

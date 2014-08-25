@@ -13,15 +13,15 @@ Fuentes
 
 ---------
 
-Un finalizador de clase, es una metodo que se ejecuta cuando el objeto
+Un finalizador de clase, es una método que se ejecuta cuando el objeto
 es destruido, pero no por el usuario, si no por el GC.
 
 En C# no existe el "destructor de clase".
 
 .. warning::
-    Ver IDisposable(abajo) para hecer este tidpo de cosas
+    Ver IDisposable(abajo) para hacer este tipo de cosas
 
-Mi problema fue con un codigo como el siguiente
+Mi problema fue con un código como el siguiente
 
 .. code-block:: c#
 
@@ -56,15 +56,15 @@ Resultado
     3
     2
 
-En teoria, o segun lo hace PHP, cuando se destruye un objeto
+En teoría, o según lo hace PHP, cuando se destruye un objeto
 (obj = null), o cuando finaliza por que ya no se referencia mas,
-el metodo __destruct() es llamado.
+el método __destruct() es llamado.
 
 En C#, que se llama finalilzador, no hace lo mismo, al menos
-no cuando se destruye de manera explicita asignandole 'null'.
+no cuando se destruye de manera explicita asignándole 'null'.
 
-Encontre en los comentarios un codigo, y al menos me hizo lo
-que esperaba que hiciera, que lanzala el finalizador en cuanto
+Encontré en los comentarios un código, y al menos me hizo lo
+que esperaba que hiciera, que lanzara el finalizador en cuanto
 lo destruyera.
 
 .. code-block:: c#
@@ -87,5 +87,5 @@ Interfaz IDisposable (Recomendado)
 **********************************
 
 Otra manera, seria que la clase implemente la interfaz ``IDisposable``
-con un unico miembro ``Dispose``, dentro del metodo se podrian
+con un único miembro ``Dispose``, dentro del método se podrían
 añadir la limpieza necesaria de la clase.

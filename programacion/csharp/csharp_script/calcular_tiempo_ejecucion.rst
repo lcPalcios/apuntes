@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-csharp_script-calcular_tiempo_ejecucion:
 
 ###########################################
-Calcular Tiempo de Ejecucion de un Programa
+Calcular Tiempo de Ejecución de un Programa
 ###########################################
 
 .. code-block:: c#
@@ -12,7 +12,7 @@ Calcular Tiempo de Ejecucion de un Programa
     Stopwatch sw = new Stopwatch();
     sw.Start();
 
-    // Tambien se puede ininializar con un metodo static Stopwatch sw = Stopwatch.StartNew();
+    // También se puede inicializar con un método static Stopwatch sw = Stopwatch.StartNew();
 
     int contador = 0;
     for (int i = 0; i < 27; i++)

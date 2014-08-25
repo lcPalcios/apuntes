@@ -1,7 +1,7 @@
 .. _reference-programacion-csharp-csharp_script-lectura_escritura_archivos_basico:
 
 #################################
-Lectura Escritura archivos Basico
+Lectura Escritura archivos Básico
 #################################
 
 Fuentes
@@ -41,11 +41,11 @@ http://msdn.microsoft.com/es-es/library/system.io.filemode%28v=vs.110%29.aspx
 
 Con FileAccess, decimos el acceso al archivo, ejemplo, Read, ReadWrite o Write.
 
-Pienso que es la mejor manera de abrir un recuerso, por que podemos decirle el
+Pienso que es la mejor manera de abrir un recurso, por que podemos decirle el
 modo y acceso al recurso.
 
 Ahora con StreamWriter, añadimos los datos.
-Cuando se usan varior recursor, es posible poner uno seguido del otro, como en el
+Cuando se usan varios recursos, es posible poner uno seguido del otro, como en el
 siguiente ejemplo.
 El compilador generará los bloques try-finally anidados apropiados.
 
@@ -62,7 +62,7 @@ El compilador generará los bloques try-finally anidados apropiados.
 Leer de un archivo
 ******************
 
-Tambien es posible abrirlo con FileStream, pero como solo se trata de leerlo, tambien
+También es posible abrirlo con FileStream, pero como solo se trata de leerlo, tambien
 lo puedo hacer con StreamReader.
 
 Primero, seria comprobar si el archivo existe y en caso de existir, abrirlo

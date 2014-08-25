@@ -1,7 +1,7 @@
 .. _reference-linux-nginx-nginx_gunicorn_django:
 
 ####################################
-Instalacion Nginx, Gunicorn y Django
+Instalación Nginx, Gunicorn y Django
 ####################################
 
 **Fuentes**

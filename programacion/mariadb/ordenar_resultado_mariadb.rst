@@ -4,7 +4,7 @@
 Ordenar Resultado
 #################
 
-Para la ordenacion de resultados se hace con ``ORDER BY nombre_col ASC|DESC``
+Para la ordenación de resultados se hace con ``ORDER BY nombre_col ASC|DESC``
 
 Para ordenar varios grupos
 

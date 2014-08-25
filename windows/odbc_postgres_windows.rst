@@ -8,25 +8,25 @@ Desde el instalador de Postgres
 *******************************
 
 Una vez instalado Postgresql, ir a inicio y buscar "Application Stack Builder".
-Despues de elegir el PostgreSQL instalado, sale un menu, buscar en "Database Driver" y
+Después de elegir el PostgreSQL instalado, sale un menú, buscar en "Database Driver" y
 seleccionar pgsqlODBC, elegir la de 32.
 
 El primer path es para decirle donde lo descarga, se puede dejar que nos propone que
-es la carpeta de usuario. Despues pregunta por la carpeta de instalacion
+es la carpeta de usuario. Después pregunta por la carpeta de instalación
 de postgresql, pongo en C:\Postgresql (donde instalo postgres)
 
 Siguiente, Siguiente, Siguiente
 
-Descargandolo a parte
+Descargándolo a parte
 *********************
 
 * http://www.postgresql.org/ftp/odbc/versions/msi/
 
-Descarlar la version de x86 e instalar.
+Descargar la versión de x86 e instalar.
 
 Instalarla en C:\Postgresql\psqlODBCx86\
 
-Independientemente del tipo de instalacion
+Independientemente del tipo de instalación
 ******************************************
 
 Ir a Control Panel\System and Security\Administrative Tools.
@@ -37,4 +37,4 @@ En **User DNS** Add y elegir Postgresql Unicode.
 
 Rellenar los campos con los datos del usuario postgres.
 
-Supongo que para la version de x64, se debera hacer lo mismo pero con un binario de x64.
+Supongo que para la versión de x64, se deberá hacer lo mismo pero con un binario de x64.

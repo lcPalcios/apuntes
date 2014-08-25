@@ -15,7 +15,7 @@ Postfix
 =======
 
 .. warning::
-    Durante la instalacion usar la opcion de no configurar (la 1ª)
+    Durante la instalación usar la opcion de no configurar (la 1ª)
 
 .. code-block:: bash
 

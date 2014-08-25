@@ -1,17 +1,17 @@
 .. _reference-linux-ruby-instalacion_y_primeros_pasos:
 
 ############################
-Instalacion y Primeros Pasos
+Instalación y Primeros Pasos
 ############################
 
-Instalacion
+Instalación
 ***********
 
 Ubuntu
 ======
 
-Dependencias para Ruby, si se omiten, cuando se inetale Ruby desde
-rvm, pedira instalarlas.
+Dependencias para Ruby, si se omiten, cuando se instale Ruby desde
+rvm, pedirá instalarlas.
 
 Prerrequisitos
 ^^^^^^^^^^^^^^
@@ -26,14 +26,14 @@ Prerrequisitos
 rvm
 ^^^^
 
-Es algo asi, como virtualenv?
+Es algo así, como Virtualenv?
 
 .. code-block:: bash
 
     \curl -sSL https://get.rvm.io | bash -s stable
 
 .. warning::
-    Esta parte, no se si lo hago bien del todo, buscar mas info de instalacion.
+    Esta parte, no se si lo hago bien del todo, buscar mas info de instalación.
 
 Editar .vimrc
 
@@ -76,5 +76,5 @@ Fedora
 ======
 
 .. hint::
-    Supongo que sera igual que en **Ubuntu**, lo unico son los
+    Supongo que sera igual que en **Ubuntu**, lo único son los
     Prerrequisitos, ponerlos si alguna vez lo hago.

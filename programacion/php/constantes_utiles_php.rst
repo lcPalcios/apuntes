@@ -6,11 +6,11 @@ Constantes Utiles PHP
 
 PATH_SEPARATOR
     En windows es ``;`` y en unix ``:``
-    util por ejemplo para un ``set_include_path``
+    Útil por ejemplo para un ``set_include_path``
 
 DIRECTORY_SEPARATOR
     En windows es ``\`` y en unix ``/``
-    Util para rutas
+    Útil para rutas
 
 PHP_EOL
     End of line, lo mismo que ``"\n"``
@@ -19,4 +19,4 @@ PHP_OS
     Sistema donde se encuentra ejecutando php
 
 PHP_VERSION
-    Version de PHP
+    Versión de PHP

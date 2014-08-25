@@ -7,7 +7,7 @@ Apply y Call Javascript
 Los metodos apply y call, son metodos que tienen todas las funciones de
 javascript.
 
-Estos metodos nos permiten llamar a una function como si fuese el metodo de
+Estos métodos nos permiten llamar a una function como si fuese el método de
 otro objeto.
 
 .. code-block:: javascript
