@@ -5,7 +5,7 @@ Crear repositorio centralizado
 ##############################
 
 .. warning::
-    Quizas este desactualizado
+    Muchos de estos apuntes son viejos y pueden estar des actualizados.
 
 **Fuentes**
 
@@ -19,10 +19,10 @@ Crear repositorio centralizado
 Opcion 1
 ********
 
-Esta opcion es crear un repositorio en ``/opt``, despues creamos un usuario
-(o varios) y le damos permisos con setfacl al/los usuarios creados en el repo.
+Esta opción es crear un repositorio en ``/opt``, después creamos un usuario
+(o varios) y le damos permisos con ``setfacl`` al/los usuarios creados en el repo.
 
-Todos los usuarios asignados tendran los mismos permisos, util para poca gente
+Todos los usuarios asignados tendrán los mismos permisos, útil para poca gente
 y de confianza.
 
 Crear en el servidor remoto una carpeta para el proyecto.
@@ -44,14 +44,14 @@ Dar permisos al los usuarios.
     sudo setfacl -R -m u:user1:rwx -m u:userX:rwx /opt/git/example.git
     sudo setfacl -dR -m u:user1:rwx -m u:userX:rwx /opt/git/example.git
 
-Si el repositorio local ya existe, y/o el remoto esta vacio
+Si el repositorio local ya existe, y/o el remoto esta vacio.
 
 .. code-block:: bash
 
     git remote add origin user1@ip:/opt/git/example.git
     git push origin master
 
-Si el repositorio tiene contenido, simplemente un clone
+Si el repositorio tiene contenido, simplemente un clone.
 
 .. code-block:: bash
 
@@ -77,7 +77,7 @@ Crear en el servidor remoto una carpeta, loguearse como git.
     git init --bare
 
 Ahora los clientes remotos que quieran tener acceso de lectura/escritura
-deberan proporcionar una clave rsa.
+deberán proporcionar una clave rsa.
 
 .. code-block:: bash
 
@@ -105,14 +105,14 @@ Opcion 3 Gitosis
 ****************
 
 .. warning::
-    Si algun dia lo hago, ordenarlo y presentarlo mejor.
+    Si algún día lo hago, ordenarlo y presentarlo mejor.
 
 | `Gitosis en git scm book <http://git-scm.com/book/es/Git-en-un-servidor-Gitosis/>`_
 | `Gitosis en github <https://github.com/tv42/gitosis/>`_
 |
 
-Otra manera tambien es crear un server donde almacena todos los repositorios
-de una manera muy comoda.
+Otra manera también es crear un server donde almacena todos los repositorios
+de una manera muy cómoda.
 ``Probado en Centos 6.x``
 
 **Fedora/Centos**
@@ -127,16 +127,16 @@ de una manera muy comoda.
 
     sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
 
-Descargar el paquete gitosis
+Descargar el paquete gitosis.
 
 .. warning::
-    La instalacion se ha de hacer clonando repositorio en github, Nota para hacer para
-    la proxima vez.
+    La instalación se ha de hacer clonando repositorio en github, Nota para hacer para
+    la próxima vez.
 
-Devemos tener una clave rsa o dsa publica, por ejemplo en /tmp
+Debemos tener una clave rsa o dsa publica, por ejemplo en /tmp.
 
 .. note::
-    No se si tengo que tener al usuario git en visudo
+    No se si tengo que tener al usuario git en visudo.
 
 .. code-block:: bash
 
@@ -148,7 +148,7 @@ Desde el pc local (cliente)
 
     git clone git@ip_server:gitosis-admin.git
 
-Crear nuevo repositorio, desde el pc local
+Crear nuevo repositorio, desde el PC local
 
 .. code-block:: bash
 
@@ -166,7 +166,7 @@ Crear nuevo repositorio, desde el pc local
     git commit -am 'Dar permisos de escritura en project_example a snicoper'
     git push origin master
 
-Ahora desde otro directorio crear una carpeta e inicializar un proyecto
+Ahora desde otro directorio crear una carpeta e inicializar un proyecto.
 
 .. code-block:: bash
 
@@ -182,7 +182,7 @@ Listo!!!
 
 Añadir nuevos usuarios a proyectos
 Para añadir un nuevo usuario con permisos de escritura, no es necesario
-hacerlo desde el PC servidor, lo podemos hacer desde el pc de snicoper@workspace.local.
+hacerlo desde el PC servidor, lo podemos hacer desde el PC de snicoper@workspace.local.
 
 Necesitamos la key rsa publica del otro usuario id_rsa.pub
 
@@ -190,7 +190,7 @@ Necesitamos la key rsa publica del otro usuario id_rsa.pub
 
     cd gitosis-admin
 
-Copiar y renombrar la clave rsa en gitosis-admin/keydir
+Copiar y renombrar la clave rsa en gitosis-admin/keydir.
 
 .. code-block:: bash
 
@@ -207,7 +207,7 @@ pertinente:
     memebers = snicoper@workspace.local ([otro_nombre@nombre_maquina] | [otro_nombre(el del archivo .pub)])
     writable = project_example
 
-Ahora el otro cliente ya podra clonar y despues pushes
+Ahora el otro cliente ya podrá clonar y después pushes.
 
 .. code-block:: bash
 
@@ -217,7 +217,7 @@ Opcion 4 Gitolite
 *****************
 
 .. warning::
-    Escribir documentacion la proxima vez que la haga
+    Escribir documentación la próxima vez que la haga.
 
 `Documentacion Ubuntu <https://help.ubuntu.com/14.04/serverguide/git.html>`_
 
@@ -280,7 +280,7 @@ Opcion 4 Gitolite
     $ git push
 
     Ahora gitolite en el servidor se encarga de añadir las claves rsa en authorized_keys
-    y crea un repositorio vacio llamado example.dev
+    y crea un repositorio vacio llamado example.dev.
 
     Para usar localmente el repo
     $ cd ~/carpeta

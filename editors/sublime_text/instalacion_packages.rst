@@ -55,7 +55,7 @@ Requiere algunos paquetes de :ref:`reference-linux-instalacion_nodejs`
 Otros
 *****
 
-Me dejo aqui algunos addons para recordar el nombre.
+Me dejo aquí algunos addons para recordar el nombre.
 
 * Monokai extended
 * AllAutocomplete

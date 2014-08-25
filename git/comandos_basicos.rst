@@ -10,7 +10,7 @@ Links
 * http://www.maefloresta.com/portal/es/git.es
 
 .. note::
-    Es una recopilacion que voy encontrando, generalmente son cositas simples.
+    Es una recopilación que voy encontrando, generalmente son cosas simples.
 
 Comandos Basicos
 ****************
@@ -34,7 +34,7 @@ incluido en el próximo commit.
 
     git add nombre
 
-Añade todos los archivos para que sea incluido en el proximo commit.
+Añade todos los archivos para que sea incluido en el próximo commit.
 
 .. code-block:: none
 
@@ -53,7 +53,7 @@ Mover archivo o directorio a una nueva ruta.
     # -f : Sobre-escribe los cambios locales no guardados
     git mv nombre
 
-Imprime un reporte del estado actual del árbol de trabajo local
+Imprime un reporte del estado actual del árbol de trabajo local.
 
 .. code-block:: none
 

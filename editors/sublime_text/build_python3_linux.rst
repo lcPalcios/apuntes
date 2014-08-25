@@ -5,7 +5,7 @@ Build Python 3 en Linux
 #######################
 
 En Linux, tanto en Fedora como en Ubuntu se tiene instalado Python 2.x y 3.x,
-por fefecto al pulsar ``Ctrl+B`` ejecuta Python 2.x.
+por defecto al pulsar ``Ctrl+B`` ejecuta Python 2.x.
 
 Para cambiar este comportamiento, en el editor:
 
@@ -26,7 +26,7 @@ Ahora en ``Tools > Build System`` seleccionar ``Python3``
 Virtualenv
 **********
 
-Ejemplo de como ejecutarlo para un entorno virtual de python **virtualenv**
+Ejemplo de como ejecutarlo para un entorno virtual de Python **Virtualenv**
 
 .. code-block:: javascript
 

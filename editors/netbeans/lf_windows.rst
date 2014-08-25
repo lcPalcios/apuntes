@@ -7,7 +7,7 @@ LF Windows
 Poner final de linea LF en Netbeans
 ***********************************
 
-Editar como administrador
+Editar como administrador.
 
 .. code-block:: bash
 

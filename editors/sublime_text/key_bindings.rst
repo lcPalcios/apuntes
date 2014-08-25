@@ -8,7 +8,7 @@ Algunas combinaciones de teclas no me funciona por defecto, por lo que
 tengo configuradas una pocas.
 
 Algunas sin modificar si funcionan el Windows, pero para no tener 2
-diferentes, uso esta configuracion en ambos sistemas.
+diferentes, uso esta configuración en ambos sistemas.
 
 .. code-block:: javascript
 

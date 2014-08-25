@@ -31,7 +31,7 @@ Configuracion con Kdiff3
         keepBackup = false
         trustExitCode = false
 
-Configuracion con Meld
+Configuración con Meld
 **********************
 
 .. code-block:: bash

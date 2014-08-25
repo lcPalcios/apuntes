@@ -85,7 +85,7 @@ Forzar apagado
     virsh destroy Name
     virsh destroy Id
 
-Optener informacion sobre un Guest
+Optener información sobre un Guest
 ==================================
 
 .. code-block:: bash
@@ -94,7 +94,7 @@ Optener informacion sobre un Guest
     virsh dominfo Name
     virsh dominfo Id
 
-Obtener informacion sobre el nodo
+Obtener información sobre el nodo
 =================================
 
 .. code-block:: bash
@@ -104,7 +104,7 @@ Obtener informacion sobre el nodo
 Eliminar una maquina
 ====================
 
-Este lo hice a mano por que no me funciono
+Este lo hice a mano por que no me funciono.
 
 .. code-block:: bash
 

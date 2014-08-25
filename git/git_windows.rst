@@ -14,8 +14,8 @@ Añadir al path
 
 
 .. note::
-    Las configuracion con Cygwin y kdiff3 no me han funcionado, usar
-    el instalador de windows.
+    Las configuración con Cygwin y kdiff3 no me han funcionado, usar
+    el instalador de Windows.
 
 Gitconfig con kdiff3
 ====================

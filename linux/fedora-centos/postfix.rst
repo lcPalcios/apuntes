@@ -5,20 +5,20 @@ Postfix
 #######
 
 .. note::
-    Todo se hace con root excepto si se dice lo contrario
+    Todo se hace con root excepto si se dice lo contrario.
 
 -------------------
 
 Servidor postfix
 ****************
 
-Instalacion de postfix
+Instalación de postfix.
 
 .. code-block:: bash
 
     yum install -y postfix
 
-Editar archivo de configuracion
+Editar archivo de configuración.
 
 .. code-block:: bash
 

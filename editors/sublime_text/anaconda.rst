@@ -10,8 +10,8 @@ Anaconda
 
 ----
 
-La configuracion se pone en
-``Preferences -> Package Settings -> Anaconda -> Settings - User``
+La configuración se pone en
+``Preferences -> Package Settings -> Anaconda -> Settings - User``.
 
 .. code-block:: javascript
 

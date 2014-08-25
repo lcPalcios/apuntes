@@ -22,7 +22,7 @@ spf13-vim
 .. code-block:: bash
 
     " Guias de indentacion
-    Bundle 'Yggdroot/indentLine'
+    " Bundle 'Yggdroot/indentLine'
 
 .. code-block:: bash
 
@@ -34,10 +34,11 @@ spf13-vim
     set nospell
     set nofoldenable
     set nocursorline
+    colorscheme wombat256
 
     let g:indent_guides_enable_on_vim_startup = 0
 
-    " Cambiar cursor en modo edicion en Konsole
+    " Cambiar el cursor en Konsole
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
@@ -46,7 +47,7 @@ spf13-vim
     cd ~
     curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
-Para actualizar
+Para actualizar.
 
 .. code-block:: bash
 

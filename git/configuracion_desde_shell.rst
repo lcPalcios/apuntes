@@ -5,11 +5,11 @@ Configruacion de Git desde la linea de comandos
 ###############################################
 
 .. note::
-    Usar mejor Configuracion :ref:`reference-git-gitconfig_linux`, tiene configuraciones que
-    aqui no tengo puestas.
+    Usar mejor Configuración :ref:`reference-git-gitconfig_linux`, tiene configuraciones que
+    aquí no tengo puestas.
 
 
-Configuracion basica
+Configuración basica
 ====================
 
 .. code-block:: bash
@@ -39,7 +39,7 @@ Con este archivo, todos los repos ignoraran los patrones de este archivo.
 
     git config --global core.excludesfile ~/.gitignore_global
 
-Arhora hay que crear el archivo
+Ahora hay que crear el archivo.
 
 .. code-block:: bash
 

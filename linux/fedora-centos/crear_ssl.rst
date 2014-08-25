@@ -6,7 +6,7 @@ Crear SSL
 
 .. note::
     | Probado para postfix, httpd usa otro.
-    | Mirar de configurar para que use el mismso, si es posible.
+    | Mirar de configurar para que use el mismo, si es posible.
 
 .. code-block:: bash
 

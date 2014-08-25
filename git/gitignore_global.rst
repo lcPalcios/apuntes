@@ -4,7 +4,7 @@
 Gitignore Global
 ################
 
-Configuracion que voy poniendo aqui, es general para todos los casos mas comunes.
+Configuración que voy poniendo aquí, es general para todos los casos mas comunes.
 
 Crear archivo .gitignore_global
 

@@ -4,6 +4,9 @@
 Creación de un proyecto Django
 ##############################
 
+.. note::
+    Para esta practica uso Django 1.7rc3 y Python 3.4
+
 La creación de un proyecto en Django te permite generar la estructura de
 directorios que mas te guste/interese, etc.
 
@@ -469,7 +472,6 @@ Las ``apps`` se puede poner en ``src/`` o crear un directorio ``src/apps``, si s
     import sys
 
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
     sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 Crear app home
@@ -604,69 +606,69 @@ Resultado final de la estructura:
 .. code-block:: bash
 
     .
+    ├── .git
     ├── bin
     │   └── gunicorn.sh
     ├── cron
     ├── docs
     ├── logs
-    ├── README.md
     ├── requeriments
     │   ├── base.txt
     │   ├── development.txt
     │   └── production.txt
-    └── src
-        ├── apps
-        │   └── home
-        │       ├── admin.py
-        │       ├── __init__.py
-        │       ├── migrations
-        │       │   └── __init__.py
-        │       ├── models.py
-        │       ├── templates
-        │       │   └── home
-        │       │       └── index.html
-        │       ├── tests.py
-        │       ├── urls.py
-        │       └── views.py
-        ├── manage.py
-        ├── media
-        ├── settings
-        │   ├── development.py
-        │   ├── __init__.py
-        │   ├── production.py
-        │   ├── settings.py
-        │   ├── urls.py
-        │   └── wsgi.py
-        ├── static
-        │   ├── css
-        │   │   ├── bootstrap.css
-        │   │   ├── bootstrap.css.map
-        │   │   ├── bootstrap.min.css
-        │   │   ├── bootstrap-theme.css
-        │   │   ├── bootstrap-theme.css.map
-        │   │   ├── bootstrap-theme.min.css
-        │   │   ├── main.css
-        │   │   └── main.min.css
-        │   ├── fonts
-        │   │   ├── glyphicons-halflings-regular.eot
-        │   │   ├── glyphicons-halflings-regular.svg
-        │   │   ├── glyphicons-halflings-regular.ttf
-        │   │   └── glyphicons-halflings-regular.woff
-        │   ├── img
-        │   └── js
-        │       ├── bootstrap.js
-        │       ├── bootstrap.min.js
-        │       ├── common.js
-        │       ├── common.min.js
-        │       └── jquery-2.1.1.min.js
-        └── templates
-            ├── 404.html
-            ├── 500.html
-            ├── base.html
-            └── _messages.html
-
-    19 directories, 44 files
-
+    ├── src
+    │   ├── apps
+    │   │   └── home
+    │   │       ├── migrations
+    │   │       │   └── __init__.py
+    │   │       ├── templates
+    │   │       │   └── home
+    │   │       │       └── index.html
+    │   │       ├── admin.py
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── tests.py
+    │   │       ├── urls.py
+    │   │       └── views.py
+    │   ├── media
+    │   ├── settings
+    │   │   ├── development.py
+    │   │   ├── __init__.py
+    │   │   ├── production.py
+    │   │   ├── settings.py
+    │   │   ├── urls.py
+    │   │   └── wsgi.py
+    │   ├── static
+    │   │   ├── css
+    │   │   │   ├── bootstrap.css
+    │   │   │   ├── bootstrap.css.map
+    │   │   │   ├── bootstrap.min.css
+    │   │   │   ├── bootstrap-theme.css
+    │   │   │   ├── bootstrap-theme.css.map
+    │   │   │   ├── bootstrap-theme.min.css
+    │   │   │   ├── main.css
+    │   │   │   └── main.min.css
+    │   │   ├── fonts
+    │   │   │   ├── glyphicons-halflings-regular.eot
+    │   │   │   ├── glyphicons-halflings-regular.svg
+    │   │   │   ├── glyphicons-halflings-regular.ttf
+    │   │   │   └── glyphicons-halflings-regular.woff
+    │   │   ├── img
+    │   │   │   └── .keep
+    │   │   └── js
+    │   │       ├── bootstrap.js
+    │   │       ├── bootstrap.min.js
+    │   │       ├── common.js
+    │   │       ├── common.min.js
+    │   │       └── jquery-2.1.1.min.js
+    │   ├── templates
+    │   │   ├── 404.html
+    │   │   ├── 500.html
+    │   │   ├── base.html
+    │   │   └── _messages.html
+    │   └── manage.py
+    ├── .gitignore
+    └── README.md
 
 Si todo ha salido bien
 

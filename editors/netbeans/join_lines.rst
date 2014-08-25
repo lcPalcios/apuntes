@@ -6,7 +6,7 @@ Join Lines
 
 .. warning::
 
-    Mejorar si lo vuelvo hacer
+    Mejorar si lo vuelvo hacer.
 
 Añadir comando para juntar lineas.
 **********************************

@@ -4,7 +4,7 @@
 SublimeREPL
 ###########
 
-Por defecto ejecuta Python 2 **en linux**, para cambiar de ejecutable, hay que modificar un
+Por defecto ejecuta Python 2 **en Linux**, para cambiar de ejecutable, hay que modificar un
 archivo.
 
 Crear una copia ``Python/Main.sublime-menu``

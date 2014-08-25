@@ -5,7 +5,7 @@ Apache Virtualhost
 ##################
 
 Siempre creo los entornos en el ``~/usuario/public_html``
-pero se podria poner donde uno quiera.
+pero se podría poner donde uno quiera.
 
 Fedora
 ******

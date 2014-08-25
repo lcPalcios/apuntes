@@ -4,8 +4,8 @@
 Settings User
 #############
 
-Esta configuracion la uso tanto en linux como en windows, solo mirar que
-la fuente este instalada o cambiar por otra, tambien ajustar tamaño fuente.
+Esta configuración la uso tanto en Linux como en Windows, solo mirar que
+la fuente este instalada o cambiar por otra, también ajustar tamaño fuente.
 
 Abrir Preferences > Setting - User
 

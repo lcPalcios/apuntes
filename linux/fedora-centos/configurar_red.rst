@@ -9,7 +9,7 @@ Fuentes
 
 http://superuser.com/questions/645487/static-ip-address-with-networkmanager
 
-Como administrador e ir a donde estan los arhivos de red.
+Como administrador e ir a donde están los archivos de red.
 
 .. code-block:: bash
 

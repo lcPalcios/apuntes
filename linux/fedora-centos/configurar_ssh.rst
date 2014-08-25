@@ -4,7 +4,7 @@
 Configurar SSH
 ##############
 
-Configuracion basica de ``SSH``
+Configuración basica de ``SSH``
 
 .. code-block:: bash
 
@@ -13,7 +13,7 @@ Configuracion basica de ``SSH``
     systemctl start sshd.service
     systemctl enable sshd.service
 
-Editamos el archivo de configuracion de ssh
+Editamos el archivo de configuración de ssh.
 
 .. code-block:: bash
 

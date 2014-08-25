@@ -12,7 +12,7 @@ Cambiar Plymouth
 
     reboot
 
-Para saber los themes que tenemos instalados
+Para saber los themes que tenemos instalados.
 
 .. code-block:: bash
 

@@ -4,7 +4,7 @@
 Typescript compiler
 ###################
 
-Comprbar donde esta el binario de ``tsc``
+Comprobar donde esta el binario de ``tsc``
 
 .. code-block:: bash
 

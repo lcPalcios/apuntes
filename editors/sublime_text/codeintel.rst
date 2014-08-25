@@ -5,7 +5,7 @@ Codeintel
 #########
 
 .. attention::
-    Para recordar, me dejo aqui algunos ejemplos, hay que cambiar las rutas.
+    Para recordar, me dejo aquí algunos ejemplos, hay que cambiar las rutas.
 
 Configuracion Linux
 *******************

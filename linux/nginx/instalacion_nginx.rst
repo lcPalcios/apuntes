@@ -56,8 +56,8 @@ me funciono sin problemas.
     enabled=1
 
 .. warning::
-    Probar la proxima vez como dice el wiki, cuando lo probre
-    centos acababa de salir.
+    Probar la próxima vez como dice el Wiki, cuando lo probé
+    Centos acababa de salir.
 
 Fedora y Centos
 ===============
