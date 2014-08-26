@@ -18,5 +18,9 @@ Para verlos puedes visitar
 
 Cualquier sugerencia o corrección snicoper@gmail.com
 
+<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/">
+    <img src="http://apuntes-de-informatica.readthedocs.org/es/latest/_static/88x31.png">
+</a>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D9NL2WD7WEMLS">
-    <img src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif"></a>
+    <img src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif">
+</a>
