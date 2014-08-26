@@ -16,7 +16,7 @@ Actualizar el sistema
 
     yum update
 
-EPEL RHEL/CentOS 7 64-Bit
+EPEL RHEL/CentOS 7
 *************************
 
 .. code-block:: bash
@@ -70,7 +70,8 @@ Gnome
 .. code-block:: bash
 
     yum -y install nautilus-open-terminal \
-        gnome-tweak-tool
+        gnome-tweak-tool \
+        meld
 
 Calligra completo
 *****************
@@ -92,7 +93,7 @@ Idioma KDE español
 .. code-block:: bash
 
     yum -y install kde-l10n-es \
-        calligra-l10n-es \
+        calligra-l10n-es
 
 Idioma español man
 ******************
@@ -124,30 +125,3 @@ PackageKit
 .. code-block:: bash
 
     yum install gnome-packagekit
-
-Otros
-*****
-
-.. warning::
-    Algunos de KDE no los he encontrado en los repos, pero los dejo aqui...
-
-KDE
-===
-
-.. code-block:: bash
-
-    yum install -y kde-partitionmanager # (Usar gparted)
-    yum install -y sqliteman # Gui Sqlite, en qt
-    yum install -y transmission-qt
-
-GNOME
-=====
-
-.. code-block:: bash
-
-    yum install -y qbittorrent
-    yum -y install gimp
-    yum -y install gparted
-    yum -y install filezilla
-    yum -y install inkscape
-    yum -y install icedtea-web

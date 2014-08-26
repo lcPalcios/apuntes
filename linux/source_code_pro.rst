@@ -11,20 +11,20 @@ Source Code Pro
 
 ----
 
-Descargar de sourceforge ``SourceCodePro_WebFontsOnly-(version)``.
+Descargar de sourceforge ``SourceCodePro_FontsOnly-(version).zip``.
 
-Después de descomprimir crear carpeta ~/.fonts
+Después de descomprimir, crear un directorio ~/.fonts
 
 .. code-block:: bash
 
     mkdir ~/.fonts
 
-Dentro, hay una carpeta ``WOFF`` que contiene dos carpetas ``OTF`` y ``TTF``
+Dentro, hay dos carpetas ``OTF`` y ``TTF``
 
 .. code-block:: bash
 
     cd carpeta_descomprimida
-    cp -r WOFF/OTF/* ~/.fonts
-    cp -r WOFF/TTF/* ~/.fonts
+    cp -r OTF/* ~/.fonts
+    cp -r TTF/* ~/.fonts
 
     sudo fc-cache

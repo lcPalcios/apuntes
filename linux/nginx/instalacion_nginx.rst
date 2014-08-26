@@ -7,7 +7,7 @@ Instalación Nginx
 Ubuntu
 ******
 
-Instalacion
+Instalación
 
 .. code-block:: bash
 
@@ -34,7 +34,15 @@ Instalación
 Centos
 ******
 
-    En la Wiki dice lo siguiente:
+.. note::
+    Tambien estan en los repos de remi
+    :ref:`reference-linux-fedora-centos-post_instalacion_centos`
+
+.. code-block:: bash
+
+    vim /etc/yum.repos.d/nginx.repo
+
+Añadir
 
 .. code-block:: bash
 
@@ -44,20 +52,10 @@ Centos
     gpgcheck=0
     enabled=1
 
-Pero a mi no me funciono por el $releasever, en cambio, poniendo "7", en ves de $releasever
-me funciono sin problemas.
-
 .. code-block:: bash
 
-    [nginx]
-    name=nginx repo
-    baseurl=http://nginx.org/packages/centos/7/$basearch/
-    gpgcheck=0
-    enabled=1
-
-.. warning::
-    Probar la próxima vez como dice el Wiki, cuando lo probé
-    Centos acababa de salir.
+    yum update
+    yum install nginx
 
 Fedora y Centos
 ===============

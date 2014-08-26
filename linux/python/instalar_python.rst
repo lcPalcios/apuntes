@@ -13,6 +13,7 @@ Python2
 .. code-block:: bash
 
     yum install -y python-setuptools python-devel
+    yum install -y python-pip
 
 Python3
 =======
@@ -20,6 +21,7 @@ Python3
 .. code-block:: bash
 
     yum install -y python3 python3-setuptools python3-devel
+    yum install -y python3-pip
 
 Ubuntu
 ******
@@ -41,7 +43,7 @@ Python3
     sudo apt install -y python3-pip
 
 
-User Pip
+Use Pip
 
 .. code-block:: bash
 
