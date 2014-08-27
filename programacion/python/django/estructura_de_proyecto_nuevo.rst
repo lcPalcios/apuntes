@@ -242,8 +242,6 @@ Editar en ``settings/development.py``
 
     TEMPLATE_DEBUG = True
 
-    ALLOWED_HOSTS = []
-
     # Añadir la base de datos de desarrollo
     # Database
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -676,112 +674,8 @@ Si todo ha salido bien
 
     ./manage.py runserver
 
-Gunicorn
-********
-
-En ``proyect_name/bin``, creamos un archivo ``gunicorn.sh``
-
-.. code-block:: bash
-
-    vim bin/gunicorn.sh
-
-    # Añadimos
-    #!/bin/bash
-    set -e
-    LOGFILE=/home/snicoper/projects/python/proyect_name/logs/gunicorn.log
-    LOGDIR=$(dirname $LOGFILE)
-    NUM_WORKERS=3
-    # user/group to run as
-    USER=snicoper
-    GROUP=snicoper
-    ADDRESS=127.0.0.1:8000
-    cd /home/snicoper/projects/python/proyect_name/src/
-    source /home/snicoper/.virtualenvs/default/bin/activate
-    test -d $LOGDIR || mkdir -p $LOGDIR
-    exec gunicorn -w $NUM_WORKERS --bind=$ADDRESS \
-      --user=$USER --group=$GROUP --log-level=debug \
-      --log-file=$LOGFILE 2>>$LOGFILE settings.wsgi:application
-
-.. warning::
-    Corregir las rutas y usuario!
-
-Permisos de ejecución
-
-.. code-block:: bash
-
-    chmod +x bin/gunicorn.sh
-
-
-**Nginx**
-
-:ref:`reference-linux-nginx-instalacion_nginx`
-
-Como ``root``
-
-.. code-block:: bash
-
-    sudo vim /etc/nginx/sites-avalaible/proyect_name
-
-Añadimos
-
-.. code-block:: bash
-
-
-    server {
-            listen   80;
-            server_name yourdomainorip.com;
-            access_log /home/snicoper/projects/python/proyect_name/logs/nginx-access.log;
-            error_log /home/snicoper/projects/python/proyect_name/logs/nginx-error.log;
-
-            # no security problem here, since / is alway passed to upstream
-            # root /home/snicoper/projects/python/proyect_name/src;
-
-            # Django media
-            location /media/  {
-                alias /home/snicoper/projects/python/proyect_name/src/media/;  # your Django project's media files - amend as required
-            }
-
-            # Django static
-            location /static/ {
-                alias /home/snicoper/projects/python/proyect_name/src/static/; # your Django project's static files - amend as required
-            }
-
-            # Django static admin
-            location /static/admin/ {
-                # this changes depending on your python version
-                root /home/snicoper/.virtualenvs/default/lib/python3.4/site-packages/django/contrib/admin/;
-            }
-
-            location / {
-                proxy_pass_header Server;
-                proxy_set_header Host $http_host;
-                proxy_redirect off;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Scheme $scheme;
-                proxy_connect_timeout 10;
-                proxy_read_timeout 10;
-                proxy_pass http://localhost:8000/;
-            }
-            # what to serve if upstream is not available or crashes
-            error_page 500 502 503 504 /media/50x.html;
-        }
-
-.. code-block:: bash
-
-    sudo ln -s /etc/nginx/sites-avalaible/proyect_name /etc/nginx/sites-enabled/proyect_name
-
-Reiniciar nginx
-
-.. code-block:: bash
-
-    sudo service nginx restart
-
-Vamos a la raiz del proyecto, ``proyect_name`` y ejecutamos
-
-.. code-block:: bash
-
-    ./gunicorn.sh
-
 Me dejo en github una plantilla creada
 
 `GitHub <https://github.com/snicoper/structura-dj>`_
+
+Quizas te pueda interesar: :ref:`reference-linux-nginx-nginx_gunicorn_django`
