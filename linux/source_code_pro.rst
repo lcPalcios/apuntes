@@ -24,7 +24,9 @@ Dentro, hay dos carpetas ``OTF`` y ``TTF``
 .. code-block:: bash
 
     cd carpeta_descomprimida
-    cp -r OTF/* ~/.fonts
-    cp -r TTF/* ~/.fonts
+    mkdir source-code-pro
+    mv OTF/* source-code-pro
+    mv TTF/* source-code-pro
+    sudo mv source-code-pro /usr/share/fonts/
 
     sudo fc-cache

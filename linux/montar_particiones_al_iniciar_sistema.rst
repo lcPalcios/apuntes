@@ -46,8 +46,7 @@ Ubuntu ntfs
 
 .. code-block:: bash
 
-    sudo su
-    umount /media/snicoper/data
+    sudo umount /media/snicoper/data
     mkdir -p /media/snicoper/data
 
 .. code-block:: bash

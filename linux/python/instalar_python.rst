@@ -98,7 +98,13 @@ Añadir
 
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     export WORKON_HOME=$HOME/.virtualenvs
+
+    # Ubuntu
     source /usr/local/bin/virtualenvwrapper.sh
+
+    # Fedora
+    source /usr/bin/virtualenvwrapper.sh
+
 
 Comandos
 
@@ -112,10 +118,10 @@ Para crear un nuevo virtualenv, ejecutar
 
 .. code-block:: bash
 
-    mkvirtualenv nombre_site
+    mkvirtualenv nombre_venv
 
 Para usarlo
 
 .. code-block:: bash
 
-    workon nombre_site
+    workon nombre_venv

@@ -44,7 +44,6 @@ En ``proyect_name/bin``, creamos un archivo ``gunicorn_start.sh``
     echo "Starting $NAME as `whoami`"
 
     # Activate the virtual environment
-    cd $DJANGODIR
     source /home/snicoper/.virtualenvs/default/bin/activate
     export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
     export PYTHONPATH=$DJANGODIR:$PYTHONPATH
@@ -171,7 +170,10 @@ Supervisor
     sudo apt-get install supervisor
     sudo vim /etc/supervisor/conf.d/proyect_name.conf
 
-    # Añadir
+Añadir
+
+.. code-block:: bash
+
     [program:proyect_name]
     command = /home/snicoper/projects/python/proyect_name/bin/gunicorn_start.sh ; Command to start app
     user = snicoper ; User to run as
@@ -179,12 +181,16 @@ Supervisor
     redirect_stderr = true ; Save stderr in the same log
     environment=LANG=en_US.UTF-8,LC_ALL=en_US.UTF-8 ; Set UTF-8 as default encoding
 
-    # Crear archivo de log
+Crear archivo de log
+
+.. code-block:: bash
+
     touch /home/snicoper/projects/python/proyect_name/logs/gunicorn_supervisor.log
+
+.. code-block:: bash
 
     sudo supervisorctl reread
     sudo supervisorctl update
-
 
 **Comandos supervisor**
 

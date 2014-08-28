@@ -166,6 +166,21 @@ libreoffice
 .. code-block:: bash
 
     sudo apt-get install libreoffice
+    
+Geary
+
+.. code-block:: bash
+
+    sudo apt-get install geary
+
+    
+RabbitVCS
+
+.. code-block:: bash
+
+    sudo add-apt-repository ppa:rabbitvcs/ppa
+    sudo apt-get update
+    sudo apt-get install rabbitvcs-nautilus3 rabbitvcs-cli
 
 -------------------
 

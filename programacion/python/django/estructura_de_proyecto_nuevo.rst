@@ -32,7 +32,7 @@ Creo varias carpetas, que mas tarde usare.
 .. code-block:: bash
 
     cd proyect_name
-    mkdir docs requeriments cron logs bin
+    mkdir docs requeriments cron logs bin run
 
 La carpeta de ``cron`` la creo pero no hablare mas de el,
 ya que no se cuando me hará falta generar automatizaciones
@@ -606,10 +606,11 @@ Resultado final de la estructura:
     .
     ├── .git
     ├── bin
-    │   └── gunicorn.sh
+    │   └── gunicorn_start.sh
     ├── cron
     ├── docs
     ├── logs
+    ├── run
     ├── requeriments
     │   ├── base.txt
     │   ├── development.txt
