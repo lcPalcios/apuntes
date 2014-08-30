@@ -17,7 +17,7 @@ Abrir Preferences > Setting - User
         "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 
         // Font
-        "font_face": "Ubuntu Mono",
+        "font_face": "Source Code Pro",
         "font_size": 10.5,
         "font_options": "subpixel_antialias",
 
@@ -68,4 +68,3 @@ Abrir Preferences > Setting - User
         ],
         "vintage_start_in_command_mode": true
     }
-

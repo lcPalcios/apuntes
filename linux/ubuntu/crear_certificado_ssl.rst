@@ -1,10 +1,10 @@
 .. _reference-linux-ubuntu-crear_certificado_ssl:
 
-####################
+#####################
 Crear certificado SSL
-####################
+#####################
 
-Pongo el nombre de ns1 para el servidor principal, cambiar si es otro servidor
+Pongo el nombre de lxmaq1 para el servidor principal, cambiar si es otro servidor
 
 .. code-block:: bash
 
@@ -14,11 +14,11 @@ Pongo el nombre de ns1 para el servidor principal, cambiar si es otro servidor
 
 .. code-block:: bash
 
-    openssl genrsa -des3 -out ns1.key 2048
+    openssl genrsa -des3 -out lxmaq1.key 2048
 
 .. code-block:: bash
 
-    openssl req -new -days 3650 -key ns1.key -out ns1.csr
+    openssl req -new -days 3650 -key lxmaq1.key -out lxmaq1.csr
 
 .. code-block:: bash
 
@@ -27,7 +27,7 @@ Pongo el nombre de ns1 para el servidor principal, cambiar si es otro servidor
     Locality Name (eg, city) [Default City]:Barcelona
     Organization Name (eg, company) [Default Company Ltd]:snicoper
     Organizational Unit Name (eg, section) []:nombre_org
-    Common Name (eg, your name or your server's hostname) []:ns1.workspace.local
+    Common Name (eg, your name or your server's hostname) []:lxmaq1.workspace.local
     Email Address []:snicoper@gmail.com
 
     A challenge password []: (Intro)
@@ -35,8 +35,8 @@ Pongo el nombre de ns1 para el servidor principal, cambiar si es otro servidor
 
 .. code-block:: bash
 
-    openssl x509 -in ns1.csr -out ns1.crt -req -signkey ns1.key -days 3650
+    openssl x509 -in lxmaq1.csr -out lxmaq1.crt -req -signkey lxmaq1.key -days 3650
 
 .. code-block:: bash
 
-    chmod 400 ns1.*
+    chmod 400 lxmaq1.*

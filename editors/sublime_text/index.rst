@@ -12,6 +12,7 @@ Contents:
     anaconda
     build_python3_linux
     codeintel
+    error_lang_en_us_utf-8-sublime_text
     instalacion_packages
     key_bindings
     projects_example

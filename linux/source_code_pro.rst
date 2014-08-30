@@ -13,17 +13,9 @@ Source Code Pro
 
 Descargar de sourceforge ``SourceCodePro_FontsOnly-(version).zip``.
 
-Después de descomprimir, crear un directorio ~/.fonts
-
 .. code-block:: bash
 
-    mkdir ~/.fonts
-
-Dentro, hay dos carpetas ``OTF`` y ``TTF``
-
-.. code-block:: bash
-
-    cd carpeta_descomprimida
+    cd SourceCodePro_FontsOnly-(version)/
     mkdir source-code-pro
     mv OTF/* source-code-pro
     mv TTF/* source-code-pro

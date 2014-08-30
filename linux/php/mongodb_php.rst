@@ -4,8 +4,7 @@
 PHP MongoDB
 ###########
 
-.. warning::
-    Poner enlaces de instalación a mongodb
+:ref:`reference-linux-instalacion_mongodb`
 
 Fedora
 ******
@@ -16,9 +15,6 @@ Fedora
 
 Ubuntu
 ******
-
-.. warning::
-    No he probado si el paquete existe
 
 .. code-block:: bash
 

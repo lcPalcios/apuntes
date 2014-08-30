@@ -10,31 +10,31 @@ Si se usa calligra, eliminar libreoffice antes de actualizar.
 
     sudo apt-get remove --purge libreoffice*
 
-Actualizar
+Actualizar.
 
 .. code-block:: bash
 
     sudo apt-get update && apt-get dist-upgrade
 
-Si es Virtualbox
+Si es Virtualbox.
 
 .. code-block:: bash
 
     sudo apt-get install virtualbox-guest-dkms
 
-Instalar Vim
+Instalar Vim.
 
 .. code-block:: bash
 
     sudo apt-get -y install vim
 
-Cambiar editor
+Cambiar editor.
 
 .. code-block:: bash
 
     sudo update-alternatives --config editor
 
-Programas basicos
+Programas basicos.
 
 .. code-block:: bash
 
@@ -57,7 +57,7 @@ Programas basicos
         openjdk-7-jre \
         openjdk-7-jdk
 
-Diccionario español
+Diccionario español.
 
 .. code-block:: bash
 
@@ -66,69 +66,63 @@ Diccionario español
 KDE
 ===
 
-Si se configura Akonadi con SQLite
+Si se configura Akonadi con SQLite.
 
-Cambiar en Menú y buscar Akonadi Server Configuration
+Cambiar en Menú y buscar Akonadi Server Configuration.
 
 .. code-block:: bash
 
     sudo apt-get install akonadi-backend-sqlite
 
-Gui SQLite
-
-.. code-block:: bash
-
-    sudo apt-get install -y sqliteman
-
-Muon
+Muon.
 
 .. code-block:: bash
 
     sudo apt-get -y install muon
 
-Calligra
+Calligra.
 
 .. code-block:: bash
 
     sudo apt-get install calligra -y
 
-kdiff3
+kdiff3.
 
 .. code-block:: bash
 
     sudo apt-get install kdiff3-qt -y
 
-Utilidades KDE
+Utilidades KDE.
 
 .. code-block:: bash
 
-    sudo apt-get install kgpg kleopatra umbrello kcolorchooser -y
+    sudo apt-get install kgpg kleopatra kcolorchooser -y
 
-Para visualizar las miniaturas en Dolphin de los .pdf
+Para visualizar las miniaturas en Dolphin de los .pdf.
 
 .. code-block:: bash
 
     sudo apt-get install kdegraphics-thumbnailers -y
 
-Transmision
+Transmision.
 
 .. code-block:: bash
 
     sudo apt-get install transmission-qt -y
 
-Eliminar
+Eliminar.
 
 .. code-block:: bash
 
     sudo apt-get remove --purge kget ktorrent amarok -y
 
-Opcionales
+Opcionales.
 
 .. code-block:: bash
 
     sudo apt-get install kdeplasma-addons -y
 
-qBittorent
+qBittorent.
 
 .. code-block:: bash
 
@@ -139,42 +133,53 @@ qBittorent
 GNOME
 =====
 
+gnome 3.12 en ubuntu-gnome 14.04.
+
+* https://kerneleros.com/instalar-gnome-3-12-en-ubuntu-14-04/
+
+Enable Icons in Ubuntu Unity Menus & Buttons.
+
+.. code-block:: bash
+
+    gsettings set org.gnome.desktop.interface menus-have-icons true
+
+Eliminar en Ubuntu Unity Amazon.
+
 .. code-block:: bash
 
     sudo apt-get remove --purge unity-webapps-common
 
-Synaptic
+Synaptic.
 
 .. code-block:: bash
 
     sudo apt-get install synaptic
 
-Open terminal here
+Open terminal here.
 
 .. code-block:: bash
 
     sudo apt-get install nautilus-open-terminal
 
-Meld
+Meld.
 
 .. code-block:: bash
 
     sudo apt-get install meld -y
 
-libreoffice
+Gpick.
+
+.. code-block:: bash
+
+    sudo apt-get install gpick -y
+
+libreoffice.
 
 .. code-block:: bash
 
     sudo apt-get install libreoffice
-    
-Geary
 
-.. code-block:: bash
-
-    sudo apt-get install geary
-
-    
-RabbitVCS
+RabbitVCS.
 
 .. code-block:: bash
 
@@ -184,58 +189,68 @@ RabbitVCS
 
 -------------------
 
-KDE/GNOME
-=========
+KDE/GNOME/Varios
+================
 
-Thunderbird
+Umbrello.
+
+    sudo apt-get install -y  umbrello
+
+Gui SQLite.
+
+.. code-block:: bash
+
+    sudo apt-get install -y sqliteman
+
+Thunderbird.
 
 .. code-block:: bash
 
     sudo apt-get install thunderbird
 
-Chromium
+Chromium.
 
 .. code-block:: bash
 
     sudo apt-get install chromium-browser -y
 
-Vlc
+Vlc.
 
 .. code-block:: bash
 
     sudo apt-get install vlc
 
-Inskape y gimp
+Inskape y gimp.
 
 .. code-block:: bash
 
     sudo apt-get install gimp inkscape
 
-Filezilla
+Filezilla.
 
 .. code-block:: bash
 
     sudo apt-get install filezilla
 
-Kdevelop
+Kdevelop.
 
 .. code-block:: bash
 
     sudo apt-get install kdevelop cmake
 
-kdevelop python
+kdevelop python.
 
 .. code-block:: bash
 
     sudo apt-get install kdev-python pep8
 
-qtcreator
+qtcreator.
 
 .. code-block:: bash
 
     sudo apt-get -y install qtcreator
 
-No mostrar la opción de cuenta de invitado al hacer login con kde
+No mostrar la opción de cuenta de invitado al hacer login con KDE y Ubuntu.
 
 .. code-block:: bash
 

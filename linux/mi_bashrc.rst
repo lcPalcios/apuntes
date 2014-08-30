@@ -13,10 +13,11 @@ Usuario
 
 .. code-block:: bash
 
-    alias ll="ls -lF"
-    alias la="ls -a"
-    alias lla="ll -a"
-    alias ccat='pygmentize -g' # Requiere python-pygments
+    alias ll='ls -lF'
+    alias la='ls -a'
+    alias lla='ll -a'
+    alias statc='stat -c %a'
+    alias ccat='pygmentize -g'
 
     # Git
     function git_branch {
@@ -34,10 +35,11 @@ root
 
 .. code-block:: bash
 
-    alias ll="ls -lF"
-    alias la="ls -a"
-    alias lla="ll -a"
-    # alias ccat='pygmentize -g' # Requiere pygmentize
+    alias ll='ls -lF'
+    alias la='ls -a'
+    alias lla='ll -a'
+    alias statc='stat -c %a'
+    alias ccat='pygmentize -g'
 
     # Git
     function git_branch {

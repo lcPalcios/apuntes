@@ -137,13 +137,14 @@ La carpeta ``mysite``, la renombro a ``settings``
 
 Creo que queda mas claro donde están los archivos de configuración.
 
-Ahora, creo dos archivos mas de configuración, uno para desarrollo y otro
-para producción dentro de la capeta ``settings``
+Ahora, creo tres archivos mas de configuración, uno para desarrollo, otro
+para producción y uno para tests, que usara otra base de datos
+dentro de la capeta ``settings``.
 
 .. code-block:: bash
 
     cd settings
-    touch production.py development.py
+    touch settings_prod.py settings_dev.py settings_tests.py
     cd ..
 
 El archivo ``settings.py`` lo dejo como base, para las configuraciones que se
@@ -153,12 +154,11 @@ Edito los archivos recién creados y les añado:
 
 .. code-block:: bash
 
-    echo 'from settings.settings import *' > development.py
-    echo 'from settings.settings import *' > production.py
+    echo 'from settings.settings import *' > settings_dev.py
+    echo 'from settings.settings import *' > settings_prod.py
+    echo 'from settings.settings import *' > settings_tests.py
 
-
-De momento, los archivos ``development.py`` y ``production.py``, usan las
-mismas configuraciones, mas tarde las cambiaremos.
+De momento, usan las mismas configuraciones, mas tarde las cambiaremos.
 
 Ahora, hay que decirle a ``Django`` que archivos de configuración usar.
 
@@ -171,7 +171,7 @@ archivo. ``manage.py``
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
     # por
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.development")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings_dev")
 
 Cambiar dentro de ``settings/settings.py`` algunas configuraciones.
 
@@ -185,7 +185,7 @@ Cambiar dentro de ``settings/settings.py`` algunas configuraciones.
 
 Estados de ``DEBUG`` y ``Database``
 
-Editar en ``settings/settings.py``
+Editar en ``settings/settings.py``, y aliminar lo siguiente:
 
 .. code-block:: python
 
@@ -208,7 +208,7 @@ Editar en ``settings/settings.py``
         }
     }
 
-Editar en ``settings/production.py``
+Editar en ``settings/settings_prod.py``
 
 .. code-block:: python
 
@@ -218,7 +218,7 @@ Editar en ``settings/production.py``
 
     TEMPLATE_DEBUG = False
 
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['ip(s) y/o dominio(s), aquí']
 
     # Añadir la base de datos de produccion
     # Database
@@ -233,7 +233,7 @@ Editar en ``settings/production.py``
 
 En ``ALLOWED_HOSTS = []`` Añadir un string con el dominio o ip.
 
-Editar en ``settings/development.py``
+Editar en ``settings/settings_dev.py``
 
 .. code-block:: python
 
@@ -253,8 +253,27 @@ Editar en ``settings/development.py``
         }
     }
 
+Editar en ``settings/settings_tests.py``
+
+.. code-block:: python
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+
+    TEMPLATE_DEBUG = True
+
+    # Database
+    # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 .. note::
-    Configurar configuración de las bases de datos.
+    Configurar las bases de datos.
 
 Modificar ``settings/wsgi.py`` para decirle cual es el archivo de configuración
 de producción.
@@ -262,7 +281,7 @@ de producción.
 .. code-block:: bash
 
     # Linea 11, cambiar
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.production")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings_prod")
 
 Lo básico ya esta creado y configurado, ahora los directorios.
 
@@ -604,70 +623,69 @@ Resultado final de la estructura:
 .. code-block:: bash
 
     .
-    ├── .git
-    ├── bin
-    │   └── gunicorn_start.sh
-    ├── cron
-    ├── docs
-    ├── logs
-    ├── run
-    ├── requeriments
-    │   ├── base.txt
-    │   ├── development.txt
-    │   └── production.txt
-    ├── src
-    │   ├── apps
-    │   │   └── home
-    │   │       ├── migrations
-    │   │       │   └── __init__.py
-    │   │       ├── templates
-    │   │       │   └── home
-    │   │       │       └── index.html
-    │   │       ├── admin.py
-    │   │       ├── __init__.py
-    │   │       ├── models.py
-    │   │       ├── tests.py
-    │   │       ├── urls.py
-    │   │       └── views.py
-    │   ├── media
-    │   ├── settings
-    │   │   ├── development.py
-    │   │   ├── __init__.py
-    │   │   ├── production.py
-    │   │   ├── settings.py
-    │   │   ├── urls.py
-    │   │   └── wsgi.py
-    │   ├── static
-    │   │   ├── css
-    │   │   │   ├── bootstrap.css
-    │   │   │   ├── bootstrap.css.map
-    │   │   │   ├── bootstrap.min.css
-    │   │   │   ├── bootstrap-theme.css
-    │   │   │   ├── bootstrap-theme.css.map
-    │   │   │   ├── bootstrap-theme.min.css
-    │   │   │   ├── main.css
-    │   │   │   └── main.min.css
-    │   │   ├── fonts
-    │   │   │   ├── glyphicons-halflings-regular.eot
-    │   │   │   ├── glyphicons-halflings-regular.svg
-    │   │   │   ├── glyphicons-halflings-regular.ttf
-    │   │   │   └── glyphicons-halflings-regular.woff
-    │   │   ├── img
-    │   │   │   └── .keep
-    │   │   └── js
-    │   │       ├── bootstrap.js
-    │   │       ├── bootstrap.min.js
-    │   │       ├── common.js
-    │   │       ├── common.min.js
-    │   │       └── jquery-2.1.1.min.js
-    │   ├── templates
-    │   │   ├── 404.html
-    │   │   ├── 500.html
-    │   │   ├── base.html
-    │   │   └── _messages.html
-    │   └── manage.py
-    ├── .gitignore
-    └── README.md
+    |-- .git
+    |-- .gitignore
+    |-- bin
+    |   `-- gunicorn_start.sh
+    |-- cron
+    |-- docs
+    |-- logs
+    |-- requeriments
+    |   |-- base.txt
+    |   |-- development.txt
+    |   `-- production.txt
+    |-- run
+    `-- src
+        |-- apps
+        |   `-- home
+        |       |-- __init__.py
+        |       |-- admin.py
+        |       |-- migrations
+        |       |   `-- __init__.py
+        |       |-- models.py
+        |       |-- templates
+        |       |   `-- home
+        |       |       `-- index.html
+        |       |-- tests.py
+        |       |-- urls.py
+        |       `-- views.py
+        |-- manage.py
+        |-- media
+        |-- settings
+        |   |-- __init__.py
+        |   |-- settings.py
+        |   |-- settings_dev.py
+        |   |-- settings_prod.py
+        |   |-- settings_tests.py
+        |   |-- urls.py
+        |   `-- wsgi.py
+        |-- static
+        |   |-- css
+        |   |   |-- bootstrap-theme.css
+        |   |   |-- bootstrap-theme.css.map
+        |   |   |-- bootstrap-theme.min.css
+        |   |   |-- bootstrap.css
+        |   |   |-- bootstrap.css.map
+        |   |   |-- bootstrap.min.css
+        |   |   |-- main.css
+        |   |   `-- main.min.css
+        |   |-- fonts
+        |   |   |-- glyphicons-halflings-regular.eot
+        |   |   |-- glyphicons-halflings-regular.svg
+        |   |   |-- glyphicons-halflings-regular.ttf
+        |   |   `-- glyphicons-halflings-regular.woff
+        |   |-- img
+        |   `-- js
+        |       |-- bootstrap.js
+        |       |-- bootstrap.min.js
+        |       |-- common.js
+        |       |-- common.min.js
+        |       `-- jquery-2.1.1.min.js
+        `-- templates
+            |-- 404.html
+            |-- 500.html
+            |-- _messages.html
+            `-- base.html
 
 Si todo ha salido bien
 

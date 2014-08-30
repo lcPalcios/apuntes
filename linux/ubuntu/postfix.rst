@@ -4,7 +4,7 @@
 Postfix
 #######
 
-Instalacion
+Instalación
 ***********
 
 .. code-block:: bash
@@ -14,8 +14,9 @@ Instalacion
 Postfix
 =======
 
-.. warning::
-    Durante la instalación usar la opcion de no configurar (la 1ª)
+* Durante la instalación cuando pregunte por el certificado SSL, decir que no.
+* Después darle a ``<ok>``
+* Por ultimo, ``No configuration``
 
 .. code-block:: bash
 
@@ -131,6 +132,13 @@ Postfix
 
 .. code-block:: bash
 
+    sudo vim /etc/aliases
+
+    # Añadir
+    root:   snicoper@mail.workspace.local
+
+.. code-block:: bash
+
     sudo newaliases
     sudo service postfix restart
 
@@ -186,7 +194,7 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
     sudo vim /etc/postfix/main.cf
 
 .. note::
-    Usar ``ns1.crt`` y ``ns1.key`` con los mismos nombres que se hayan
+    Usar ``lxmaq1.crt`` y ``lxmaq1.key`` con los mismos nombres que se hayan
     creado en :ref:`reference-linux-ubuntu-crear_certificado_ssl`
 
 .. code-block:: bash
@@ -194,8 +202,8 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
     # add at the last line
     # SSL
     smtpd_use_tls = yes
-    smtpd_tls_cert_file = /etc/ssl/private/ns1.crt
-    smtpd_tls_key_file = /etc/ssl/private/ns1.key
+    smtpd_tls_cert_file = /etc/ssl/private/lxmaq1.crt
+    smtpd_tls_key_file = /etc/ssl/private/lxmaq1.key
     smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 
 .. code-block:: bash
@@ -219,10 +227,10 @@ Ver :ref:`reference-linux-ubuntu-crear_certificado_ssl`
     ssl = yes
 
     # line 12,13: uncomment and specify certificate
-    ssl_cert = </etc/ssl/private/ns1.crt
-    ssl_key = </etc/ssl/private/ns1.key
+    ssl_cert = </etc/ssl/private/lxmaq1.crt
+    ssl_key = </etc/ssl/private/lxmaq1.key
 
 .. code-block:: bash
 
-    sudo /etc/init.d/postfix restart
+    sudo service postfix restart
     sudo service dovecot restart

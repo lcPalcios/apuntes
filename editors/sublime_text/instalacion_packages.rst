@@ -34,7 +34,6 @@ Python
 * Anaconda
 * Djaneiro
 * Python Imports Sorter
-* SublimeLinter-pep8
 
 Python varios
 =============
@@ -57,6 +56,7 @@ Otros
 
 Me dejo aquí algunos addons para recordar el nombre.
 
+* SublimeLinter-pep8
 * Monokai extended
 * AllAutocomplete
 * SublimeCodeIntel

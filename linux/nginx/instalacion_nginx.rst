@@ -21,6 +21,19 @@ añadir regla en ufw
 
     sudo ufw allow 80
 
+Ubuntu PPA
+**********
+
+* https://launchpad.net/~nginx/+archive/ubuntu/development
+* http://wiki.nginx.org/Install
+
+.. code-block:: bash
+
+    sudo -s
+    nginx=stable # use nginx=development for latest development version
+    sudo add-apt-repository ppa:nginx/$nginx
+    sudo apt-get update
+    sudo apt-get install nginx
 
 Fedora
 ******
