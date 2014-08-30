@@ -38,7 +38,7 @@ En ``proyect_name/bin``, creamos un archivo ``gunicorn_start.sh``
     USER=snicoper # the user to run as
     GROUP=snicoper # the group to run as
     NUM_WORKERS=3 # how many worker processes should Gunicorn spawn
-    DJANGO_SETTINGS_MODULE=settings.production # which settings file should Django use
+    DJANGO_SETTINGS_MODULE=settings.settings_prod # which settings file should Django use
     DJANGO_WSGI_MODULE=settings.wsgi # WSGI module name
 
     echo "Starting $NAME as `whoami`"
