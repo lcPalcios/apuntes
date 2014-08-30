@@ -137,14 +137,14 @@ La carpeta ``mysite``, la renombro a ``settings``
 
 Creo que queda mas claro donde están los archivos de configuración.
 
-Ahora, creo tres archivos mas de configuración, uno para desarrollo, otro
-para producción y uno para tests, que usara otra base de datos
+Ahora, creo dos archivos mas de configuración, uno para desarrollo y otro
+para producción, que usara otra base de datos
 dentro de la capeta ``settings``.
 
 .. code-block:: bash
 
     cd settings
-    touch settings_prod.py settings_dev.py settings_tests.py
+    touch settings_prod.py settings_dev.py
     cd ..
 
 El archivo ``settings.py`` lo dejo como base, para las configuraciones que se
@@ -156,7 +156,6 @@ Edito los archivos recién creados y les añado:
 
     echo 'from settings.settings import *' > settings_dev.py
     echo 'from settings.settings import *' > settings_prod.py
-    echo 'from settings.settings import *' > settings_tests.py
 
 De momento, usan las mismas configuraciones, mas tarde las cambiaremos.
 
@@ -243,25 +242,6 @@ Editar en ``settings/settings_dev.py``
     TEMPLATE_DEBUG = True
 
     # Añadir la base de datos de desarrollo
-    # Database
-    # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-
-Editar en ``settings/settings_tests.py``
-
-.. code-block:: python
-
-    # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
-
-    TEMPLATE_DEBUG = True
-
     # Database
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
@@ -656,7 +636,6 @@ Resultado final de la estructura:
         |   |-- settings.py
         |   |-- settings_dev.py
         |   |-- settings_prod.py
-        |   |-- settings_tests.py
         |   |-- urls.py
         |   `-- wsgi.py
         |-- static
