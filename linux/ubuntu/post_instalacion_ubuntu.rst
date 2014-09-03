@@ -4,6 +4,16 @@
 Post instalacion Ubuntu
 #######################
 
+Tengo el SO en ingles, pero país, moneda, etc en español. Si da el error de
+``locale: Cannot set LC_ALL to default locale: No such file or directory``,
+editar ``/etc/environment`` y añadir:
+
+.. code-block:: bash
+
+    LC_ALL="en_US.UTF-8"
+
+    # reiniciar
+
 Si se usa calligra, eliminar libreoffice antes de actualizar.
 
 .. code-block:: bash
@@ -66,13 +76,14 @@ Diccionario español.
 KDE
 ===
 
-Si se configura Akonadi con SQLite.
+Si se configura Akonadi con SQLite o PostgreSQL.
 
 Cambiar en Menú y buscar Akonadi Server Configuration.
 
 .. code-block:: bash
 
     sudo apt-get install akonadi-backend-sqlite
+    sudo apt-get install akonadi-backend-postgresql
 
 Muon.
 
@@ -104,23 +115,23 @@ Para visualizar las miniaturas en Dolphin de los .pdf.
 
     sudo apt-get install kdegraphics-thumbnailers -y
 
-Transmision.
-
-.. code-block:: bash
-
-    sudo apt-get install transmission-qt -y
-
 Eliminar.
 
 .. code-block:: bash
 
-    sudo apt-get remove --purge kget ktorrent amarok -y
+    sudo apt-get remove --purge kget amarok -y
 
 Opcionales.
 
 .. code-block:: bash
 
     sudo apt-get install kdeplasma-addons -y
+
+Transmision.
+
+.. code-block:: bash
+
+    sudo apt-get install transmission-qt -y
 
 qBittorent.
 
@@ -136,12 +147,6 @@ GNOME
 gnome 3.12 en ubuntu-gnome 14.04.
 
 * https://kerneleros.com/instalar-gnome-3-12-en-ubuntu-14-04/
-
-Enable Icons in Ubuntu Unity Menus & Buttons.
-
-.. code-block:: bash
-
-    gsettings set org.gnome.desktop.interface menus-have-icons true
 
 Eliminar en Ubuntu Unity Amazon.
 
@@ -250,7 +255,7 @@ qtcreator.
 
     sudo apt-get -y install qtcreator
 
-No mostrar la opción de cuenta de invitado al hacer login con KDE y Ubuntu.
+No mostrar la opción de cuenta de invitado al hacer login.
 
 .. code-block:: bash
 

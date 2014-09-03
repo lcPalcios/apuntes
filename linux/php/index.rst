@@ -12,6 +12,7 @@ Categorias:
    composer
    dokuwiki_apache
    instalacion_laravel
+   instalacion_mariadb
    instalacion_php
    memcached
    mongodb_php

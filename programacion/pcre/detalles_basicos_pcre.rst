@@ -30,8 +30,8 @@ Meta-caracteres
 Secuencias de escape
 ********************
 
-* (\w) Representa un carácter de "palabra" y es equivalente a la expresión [A-Za-z0-9]
-* (\W) Representa lo opuesto a \w y es equivalente a [^A-Za-z0-9]
+* (\w) Representa un carácter de "palabra" y es equivalente a la expresión [a-zA-Z0-9\_]
+* (\W) Representa lo opuesto a \w y es equivalente a [^a-zA-Z0-9\_]
 * (\s) Representa un carácter de espacio en blanco
 * (\S) Representa un carácter que no es un espacio en blanco
 * (\d) Representa un dígito, equivalente a [0-9]

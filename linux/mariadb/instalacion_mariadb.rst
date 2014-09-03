@@ -4,11 +4,6 @@
 Instalación MariaDB
 ###################
 
-
-.. warning::
-    Cuidado con las versiones, la 10+, no tiene la misma compatibilidad que
-    las 5.x.
-
 En Fedora 20+, MySQL Workbench no esta en los repositorios, tampoco he probado Workbench
 con MariaDB 10+ en ningún sistema.
 

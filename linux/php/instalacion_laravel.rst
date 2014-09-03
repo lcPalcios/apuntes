@@ -29,7 +29,7 @@ Ubuntu
 
 .. code-block:: bash
 
-    apt-get install php5-curl
+    sudo apt-get install php5-curl
 
 Composer o Archivo Phar
 =======================
