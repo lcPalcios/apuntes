@@ -5,7 +5,7 @@ Creación de un proyecto Django
 ##############################
 
 .. note::
-    Para esta practica uso Django 1.7rc3 y Python 3.4
+    Para esta practica uso Django 1.7 y Python 3.4
 
 La creación de un proyecto en Django te permite generar la estructura de
 directorios que mas te guste/interese, etc.
@@ -442,40 +442,8 @@ Editar ``src/settings/settings.py`` y añadir al final
         os.path.join(BASE_DIR, 'templates'),
     )
 
-APPs
-****
-
-Las ``apps`` se puede poner en ``src/`` o crear un directorio ``src/apps``, si se ponen en
-``src/``, no hacer nada, si se crea ``src/apps`` modificar ``src/settings/settings.py``.
-
-.. code-block:: python
-
-    # Solo si se van a crear las apps en ~/src/apps/
-
-    # Debajo de:
-    import os
-
-    # Insertar:
-    import sys
-
-    # Debajo de:
-    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-    Insertar:
-    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-
-    # Quedando asi:
-    import os
-    import sys
-
-    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-
 Crear app home
 **************
-
-Si se ha creado el directorio ``src/apps`` navegar hasta ``src/apps``,
-de lo contrario navegar hasta ``src/``
 
 .. code-block:: bash
 
@@ -484,12 +452,6 @@ de lo contrario navegar hasta ``src/``
     mkdir -p home/templates/home
     touch home/templates/home/index.html
     touch home/urls.py
-
-    # Si es en src/apps, desde src/apps
-    django-admin.py startapp home
-    mkdir -p apps/home/templates/home
-    touch apps/home/templates/home/index.html
-    touch apps/home/urls.py
 
 Añadir al index recién creado
 
@@ -603,68 +565,68 @@ Resultado final de la estructura:
 .. code-block:: bash
 
     .
-    |-- .git
-    |-- .gitignore
-    |-- bin
-    |   `-- gunicorn_start.sh
-    |-- cron
-    |-- docs
-    |-- logs
-    |-- requeriments
-    |   |-- base.txt
-    |   |-- development.txt
-    |   `-- production.txt
-    |-- run
-    `-- src
-        |-- apps
-        |   `-- home
-        |       |-- __init__.py
-        |       |-- admin.py
-        |       |-- migrations
-        |       |   `-- __init__.py
-        |       |-- models.py
-        |       |-- templates
-        |       |   `-- home
-        |       |       `-- index.html
-        |       |-- tests.py
-        |       |-- urls.py
-        |       `-- views.py
-        |-- manage.py
-        |-- media
-        |-- settings
-        |   |-- __init__.py
-        |   |-- settings.py
-        |   |-- settings_dev.py
-        |   |-- settings_prod.py
-        |   |-- urls.py
-        |   `-- wsgi.py
-        |-- static
-        |   |-- css
-        |   |   |-- bootstrap-theme.css
-        |   |   |-- bootstrap-theme.css.map
-        |   |   |-- bootstrap-theme.min.css
-        |   |   |-- bootstrap.css
-        |   |   |-- bootstrap.css.map
-        |   |   |-- bootstrap.min.css
-        |   |   |-- main.css
-        |   |   `-- main.min.css
-        |   |-- fonts
-        |   |   |-- glyphicons-halflings-regular.eot
-        |   |   |-- glyphicons-halflings-regular.svg
-        |   |   |-- glyphicons-halflings-regular.ttf
-        |   |   `-- glyphicons-halflings-regular.woff
-        |   |-- img
-        |   `-- js
-        |       |-- bootstrap.js
-        |       |-- bootstrap.min.js
-        |       |-- common.js
-        |       |-- common.min.js
-        |       `-- jquery-2.1.1.min.js
-        `-- templates
-            |-- 404.html
-            |-- 500.html
-            |-- _messages.html
-            `-- base.html
+    ├── proyect_name
+    │   ├── bin
+    │   │   └── gunicorn_start.sh
+    │   ├── cron
+    │   ├── docs
+    │   ├── logs
+    │   ├── requeriments
+    │   │   ├── base.txt
+    │   │   ├── development.txt
+    │   │   └── production.txt
+    │   ├── run
+    │   └── src
+    │       ├── home
+    │       │   ├── __init__.py
+    │       │   ├── admin.py
+    │       │   ├── migrations
+    │       │   │   └── __init__.py
+    │       │   ├── models.py
+    │       │   ├── templates
+    │       │   │   └── home
+    │       │   │       └── index.html
+    │       │   ├── tests.py
+    │       │   ├── urls.py
+    │       │   └── views.py
+    │       ├── manage.py
+    │       ├── media
+    │       ├── settings
+    │       │   ├── __init__.py
+    │       │   ├── settings.py
+    │       │   ├── settings_dev.py
+    │       │   ├── settings_prod.py
+    │       │   ├── urls.py
+    │       │   └── wsgi.py
+    │       ├── static
+    │       │   ├── css
+    │       │   │   ├── bootstrap.css
+    │       │   │   ├── bootstrap.css.map
+    │       │   │   ├── bootstrap.min.css
+    │       │   │   ├── bootstrap-theme.css
+    │       │   │   ├── bootstrap-theme.css.map
+    │       │   │   ├── bootstrap-theme.min.css
+    │       │   │   ├── main.css
+    │       │   │   └── main.min.css
+    │       │   ├── fonts
+    │       │   │   ├── glyphicons-halflings-regular.eot
+    │       │   │   ├── glyphicons-halflings-regular.svg
+    │       │   │   ├── glyphicons-halflings-regular.ttf
+    │       │   │   └── glyphicons-halflings-regular.woff
+    │       │   ├── img
+    │       │   └── js
+    │       │       ├── bootstrap.js
+    │       │       ├── bootstrap.min.js
+    │       │       ├── common.js
+    │       │       ├── common.min.js
+    │       │       └── jquery-2.1.1.min.js
+    │       └── templates
+    │           ├── _messages.html
+    │           ├── 404.html
+    │           ├── 500.html
+    │           └── base.html
+    └── README.md
+
 
 Si todo ha salido bien
 
