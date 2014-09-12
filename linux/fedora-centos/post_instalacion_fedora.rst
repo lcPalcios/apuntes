@@ -94,13 +94,12 @@ Programas basicos
 
     # yum -y groupinstall "Development-Tools"
     # O bien
-    yum install -y kernel-devel kernel-headers gcc cpp
+    yum install -y kernel-devel kernel-headers gcc cpp make
     yum -y install p7zip \
         p7zip-plugins \
         unrar \
         wget \
         git \
-        gitk \
         ctags \
         ctags-etags \
         mutt \
@@ -166,7 +165,6 @@ Eliminar algunos KDE
         libkdegames \
         kdegames-minimal \
         kwrite \
-        ktorrent \
         kdenetwork-kget \
         kdenetwork-kget-libs \
         amarok \

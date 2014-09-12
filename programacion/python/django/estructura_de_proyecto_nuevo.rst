@@ -46,12 +46,12 @@ Empiezo con requeriments
 .. code-block:: bash
 
     cd requeriments
-    touch base.txt production.txt development.txt
+    touch base.txt production.txt local.txt
 
     echo '-r base.txt' > production.txt
-    echo '-r base.txt' > development.txt
+    echo '-r base.txt' > local.txt
 
-Para un ejemplo simple, ``Django`` estará tanto en producción como en desarrollo,
+Para un ejemplo simple, ``Django`` estará tanto en producción como en desarrollo (local),
 por lo que se añade a ``base.txt``.
 
 ``Sphinx`` y ``django-debug-toolbar`` solo para desarrollo,
@@ -72,7 +72,7 @@ por lo que se añade a ``base.txt``.
     Django
     psycopg2
 
-    vim development.txt
+    vim local.txt
 
     # Añadir
     Sphinx
@@ -90,15 +90,17 @@ el de producción:
 .. code-block:: bash
 
     # Para el entorno de desarrollo.
-    pip install -r development.txt
+    pip install -r local.txt
 
     # Para el entorno de producción.
     pip install -r production.txt
 
+    cd ..
+
 Creacion del proyecto Django
 *****************************
 
-El proyecto para la explicación se llamara ``mysite``, así que empezamos con
+El proyecto para la practica se llamara ``mysite``, así que empezamos con
 ``django-admin`` en la raíz de ``proyect_name``.
 
 .. code-block:: bash
@@ -144,18 +146,11 @@ dentro de la capeta ``settings``.
 .. code-block:: bash
 
     cd settings
-    touch settings_prod.py settings_dev.py
-    cd ..
+    mv settings.py settings_base.py
+    touch settings_local.py settings_prod.py
 
-El archivo ``settings.py`` lo dejo como base, para las configuraciones que se
+El archivo ``settings_base.py`` lo dejo como base, para las configuraciones que se
 comparten en desarrollo y producción.
-
-Edito los archivos recién creados y les añado:
-
-.. code-block:: bash
-
-    echo 'from settings.settings import *' > settings_dev.py
-    echo 'from settings.settings import *' > settings_prod.py
 
 De momento, usan las mismas configuraciones, mas tarde las cambiaremos.
 
@@ -170,25 +165,29 @@ archivo. ``manage.py``
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
     # por
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings_dev")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings_local")
 
-Cambiar dentro de ``settings/settings.py`` algunas configuraciones.
+Cambiar dentro de ``settings/settings_base.py`` algunas configuraciones.
 
 .. code-block:: bash
 
-    # Linea 51, cambiar
+    # Buscar
+    ROOT_URLCONF = 'mysite.urls'
+
+    WSGI_APPLICATION = 'mysite.wsgi.application'
+
+    # Remplazar por
     ROOT_URLCONF = 'settings.urls'
 
-    # Linea 53, cambiar
     WSGI_APPLICATION = 'settings.wsgi.application'
 
 Estados de ``DEBUG`` y ``Database``
 
-Editar en ``settings/settings.py``, y aliminar lo siguiente:
+Editar en ``settings/settings_base.py``, y aliminar lo siguiente:
 
 .. code-block:: python
 
-    # Eliminar
+    # Eliminar desde la linea 22 a la 27
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
@@ -207,17 +206,51 @@ Editar en ``settings/settings.py``, y aliminar lo siguiente:
         }
     }
 
+Añadir despues de ``INSTALLED_APPS``
+
+.. code-block:: python
+
+    THIRD_PARTY_APPS = (
+    )
+
+    LOCAL_APPS = (
+        'home',
+    )
+
+Añadir al final
+
+.. code-block:: python
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
+    TEMPLATE_DIRS = (
+        os.path.join(BASE_DIR, 'templates'),
+    )
+
 Editar en ``settings/settings_prod.py``
 
 .. code-block:: python
 
-    # Añadir
+    from settings.settings_base import *
+
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = False
 
     TEMPLATE_DEBUG = False
 
     ALLOWED_HOSTS = ['ip(s) y/o dominio(s), aquí']
+
+    # Application definition
+
+    THIRD_PARTY_APPS += (
+    )
+
+    LOCAL_APPS += (
+    )
+
+    INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
 
     # Añadir la base de datos de produccion
     # Database
@@ -232,14 +265,27 @@ Editar en ``settings/settings_prod.py``
 
 En ``ALLOWED_HOSTS = []`` Añadir un string con el dominio o ip.
 
-Editar en ``settings/settings_dev.py``
+Editar en ``settings/settings_local.py``
 
 .. code-block:: python
+
+    from settings.settings_base import *
 
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
     TEMPLATE_DEBUG = True
+
+    # Application definition
+
+    THIRD_PARTY_APPS += (
+        'debug_toolbar.apps.DebugToolbarConfig',
+    )
+
+    LOCAL_APPS += (
+    )
+
+    INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
 
     # Añadir la base de datos de desarrollo
     # Database
@@ -313,7 +359,7 @@ Editar ``base.html`` y añadir
         <!-- Bootstrap -->
         <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
-        <link href="{% static "css/main.min.css" %}" rel="stylesheet">
+        <link href="{% static "css/main.css" %}" rel="stylesheet">
         {% block styles %}{% endblock styles %}
     </head>
     <body>
@@ -358,7 +404,7 @@ Editar ``base.html`` y añadir
         <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static "js/bootstrap.min.js" %}"></script>
-        <script src="{% static "js/common.min.js" %}"></script>
+        <script src="{% static "js/main.js" %}"></script>
         {% block scripts %}{% endblock scripts %}
     </body>
     </html>
@@ -399,7 +445,7 @@ Editar ``404.html`` y añadir
         </div>
     {% endblock content %}
 
-Ir a ``src/templates/js``, crear un archivo ``common.js`` y añadir
+Ir a ``src/templates/js``, crear un archivo ``main.js`` y añadir
 
 .. code-block:: javascript
 
@@ -429,18 +475,21 @@ Ir a ``src/templates/css``, crear un archivo ``main.css`` y añadir
         padding-top: 70px;
         padding-bottom: 20px;
     }
-
-Editar ``src/settings/settings.py`` y añadir al final
-
-.. code-block:: python
-
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-
-    TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'templates'),
-    )
+    .go-top {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        text-decoration: none;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 12px;
+        padding: 1em;
+        display: none;
+        cursor: pointer;
+    }
+    .go-top:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 
 Crear app home
 **************
@@ -499,26 +548,6 @@ Editar ``home/views.py``
     def index(request):
         return render(request, 'home/index.html')
 
-Ahora ya solo quedar añadir la ``app`` en ``settings/settings.py``
-
-.. code-block:: python
-
-    # Application definition
-
-    INSTALLED_APPS = (
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-    )
-
-    # Local APPS
-    INSTALLED_APPS += (
-        'home',
-    )
-
 GIT
 ***
 
@@ -565,68 +594,64 @@ Resultado final de la estructura:
 .. code-block:: bash
 
     .
-    ├── proyect_name
-    │   ├── bin
-    │   │   └── gunicorn_start.sh
-    │   ├── cron
-    │   ├── docs
-    │   ├── logs
-    │   ├── requeriments
-    │   │   ├── base.txt
-    │   │   ├── development.txt
-    │   │   └── production.txt
-    │   ├── run
-    │   └── src
-    │       ├── home
-    │       │   ├── __init__.py
-    │       │   ├── admin.py
-    │       │   ├── migrations
-    │       │   │   └── __init__.py
-    │       │   ├── models.py
-    │       │   ├── templates
-    │       │   │   └── home
-    │       │   │       └── index.html
-    │       │   ├── tests.py
-    │       │   ├── urls.py
-    │       │   └── views.py
-    │       ├── manage.py
-    │       ├── media
-    │       ├── settings
-    │       │   ├── __init__.py
-    │       │   ├── settings.py
-    │       │   ├── settings_dev.py
-    │       │   ├── settings_prod.py
-    │       │   ├── urls.py
-    │       │   └── wsgi.py
-    │       ├── static
-    │       │   ├── css
-    │       │   │   ├── bootstrap.css
-    │       │   │   ├── bootstrap.css.map
-    │       │   │   ├── bootstrap.min.css
-    │       │   │   ├── bootstrap-theme.css
-    │       │   │   ├── bootstrap-theme.css.map
-    │       │   │   ├── bootstrap-theme.min.css
-    │       │   │   ├── main.css
-    │       │   │   └── main.min.css
-    │       │   ├── fonts
-    │       │   │   ├── glyphicons-halflings-regular.eot
-    │       │   │   ├── glyphicons-halflings-regular.svg
-    │       │   │   ├── glyphicons-halflings-regular.ttf
-    │       │   │   └── glyphicons-halflings-regular.woff
-    │       │   ├── img
-    │       │   └── js
-    │       │       ├── bootstrap.js
-    │       │       ├── bootstrap.min.js
-    │       │       ├── common.js
-    │       │       ├── common.min.js
-    │       │       └── jquery-2.1.1.min.js
-    │       └── templates
-    │           ├── _messages.html
-    │           ├── 404.html
-    │           ├── 500.html
-    │           └── base.html
-    └── README.md
+    ├── bin
+    ├── cron
+    ├── docs
+    ├── logs
+    ├── requeriments
+    │   ├── base.txt
+    │   ├── local.txt
+    │   └── production.txt
+    ├── run
+    └── src
+        ├── home
+        │   ├── admin.py
+        │   ├── __init__.py
+        │   ├── migrations
+        │   │   └── __init__.py
+        │   ├── models.py
+        │   ├── templates
+        │   │   └── home
+        │   │       └── index.html
+        │   ├── tests.py
+        │   ├── urls.py
+        │   └── views.py
+        ├── manage.py
+        ├── media
+        ├── settings
+        │   ├── __init__.py
+        │   ├── settings_base.py
+        │   ├── settings_local.py
+        │   ├── settings_prod.py
+        │   ├── urls.py
+        │   └── wsgi.py
+        ├── static
+        │   ├── css
+        │   │   ├── bootstrap.css
+        │   │   ├── bootstrap.css.map
+        │   │   ├── bootstrap.min.css
+        │   │   ├── bootstrap-theme.css
+        │   │   ├── bootstrap-theme.css.map
+        │   │   ├── bootstrap-theme.min.css
+        │   │   └── main.css
+        │   ├── fonts
+        │   │   ├── glyphicons-halflings-regular.eot
+        │   │   ├── glyphicons-halflings-regular.svg
+        │   │   ├── glyphicons-halflings-regular.ttf
+        │   │   └── glyphicons-halflings-regular.woff
+        │   ├── img
+        │   └── js
+        │       ├── bootstrap.js
+        │       ├── bootstrap.min.js
+        │       ├── jquery-2.1.1.min.js
+        │       └── main.js
+        └── templates
+            ├── 404.html
+            ├── 500.html
+            ├── base.html
+            └── _messages.html
 
+    19 directories, 37 files
 
 Si todo ha salido bien
 

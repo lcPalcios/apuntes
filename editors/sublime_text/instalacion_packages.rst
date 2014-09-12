@@ -26,7 +26,7 @@ Packages comunes
 Theme
 *****
 
-* Theme - Flatland
+* Predawn
 
 Python
 ******
@@ -56,6 +56,7 @@ Otros
 
 Me dejo aquí algunos addons para recordar el nombre.
 
+* Theme - Flatland
 * SublimeLinter-pep8
 * Monokai extended
 * AllAutocomplete

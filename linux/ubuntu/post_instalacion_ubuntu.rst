@@ -4,16 +4,6 @@
 Post instalacion Ubuntu
 #######################
 
-Tengo el SO en ingles, pero país, moneda, etc en español. Si da el error de
-``locale: Cannot set LC_ALL to default locale: No such file or directory``,
-editar ``/etc/environment`` y añadir:
-
-.. code-block:: bash
-
-    LC_ALL="en_US.UTF-8"
-
-    # reiniciar
-
 Si se usa calligra, eliminar libreoffice antes de actualizar.
 
 .. code-block:: bash
@@ -26,7 +16,7 @@ Actualizar.
 
     sudo apt-get update && apt-get dist-upgrade
 
-Si es Virtualbox.
+Si es una instalación de VirtualBox.
 
 .. code-block:: bash
 
@@ -51,7 +41,6 @@ Programas basicos.
     sudo apt-get install -y \
         build-essential \
         git \
-        gitk \
         git-cola \
         exuberant-ctags \
         curl \
@@ -63,6 +52,7 @@ Programas basicos.
         tree \
         python-pygments
 
+    # JDK y JRE
     sudo apt-get install -y \
         openjdk-7-jre \
         openjdk-7-jdk
@@ -78,7 +68,7 @@ KDE
 
 Si se configura Akonadi con SQLite o PostgreSQL.
 
-Cambiar en Menú y buscar Akonadi Server Configuration.
+Cambiar en Menú > buscar ``Akonadi Server Configuration``.
 
 .. code-block:: bash
 
@@ -144,10 +134,6 @@ qBittorent.
 GNOME
 =====
 
-gnome 3.12 en ubuntu-gnome 14.04.
-
-* https://kerneleros.com/instalar-gnome-3-12-en-ubuntu-14-04/
-
 Eliminar en Ubuntu Unity Amazon.
 
 .. code-block:: bash
@@ -172,7 +158,7 @@ Meld.
 
     sudo apt-get install meld -y
 
-Gpick.
+gpick.
 
 .. code-block:: bash
 
@@ -194,7 +180,7 @@ RabbitVCS.
 
 -------------------
 
-KDE/GNOME/Varios
+KDE/GNOME
 ================
 
 Umbrello.

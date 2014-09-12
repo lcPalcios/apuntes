@@ -21,9 +21,9 @@ EPEL RHEL/CentOS 7
 
 .. code-block:: bash
 
-    wget http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
-    rpm -ivh epel-release-7-0.2.noarch.rpm
-    rm epel-release-7-0.2.noarch.rpm
+    wget http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-2.noarch.rpm
+    rpm -ivh epel-release-7-2.noarch.rpm
+    rm epel-release-7-2.noarch.rpm
 
 REMI
 ****
@@ -41,13 +41,12 @@ Programas basicos
 
 .. code-block:: bash
 
-    yum install -y kernel-devel kernel-headers gcc cpp
+    yum install -y kernel-devel kernel-headers gcc cpp make
     yum -y install p7zip \
         p7zip-plugins \
         unrar \
         wget \
         git \
-        gitk \
         ctags \
         ctags-etags \
         mutt \
@@ -112,7 +111,6 @@ Eliminar algunos KDE
         libkdegames \
         kdegames-minimal \
         kwrite \
-        ktorrent \
         kdenetwork-kget \
         kdenetwork-kget-libs \
         amarok \
