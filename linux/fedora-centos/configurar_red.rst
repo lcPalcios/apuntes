@@ -4,10 +4,11 @@
 Configurar Red
 ##############
 
-Fuentes
-*******
+**Fuentes**
 
-http://superuser.com/questions/645487/static-ip-address-with-networkmanager
+* http://superuser.com/questions/645487/static-ip-address-with-networkmanager
+
+----
 
 Como administrador e ir a donde están los archivos de red.
 

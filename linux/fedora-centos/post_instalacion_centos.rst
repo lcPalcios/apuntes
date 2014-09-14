@@ -15,15 +15,16 @@ Actualizar el sistema
 .. code-block:: bash
 
     yum update
+    yum install net-tools wget vim
 
 EPEL RHEL/CentOS 7
 *************************
 
 .. code-block:: bash
 
-    wget http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-2.noarch.rpm
-    rpm -ivh epel-release-7-2.noarch.rpm
-    rm epel-release-7-2.noarch.rpm
+    wget http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-1.noarch.rpm
+    rpm -ivh epel-release-7-1.noarch.rpm
+    rm epel-release-7-1.noarch.rpm
 
 REMI
 ****
@@ -44,7 +45,7 @@ Programas basicos
     yum install -y kernel-devel kernel-headers gcc cpp make
     yum -y install p7zip \
         p7zip-plugins \
-        unrar \
+        openssh \
         wget \
         git \
         ctags \

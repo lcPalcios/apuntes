@@ -24,9 +24,9 @@ Crear archivo .gitignore_global
     # Directories #
     ###############
     __pycache__/
-    logs/
     .idea/
-    build
+    build/
+    logs/
 
     # Specific files #
     ##################

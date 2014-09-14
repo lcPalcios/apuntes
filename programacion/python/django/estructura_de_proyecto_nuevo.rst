@@ -43,14 +43,6 @@ uno común y otros dos, uno para desarrollo y otro para producción.
 
 Empiezo con requeriments
 
-.. code-block:: bash
-
-    cd requeriments
-    touch base.txt production.txt local.txt
-
-    echo '-r base.txt' > production.txt
-    echo '-r base.txt' > local.txt
-
 Para un ejemplo simple, ``Django`` estará tanto en producción como en desarrollo (local),
 por lo que se añade a ``base.txt``.
 
@@ -69,19 +61,22 @@ por lo que se añade a ``base.txt``.
     vim base.txt
 
     # Añadir
-    Django
+    django
     psycopg2
 
     vim local.txt
 
     # Añadir
-    Sphinx
-    django-debug-toolbar
+    -r base.txt # includes the base.txt requirements file
 
+    sphinx
+    django-debug-toolbar
 
     vim production.txt
 
     # Añadir
+    -r base.txt # includes the base.txt requirements file
+
     gunicorn
 
 Ahora dependiendo de si estamos en el entorno de desarrollo o
@@ -573,9 +568,9 @@ Crear .gitignore
     # Directories #
     ###############
     __pycache__/
-    logs/
     .idea/
     build/
+    logs/
 
     # Specific files #
     ##################
