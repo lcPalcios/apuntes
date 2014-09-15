@@ -46,7 +46,7 @@ Pysopg2
 
 .. code-block:: bash
 
-    (py3venv) easy_install http://www.stickpeople.com/projects/python/win-psycopg/2.5.3/psycopg2-2.5.3.win-amd64-py3.4-pg9.3.4-release.exe
+    (py3venv) easy_install http://www.stickpeople.com/projects/python/win-psycopg/2.5.4/psycopg2-2.5.4.win-amd64-py3.4-pg9.3.5-release.exe
 
 PYTHONPATH
 **********

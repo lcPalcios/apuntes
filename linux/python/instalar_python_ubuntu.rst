@@ -1,30 +1,8 @@
 .. _reference-linux-python-instalar_python:
 
-#####################
-Instalación de Python
-#####################
-
-Fedora
-******
-
-Python2
-=======
-
-.. code-block:: bash
-
-    yum install -y python-setuptools python-devel
-    yum install -y python-pip
-
-Python3
-=======
-
-.. code-block:: bash
-
-    yum install -y python3 python3-setuptools python3-devel
-    yum install -y python3-pip
-
-Ubuntu
-******
+############################
+Instalacion Python en Ubuntu
+############################
 
 Python2
 =======
@@ -53,21 +31,6 @@ Use Pip
     # en python 3
     pip3 install nombre_paquete
 
-Centos 7 y Python 3.4.1
-***********************
-
-.. code-block:: bash
-
-    yum install -y zlib-devel openssl-devel sqlite-devel bzip2-devel
-    wget https://www.python.org/ftp/python/3.4.1/Python-3.4.1.tgz
-    tar -zxvf Python-3.4.1.tgz
-    cd Python-3.4.1
-
-    ./configure
-    make && make altinstall
-
-Usar pip con ``pip3.4``
-
 Virtualenv y Virtualenvwrapper en Fedora/Ubuntu
 ***********************************************
 
@@ -78,28 +41,16 @@ Instalación
     sudo pip3 install virtualenv
     mkdir ~/.virtualenvs
 
-Virtualenv con python 3
-=======================
-
-Si se va a usar Virtualenvwrapper omitir esta parte
+Virtualenv y Virtualenvwrapper
+******************************
 
 .. code-block:: bash
 
-    virtualenv -p /usr/bin/python3 ~/.virtualenvs/py3venv --no-site-packages
-    source py3venv/bin/activate
+    su
+    pip3 install virtualenv virtualenvwrapper
+    exit
 
-Para desactivar
-
-.. code-block:: bash
-
-    deactivate
-
-Instalar Virtualenvwrapper
-==========================
-
-.. code-block:: bash
-
-    sudo pip3 install virtualenvwrapper
+    mkdir ~/.virtualenvs
 
 Editar .bashrc
 
@@ -111,20 +62,9 @@ Añadir
 
 .. code-block:: bash
 
-    # which pythonXXX, para donde esta el ejecutable a usar
-
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     export WORKON_HOME=$HOME/.virtualenvs
-
-    # Ubuntu
     source /usr/local/bin/virtualenvwrapper.sh
-
-    # Fedora
-    source /usr/bin/virtualenvwrapper.sh
-
-    # Centos, compilacion de python
-    source /usr/local/bin/virtualenvwrapper.sh
-
 
 Comandos
 

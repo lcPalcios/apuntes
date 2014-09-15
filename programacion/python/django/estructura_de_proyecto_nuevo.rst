@@ -21,7 +21,7 @@ virtual de Python.
 Dejo aquí como :ref:`reference-linux-python-instalar_python`
 
 Ahora creo un directorio que es donde estará todo lo relacionado
-con el proyecto, como docs, cron, requeriments, etc.
+con el proyecto, como docs, requeriments, etc.
 
 .. code-block:: bash
 
@@ -32,11 +32,7 @@ Creo varias carpetas, que mas tarde usare.
 .. code-block:: bash
 
     cd proyect_name
-    mkdir docs requeriments cron logs bin run
-
-La carpeta de ``cron`` la creo pero no hablare mas de el,
-ya que no se cuando me hará falta generar automatizaciones
-para el servidor (pensado para producción).
+    mkdir docs requeriments logs bin
 
 Los documentos (docs), lo genero con Sphinx y en requeriments creo tres archivos,
 uno común y otros dos, uno para desarrollo y otro para producción.
@@ -590,14 +586,12 @@ Resultado final de la estructura:
 
     .
     ├── bin
-    ├── cron
     ├── docs
     ├── logs
     ├── requeriments
     │   ├── base.txt
     │   ├── local.txt
     │   └── production.txt
-    ├── run
     └── src
         ├── home
         │   ├── admin.py
