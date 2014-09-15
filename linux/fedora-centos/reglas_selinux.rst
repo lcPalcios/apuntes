@@ -44,6 +44,7 @@ de inicio de los usuarios locales
 
     setsebool -P httpd_enable_homedirs 1
     setsebool -P httpd_read_user_content 1
+    setsebool -P httpd_can_network_connect on
 
 Enable File Control Contexts (No me hizo falta)
 

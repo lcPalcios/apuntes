@@ -84,6 +84,7 @@ Añadimos
     server {
         listen   80;
         server_name lxmaq1.workspace.local;
+        root /home/snicoper/projects/python/proyect_name/src;
 
         access_log /home/snicoper/projects/python/proyect_name/logs/nginx-access.log;
         error_log /home/snicoper/projects/python/proyect_name/logs/nginx-error.log;
@@ -101,7 +102,7 @@ Añadimos
         # Django static admin
         location /static/admin/ {
             # this changes depending on your python version
-            root /home/snicoper/.virtualenvs/default/lib/python3.4/site-packages/django/contrib/admin/;
+            alias /home/snicoper/.virtualenvs/default/lib/python3.4/site-packages/django/contrib/admin/;
         }
 
         location / {
