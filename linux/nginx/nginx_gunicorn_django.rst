@@ -77,7 +77,11 @@ Nginx
 
 .. code-block:: bash
 
+    # Ubuntu
     sudo vim /etc/nginx/sites-avalaible/proyect_name
+
+    # Fedora/Centos
+    sudo vim /etc/nginx/conf.d/proyect_name.conf
 
 Añadimos
 
@@ -118,20 +122,30 @@ Añadimos
         }
 
         # what to serve if upstream is not available or crashes
-        error_page 500 502 503 504 /media/50x.html;
+        error_page 500 502 503 504 /templates/50x.html;
     }
-
-Si los archivos static no se ven, mirar ``collectstatic`` de django.
 
 .. code-block:: bash
 
+    # Solo ubuntu
     sudo ln -s /etc/nginx/sites-avalaible/proyect_name /etc/nginx/sites-enabled/proyect_name
+
+Si los archivos static no se ven, mirar ``collectstatic`` de django, o modificar
+``location /static/admin/``
+
+En Fedora/Centos, mirar :ref:`reference-linux-fedora-centos-reglas_selinux` y si el
+proyecto esta en el ``home`` de un usuario, poner permisos ``711`` en la carpeta
+del usuario, de lo contrario, mostrara un error ``403``
 
 Reiniciar nginx
 
 .. code-block:: bash
 
+    # Ubuntu
     sudo service nginx restart
+
+    # Fedora/Centos
+    systemctl restart nginx.service
 
 Supervisor
 **********
@@ -142,28 +156,6 @@ Supervisor
 
     sudo apt-get install supervisor
     sudo touch /etc/supervisor/conf.d/proyect_name.conf
-
-**Fedora/Centos**
-
-.. code-block:: bash
-
-    su
-
-    # Requiere repos epel
-    yum install supervisor
-
-    # Esto lo tengo que hacer cada vez que reinicio
-    supervisord -c /etc/supervisord.conf
-
-    vim /etc/supervisord.conf
-
-    # Cambiar ``*.ini`` por ``*.conf`` al final del archivo.
-    [include]
-    files = /etc/supervisord.d/*.conf
-
-    touch /etc/supervisord.d/proyect_name.conf
-
-**Ubuntu/Fedora/Centos**
 
 Añadir en ``proyect_name.conf``
 
@@ -198,3 +190,36 @@ Crear archivo de log
     sudo supervisorctl start proyect_name
     sudo supervisorctl restart proyect_name
 
+Systemd
+*******
+
+**Fedora/Centos7 como servicio**
+
+Es la primera vez que hago un script de este tipo, asi que, sera mejorable, pero funciona!
+
+.. code-block:: bash
+
+    sudo vim /etc/systemd/system/gunicorn.service
+
+    # Añadir
+    [Unit]
+    Description=Gunicorn Start Django server
+    After=syslog.target
+
+    [Service]
+    Type=simple
+    PIDFile=/var/run/gunicorn_start.pid
+    ExecStart=/home/snicoper/projects/python/proyect_name/bin/gunicorn_start.sh
+    Restart=on-abort
+
+    [Install]
+    WantedBy=multi-user.target
+
+En principio funciona :S
+
+.. code-block:: bash
+
+    sudo systemctl start gunicorn.service
+    sudo systemctl stop gunicorn.service
+    sudo systemctl restart gunicorn.service
+    sudo systemctl enable gunicorn.service
