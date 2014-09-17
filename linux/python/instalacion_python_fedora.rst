@@ -28,7 +28,7 @@ Use Pip
     pip install nombre_paquete
 
     # en python 3
-    pip3 install nombre_paquete
+    pip-python3 install nombre_paquete
 
 Virtualenv y Virtualenvwrapper
 ******************************
@@ -36,7 +36,7 @@ Virtualenv y Virtualenvwrapper
 .. code-block:: bash
 
     su
-    pip3 install virtualenv virtualenvwrapper
+    pip-python3 install virtualenv virtualenvwrapper
     exit
 
     mkdir ~/.virtualenvs

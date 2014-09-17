@@ -16,7 +16,7 @@ La configuración se pone en
 .. code-block:: javascript
 
     {
-        "python_interpreter": "/home/snicoper/Desktop/test/venv/bin/python3",
+        "python_interpreter": "/home/snicoper/.virtualenvs/default/bin/python",
         "anaconda_linter_mark_style": "none",
         "complete_parameters": true,
         "anaconda_gutter_theme": "alpha",
@@ -25,6 +25,5 @@ La configuración se pone en
         "auto_formatting": false,
         "pep8_ignore":
         [
-            "E309",
         ],
     }

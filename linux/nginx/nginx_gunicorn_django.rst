@@ -16,8 +16,6 @@ Instalación Nginx, Gunicorn y Django
     Estas notas estan basadas en la estuctura
     :ref:`reference-programacion-python-django-estructura_de_proyecto_nuevo`
 
-    Probado en Ubuntu 14.04
-
 Gunicorn
 ********
 
@@ -73,6 +71,10 @@ Nginx
 
 :ref:`reference-linux-nginx-instalacion_nginx`
 
+.. note::
+    En Fedora/Centos si se sirven las paginas en el ``home`` hay que dar pemisos
+    al home del usuario ``chmod 711 /home/usuario``
+
 .. code-block:: bash
 
     sudo vim /etc/nginx/sites-avalaible/proyect_name
@@ -83,11 +85,10 @@ Añadimos
 
     server {
         listen   80;
-        server_name lxmaq1.workspace.local;
-        root /home/snicoper/projects/python/proyect_name/src;
+        server_name www.workspace.local;
 
-        access_log /home/snicoper/projects/python/proyect_name/logs/nginx-access.log;
-        error_log /home/snicoper/projects/python/proyect_name/logs/nginx-error.log;
+        access_log /var/log/nginx/proyect_name-access.log;
+        error_log /var/log/nginx/proyect_name-error.log;
 
         # Django media
         location /media/  {
@@ -102,7 +103,7 @@ Añadimos
         # Django static admin
         location /static/admin/ {
             # this changes depending on your python version
-            alias /home/snicoper/.virtualenvs/default/lib/python3.4/site-packages/django/contrib/admin/;
+            alias /home/snicoper/.virtualenvs/default/lib/python3.4/site-packages/django/contrib/admin/static/admin/;
         }
 
         location / {
@@ -120,6 +121,8 @@ Añadimos
         error_page 500 502 503 504 /media/50x.html;
     }
 
+Si los archivos static no se ven, mirar ``collectstatic`` de django.
+
 .. code-block:: bash
 
     sudo ln -s /etc/nginx/sites-avalaible/proyect_name /etc/nginx/sites-enabled/proyect_name
@@ -133,20 +136,44 @@ Reiniciar nginx
 Supervisor
 **********
 
+**Ubuntu**
+
 .. code-block:: bash
 
     sudo apt-get install supervisor
-    sudo vim /etc/supervisor/conf.d/proyect_name.conf
+    sudo touch /etc/supervisor/conf.d/proyect_name.conf
 
-Añadir
+**Fedora/Centos**
+
+.. code-block:: bash
+
+    su
+
+    # Requiere repos epel
+    yum install supervisor
+
+    # Esto lo tengo que hacer cada vez que reinicio
+    supervisord -c /etc/supervisord.conf
+
+    vim /etc/supervisord.conf
+
+    # Cambiar ``*.ini`` por ``*.conf`` al final del archivo.
+    [include]
+    files = /etc/supervisord.d/*.conf
+
+    touch /etc/supervisord.d/proyect_name.conf
+
+**Ubuntu/Fedora/Centos**
+
+Añadir en ``proyect_name.conf``
 
 .. code-block:: bash
 
     [program:proyect_name]
-    command = /home/snicoper/projects/python/proyect_name/bin/gunicorn_start.sh ; Command to start app
-    user = snicoper ; User to run as
-    stdout_logfile = /home/snicoper/projects/python/proyect_name/logs/gunicorn_supervisor.log ; Where to write log messages
-    redirect_stderr = true ; Save stderr in the same log
+    command=/home/snicoper/projects/python/proyect_name/bin/gunicorn_start.sh
+    user=snicoper
+    stdout_logfile=/home/snicoper/projects/python/proyect_name/logs/gunicorn_supervisor.log
+    redirect_stderr=true
     autostart=true
     autorestart=true
 
@@ -154,6 +181,7 @@ Crear archivo de log
 
 .. code-block:: bash
 
+    mkdir /home/snicoper/projects/python/proyect_name/logs
     touch /home/snicoper/projects/python/proyect_name/logs/gunicorn_supervisor.log
 
 .. code-block:: bash

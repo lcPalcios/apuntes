@@ -54,7 +54,7 @@ Ubuntu
 Fedora
 ======
 
-**Por hacer**
+:ref:`reference-linux-fedora-centos-configurar_red`
 
 Configuracion Bind
 ******************
@@ -81,7 +81,37 @@ Ubuntu
 Fedora
 ======
 
-**Por hacer**
+.. code-block:: bash
+
+    vim /etc/named.conf
+
+Cambiar al principio:
+
+.. code-block:: bash
+
+    options {
+            #listen-on port 53 { 127.0.0.1; 192.168.1.2; };
+            listen-on-v6 port 53 { ::1; };
+            directory       "/var/named";
+            dump-file       "/var/named/data/cache_dump.db";
+            statistics-file "/var/named/data/named_stats.txt";
+            memstatistics-file "/var/named/data/named_mem_stats.txt";
+            allow-query     { any; };
+            allow-transfer     { localhost; 192.168.1.0/24; };
+
+Insertar entre ``logging {...`` y ``zone "." IN {...``
+
+.. code-block:: bash
+
+    zone "workspace.local" {
+        type master;
+        file "/var/named/db.workspace";
+    };
+
+    zone "1.168.192.in-addr.arpa" {
+        type master;
+        file "/var/named/db.1.168.192";
+    };
 
 Ubuntu y Fedora
 ***************
@@ -92,7 +122,7 @@ Ubuntu y Fedora
     sudo vim /etc/bind/db.workspace
 
     # Fedora
-    # Por hacer
+    vim /var/named/db.workspace
 
 .. code-block:: bash
 
@@ -125,7 +155,7 @@ Ubuntu y Fedora
     sudo vim /etc/bind/db.1.168.192
 
     # Fedora
-    # Por hacer
+    vim /var/named/db.1.168.192
 
 .. code-block:: bash
 
@@ -144,6 +174,8 @@ Ubuntu y Fedora
             IN      NS      ns1.workspace.local.
 
             IN      PTR     workspace.local.
+            IN      A       255.255.255.0
+
     10      IN      PTR     ns1.workspace.local.
 
 
@@ -159,4 +191,19 @@ Ubuntu
 Fedora
 ******
 
-**Por hacer**
+.. code-block:: bash
+
+    vim /etc/sysconfig/named
+
+Añadir
+
+.. code-block:: bash
+
+    OPTIONS="-4"
+
+Firewall
+
+.. code-block:: bash
+
+    firewall-cmd --permanent --zone=public --add-service=dns
+    systemctl restart firewalld.service

@@ -31,16 +31,6 @@ Use Pip
     # en python 3
     pip3 install nombre_paquete
 
-Virtualenv y Virtualenvwrapper en Fedora/Ubuntu
-***********************************************
-
-Instalación
-
-.. code-block:: bash
-
-    sudo pip3 install virtualenv
-    mkdir ~/.virtualenvs
-
 Virtualenv y Virtualenvwrapper
 ******************************
 

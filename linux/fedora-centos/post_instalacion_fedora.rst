@@ -9,6 +9,11 @@ Post instalacion Fedora
 
 Todo se hace como usuario ``root`` a no ser que se diga lo contrario.
 
+Si se elimina Calligra, eliminarlo antes de actualizar.
+
+.. code-block:: bash
+
+    yum remove calligra*
 
 Actualizar
 **********
@@ -197,14 +202,12 @@ GKT
 
 Chromium estable
 ================
-.. note::
-    Me desconfigura bind, solo usar en clientes.
 
-* http://spot.livejournal.com/326919.html
+* http://copr.fedoraproject.org/coprs/churchyard/chromium-russianfedora-tested/
 
 .. code-block:: bash
 
-    yum-config-manager --add-repo=http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo
-    wget http://repos.fedorapeople.org/repos/spot/chromium-stable/spot.gpg
+    /etc/yum.repos.d
+    wget https://copr.fedoraproject.org/coprs/churchyard/chromium-russianfedora-tested/repo/fedora-20/churchyard-chromium-russianfedora-tested-fedora-20.repo
 
     yum install chromium -y

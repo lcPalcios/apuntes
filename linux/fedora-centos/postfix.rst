@@ -126,6 +126,7 @@ Dovecot
 
 .. code-block:: bash
 
+    # line 100: add 'login'
     auth_mechanisms = plain login
 
 .. code-block:: bash

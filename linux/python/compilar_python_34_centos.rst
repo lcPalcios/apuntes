@@ -9,12 +9,22 @@ Compilación
 
 .. code-block:: bash
 
-    sudo yum install -y zlib-devel openssl-devel sqlite-devel bzip2-devel
+    sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+
+.. code-block:: bash
+
+    vim /etc/ld.so.conf
+
+    # Añadir
+    /usr/local/lib
+
+.. code-block:: bash
+
     wget https://www.python.org/ftp/python/3.4.1/Python-3.4.1.tgz
     tar -zxvf Python-3.4.1.tgz
     cd Python-3.4.1
 
-    ./configure
+    ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
     make
     sudo make altinstall
 

@@ -9,6 +9,7 @@ Categorias:
 .. toctree::
     :maxdepth: 1
 
+    atributos_todos_campos_modelform
     estructura_de_proyecto_nuevo
     how_to_create_language_files
     migraciones_django

@@ -477,6 +477,7 @@ Ir a ``src/templates/css``, crear un archivo ``main.css`` y añadir
         padding: 1em;
         display: none;
         cursor: pointer;
+        border-radius: 45px;
     }
     .go-top:hover {
         background-color: rgba(0, 0, 0, 0.6);

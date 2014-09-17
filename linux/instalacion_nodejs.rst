@@ -13,7 +13,7 @@ Fedora
 
 .. code-block:: bash
 
-    yum install nodejs
+    sudo yum install nodejs npm
 
 Ubuntu
 ======
@@ -30,7 +30,7 @@ less
 
 .. code-block:: bash
 
-    npm install less -g
+    sudo npm install less -g
 
 para usar: lessc archivo.less > archivo.css
 
@@ -39,7 +39,7 @@ typescript
 
 .. code-block:: bash
 
-    npm install typescript -g
+    sudo npm install typescript -g
 
 para transformar: tsc helloworld.ts
 
@@ -48,4 +48,4 @@ yuicompressor
 
 .. code-block:: bash
 
-    npm install yuicompressor -g
+    sudo npm install yuicompressor -g

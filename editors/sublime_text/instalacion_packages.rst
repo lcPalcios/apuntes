@@ -33,7 +33,7 @@ Python
 
 * Anaconda
 * Djaneiro
-* Python Imports Sorter
+* Python Imports Sorter # Linux: Super+Shift+I
 
 Python varios
 =============
