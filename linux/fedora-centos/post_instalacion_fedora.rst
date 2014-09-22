@@ -121,6 +121,12 @@ KDE
     yum -y install oxygen-cursor-themes firefox kate \
         umbrello git-cola kdiff3
 
+Muestra alertas de selinux, no viene por defecto en KDE
+
+.. code-block:: bash
+
+    yum -y install setroubleshoot
+
 Gnome
 *****
 

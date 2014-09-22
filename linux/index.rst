@@ -35,6 +35,7 @@ Contents:
    comando_find
    comando_setfacl
    comprimir_descomprimir_desde_consola
+   configurar_mutt
    comandos_utiles
    contar_lineas_proyecto
    crear_grupos_anadir_usuarios_a_grupo

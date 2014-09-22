@@ -121,19 +121,4 @@ Todo como root
     systemctl restart nginx.service
     systemctl restart php-fpm.service
 
-.. danger::
-    If you get 403 forbidden error, then you probably have problem with SELinux,
-    then run simply following command:
-
-    Ver :ref:`reference-linux-fedora-centos-reglas_selinux`
-
-.. warning::
-    POR PROVAR |br|
-    Creo que me deberia dar error SELinux...
-
-.. code-block:: bash
-
-    chcon -R -t httpd_sys_content_t /home/snicoper/public_html
-
-    ## Or some apps might need httpd_sys_rw_content_t ##
-    chcon -R -t httpd_sys_rw_content_t /home/snicoper/public_html
+Ver :ref:`reference-linux-fedora-centos-reglas_selinux`

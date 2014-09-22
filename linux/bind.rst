@@ -11,6 +11,7 @@ Fuentes
 * http://www.belinuxmyfriend.com/2007/07/ip-estatica-en-ubuntu-manualmente.html
 * http://www.server-world.info/en/note?os=Ubuntu_13.04&p=dns&f=1
 * http://lani78.com/2012/07/22/setting-up-a-dns-for-the-local-network-on-the-ubuntu-12-04-precise-pangolin-server/
+* http://docs.fedoraproject.org/en-US/Fedora/20/html/Networking_Guide/index.html
 
 Instalacion
 ***********
@@ -25,7 +26,11 @@ Ubuntu
 Fedora
 ======
 
-**Por hacer**
+.. code-block:: bash
+
+    yum install bind bind-utils bind-chroot
+    systemctl enable named-chroot
+    systemctl start named-chroot
 
 Configuración Red
 *****************
@@ -68,12 +73,12 @@ Ubuntu
 
 .. code-block:: bash
 
-    zone "workspace.local" {
+    zone "workspace.local" IN {
         type master;
         file "/etc/bind/db.workspace";
     };
 
-    zone "1.168.192.in-addr.arpa" {
+    zone "1.168.192.in-addr.arpa" IN {
         type master;
         file "/etc/bind/db.1.168.192";
     };
@@ -90,25 +95,24 @@ Cambiar al principio:
 .. code-block:: bash
 
     options {
-            #listen-on port 53 { 127.0.0.1; 192.168.1.2; };
+            listen-on port 53 { 127.0.0.1; 192.168.1.100; };
             listen-on-v6 port 53 { ::1; };
             directory       "/var/named";
             dump-file       "/var/named/data/cache_dump.db";
             statistics-file "/var/named/data/named_stats.txt";
             memstatistics-file "/var/named/data/named_mem_stats.txt";
-            allow-query     { any; };
-            allow-transfer     { localhost; 192.168.1.0/24; };
+            allow-query     { localhost; any; };
 
 Insertar entre ``logging {...`` y ``zone "." IN {...``
 
 .. code-block:: bash
 
-    zone "workspace.local" {
+    zone "workspace.local" IN {
         type master;
         file "/var/named/db.workspace";
     };
 
-    zone "1.168.192.in-addr.arpa" {
+    zone "1.168.192.in-addr.arpa" IN {
         type master;
         file "/var/named/db.1.168.192";
     };
@@ -138,16 +142,16 @@ Ubuntu y Fedora
                              604800 )       ; Negative Cache TTL
     ;
             IN      NS      ns1.workspace.local.
-            IN      A       192.168.1.10
+            IN      A       192.168.1.100
 
             IN      MX 10   mail.workspace.local.
 
-    ns1     IN      A       192.168.1.10
-    mail    IN      A       192.168.1.10
-    www     IN      A       192.168.1.10
+    ns1     IN      A       192.168.1.100
+    mail    IN      A       192.168.1.100
+    www     IN      A       192.168.1.100
 
     ; Otras maquinas
-    wsmaq1  IN      A       192.168.1.2
+    wsmaq1  IN      A       192.168.1.3
 
 .. code-block:: bash
 
@@ -163,7 +167,7 @@ Ubuntu y Fedora
     ; BIND reverse data file for local loopback interface
     ;
     $TTL    604800
-    @       IN      SOA     workspace.local. root.localhost. (
+    @       IN      SOA     workspace.local. root.workspace.local. (
                                   1         ; Serial
                              604800         ; Refresh
                               86400         ; Retry
@@ -174,9 +178,9 @@ Ubuntu y Fedora
             IN      NS      ns1.workspace.local.
 
             IN      PTR     workspace.local.
-            IN      A       255.255.255.0
 
-    10      IN      PTR     ns1.workspace.local.
+    100     IN      PTR     ns1.workspace.local.
+    3       IN      PTR     wsmaq1.workspace.local.
 
 
 Ubuntu
@@ -191,19 +195,12 @@ Ubuntu
 Fedora
 ******
 
-.. code-block:: bash
-
-    vim /etc/sysconfig/named
-
-Añadir
-
-.. code-block:: bash
-
-    OPTIONS="-4"
-
 Firewall
 
 .. code-block:: bash
 
-    firewall-cmd --permanent --zone=public --add-service=dns
-    systemctl restart firewalld.service
+    systemctl restart named-chroot.service
+    systemctl enable named-chroot.service
+
+    firewall-cmd --permanent --add-service=dns
+    firewall-cmd --reload

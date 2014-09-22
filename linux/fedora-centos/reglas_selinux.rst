@@ -25,7 +25,7 @@ Postgresql
 
 .. code-block:: bash
 
-    setsebool -P allow_user_postgresql_connect on
+    setsebool -P allow_user_postgresql_connect 1
 
 Memcached
 *********
@@ -45,12 +45,6 @@ de inicio de los usuarios locales
     setsebool -P httpd_enable_homedirs 1
     setsebool -P httpd_read_user_content 1
     setsebool -P httpd_can_network_connect on
-
-Enable File Control Contexts (No me hizo falta)
-
-.. code-block:: bash
-
-    setsebool -P httpd_unified 1
 
 Para definir que un directorio fuera de ``/var/www``, como por ejemplo
 ``/sitios/dominio.tld/html``, pueda ser utilizado por Apache, se le debe asignar el

@@ -82,6 +82,6 @@ Firewall
 
 .. code-block:: bash
 
-    firewall-cmd --permanent --zone=public --add-service=http
-    firewall-cmd --permanent --zone=public --add-service=https
-    systemctl restart firewalld.service
+    firewall-cmd --permanent --add-service=http
+    firewall-cmd --permanent --add-service=https
+    firewall-cmd --reload

@@ -9,6 +9,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   aletas_selinux_por_email
    cambiar_plymouth
    configurar_red
    configurar_ssh

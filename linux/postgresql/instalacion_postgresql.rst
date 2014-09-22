@@ -91,7 +91,8 @@ Establecer contraseña de postgres
 
 .. code-block:: bash
 
-    su postgres
+    passwd postgres
+    su - postgres
     psql
 
     CREATE USER snicoper WITH PASSWORD '123456' NOCREATEDB NOCREATEUSER;

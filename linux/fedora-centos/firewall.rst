@@ -63,3 +63,10 @@ Añadir un servicio de manera persistente
     firewall-cmd --permanent --zone=public --add-service=http
 
 Para eliminar cabiar --add-x por --remove-x
+
+Listar puertos o servicios abiertos
+
+.. code-block:: bash
+
+    firewall-cmd --zone=public --list-ports
+    firewall-cmd --zone=public --list-services

@@ -174,7 +174,7 @@ Cambiar dentro de ``settings/settings_base.py`` algunas configuraciones.
 
 Estados de ``DEBUG`` y ``Database``
 
-Editar en ``settings/settings_base.py``, y aliminar lo siguiente:
+Editar en ``settings/settings_base.py``, y eliminar lo siguiente:
 
 .. code-block:: python
 
@@ -653,4 +653,4 @@ Me dejo en github una plantilla creada
 
 `GitHub <https://github.com/snicoper/structura-dj>`_
 
-Quizas te pueda interesar: :ref:`reference-linux-nginx-nginx_gunicorn_django`
+Quizás te pueda interesar: :ref:`reference-linux-nginx-nginx_gunicorn_django`

@@ -162,6 +162,10 @@ Dovecot
     # En la ultima linea agregar
     root: snicoper
 
+.. code-block:: bash
+
+    postalias /etc/aliases
+
 .. important::
     | Ver :ref:`reference-linux-fedora-centos-reglas_selinux`
     | Para crear el certificado SSL, :ref:`reference-linux-fedora-centos-crear_ssl`
@@ -185,7 +189,7 @@ Dovecot
 
 .. code-block:: bash
 
-    # Descomentar linea 16
+    # Descomentar linea 26
     smtps       inet   n       -       n       -       -       smtpd
 
     # Descomentar lineas 27 y 28
@@ -216,8 +220,8 @@ Firewall
 
 .. code-block:: bash
 
-    firewall-cmd --permanent --zone=public --add-service=smtp
-    systemctl restart firewalld.service
+    firewall-cmd --permanent --add-service=smtp
+    firewall-cmd --reload
 
 Lista de puertos por defecto
 ============================

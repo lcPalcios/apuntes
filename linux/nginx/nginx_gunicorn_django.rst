@@ -13,7 +13,7 @@ Instalación Nginx, Gunicorn y Django
 ----------
 
 .. note::
-    Estas notas estan basadas en la estuctura
+    Estas notas están basadas en la estructura
     :ref:`reference-programacion-python-django-estructura_de_proyecto_nuevo`
 
 Gunicorn
@@ -127,10 +127,10 @@ Añadimos
 
 .. code-block:: bash
 
-    # Solo ubuntu
+    # Solo Ubuntu
     sudo ln -s /etc/nginx/sites-avalaible/proyect_name /etc/nginx/sites-enabled/proyect_name
 
-Si los archivos static no se ven, mirar ``collectstatic`` de django, o modificar
+Si los archivos static no se ven, mirar ``collectstatic`` de Django, o modificar
 ``location /static/admin/``
 
 En Fedora/Centos, mirar :ref:`reference-linux-fedora-centos-reglas_selinux` y si el
@@ -195,7 +195,7 @@ Systemd
 
 **Fedora/Centos7 como servicio**
 
-Es la primera vez que hago un script de este tipo, asi que, sera mejorable, pero funciona!
+Es la primera vez que hago un script de este tipo, así que, sera mejorable, pero funciona!
 
 .. code-block:: bash
 
