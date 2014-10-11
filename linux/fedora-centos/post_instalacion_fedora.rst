@@ -186,7 +186,7 @@ Otros
 *****
 
 KDE
-====
+===
 
 .. code-block:: bash
 
@@ -194,7 +194,7 @@ KDE
     yum install -y sqliteman # Gui Sqlite, en qt
     yum install -y transmission-qt
 
-GKT
+GTK
 ===
 
 .. code-block:: bash

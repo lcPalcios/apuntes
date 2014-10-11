@@ -18,6 +18,8 @@ Python3
 .. code-block:: bash
 
     sudo yum install -y python3 python3-setuptools python3-devel
+
+    # Fedora 20, en 21 ya esta instalado
     sudo yum install -y python3-pip
 
 Use Pip
@@ -27,8 +29,11 @@ Use Pip
     # en python 2
     pip install nombre_paquete
 
-    # en python 3
+    # en python 3 fedora 20
     pip-python3 install nombre_paquete
+
+    # en python 3 fedora 21
+    pip3 install nombre_paquete
 
 Virtualenv y Virtualenvwrapper
 ******************************

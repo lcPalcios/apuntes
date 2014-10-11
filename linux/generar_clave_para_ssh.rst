@@ -13,4 +13,4 @@ La carpeta ~/.ssh debe tener permisos 700 y los archivos de dentro de ~/.ssh han
 .. code-block:: bash
 
     chmod 700 ~/.ssh
-    chmod 600 ~/*
+    chmod 600 ~/.ssh/*
