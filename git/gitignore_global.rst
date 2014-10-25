@@ -30,6 +30,7 @@ Crear archivo .gitignore_global
 
     # Specific files #
     ##################
+    *.komodoproject
 
     # OS generated files #
     ######################

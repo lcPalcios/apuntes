@@ -11,6 +11,7 @@ Categorias:
 
     atributos_todos_campos_modelform
     estructura_de_proyecto_nuevo
+    generar_slug_automaticamente
     how_to_create_language_files
     migraciones_django
     problema_con_trror_that_port_is_already_in_use

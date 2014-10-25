@@ -571,6 +571,7 @@ Crear .gitignore
 
     # Specific files #
     ##################
+    *.komodoproject
 
     # OS generated files #
     ######################
